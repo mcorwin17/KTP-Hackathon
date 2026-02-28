@@ -1,4 +1,4 @@
-"""Deterministic regex-based field extraction."""
+"""Deterministic regex-based field extraction with OCR robustness."""
 
 import re
 from datetime import datetime
@@ -12,14 +12,14 @@ GARBAGE_PATTERNS = [
     r'^[█▓▒░■□▪▫]+',  # Block characters (redaction marks)
     r'^\*+$',  # Only asterisks
     r'^[_\-=]+$',  # Only underscores/dashes
-    r'^[x]{3,}$',  # Multiple x's (common redaction)
+    r'^[xX]{4,}$',  # Multiple x's (common redaction) - increased threshold
     r'^\[redacted\]$',
     r'^\[blocked\]$',
     r'^\[removed\]$',
 ]
 
-# Minimum readable character ratio for valid text
-MIN_READABLE_RATIO = 0.6
+# Minimum readable character ratio for valid text (lowered for OCR tolerance)
+MIN_READABLE_RATIO = 0.5
 
 
 def is_garbage_text(text: str) -> bool:
@@ -34,26 +34,95 @@ def is_garbage_text(text: str) -> bool:
         if re.match(pattern, text, re.IGNORECASE):
             return True
 
-    # Check readable character ratio
-    readable_chars = sum(1 for c in text if c.isalnum() or c.isspace())
+    # Check readable character ratio (more lenient for OCR)
+    readable_chars = sum(1 for c in text if c.isalnum() or c.isspace() or c in '.,/-#')
     if len(text) > 0 and readable_chars / len(text) < MIN_READABLE_RATIO:
         return True
 
-    # Check for excessive repeated characters (OCR artifacts)
-    if len(text) >= 4:
-        for i in range(len(text) - 3):
-            if text[i] == text[i+1] == text[i+2] == text[i+3] and not text[i].isspace():
-                # Allow some repeats like "1111" for numbers but not random chars
-                if not text[i].isdigit():
+    # Check for excessive repeated characters (OCR artifacts) - only non-digit, non-space
+    if len(text) >= 5:
+        for i in range(len(text) - 4):
+            char = text[i]
+            if char == text[i+1] == text[i+2] == text[i+3] == text[i+4]:
+                if not char.isdigit() and not char.isspace():
                     return True
 
     return False
+
+
+def normalize_ocr_text(text: str) -> str:
+    """
+    Normalize common OCR errors in text.
+
+    Fixes common character confusions while preserving the original structure.
+    """
+    if not text:
+        return text
+
+    # Fix common OCR character confusions in specific contexts
+    normalized = text
+
+    # Fix date-like patterns: O -> 0 when surrounded by digits or in date context
+    # e.g., "O1/15/2O26" -> "01/15/2026"
+    normalized = re.sub(r'(?<=\d)O(?=\d)', '0', normalized)
+    normalized = re.sub(r'(?<=/)O(?=\d)', '0', normalized)
+    normalized = re.sub(r'(?<=\d)O(?=/)', '0', normalized)
+    normalized = re.sub(r'(?<=--)O(?=\d)', '0', normalized)
+    normalized = re.sub(r'\bO(\d)', r'0\1', normalized)  # O1 -> 01 at word boundary
+
+    # Fix year patterns: 2O26 -> 2026
+    normalized = re.sub(r'(20)O(\d)', r'\g<1>0\2', normalized)
+    normalized = re.sub(r'(19)O(\d)', r'\g<1>0\2', normalized)
+
+    # Fix l/1/I confusions in permit numbers (when followed/preceded by digits)
+    # BP-2026-OOl42 -> BP-2026-00142
+    normalized = re.sub(r'(?<=[A-Z]-\d{4}-)OO([lI1])(\d+)', r'00\1\2', normalized)
+    normalized = re.sub(r'(?<=\d)[lI](?=\d)', '1', normalized)
+
+    # Normalize various dash types to standard hyphen
+    normalized = re.sub(r'[–—−]', '-', normalized)
+
+    # Fix spacing around slashes and dashes in dates
+    normalized = re.sub(r'\s*/\s*', '/', normalized)
+    normalized = re.sub(r'(\d)\s+-\s+(\d)', r'\1-\2', normalized)
+
+    return normalized
+
+
+def preprocess_ocr_date(date_str: str) -> str:
+    """Preprocess a potential date string to fix OCR errors."""
+    if not date_str:
+        return date_str
+
+    result = date_str.strip()
+
+    # Fix O/0 confusions
+    result = re.sub(r'\bO(?=\d)', '0', result)
+    result = re.sub(r'(?<=\d)O(?=\d)', '0', result)
+    result = re.sub(r'(?<=\d)O\b', '0', result)
+    result = re.sub(r'(?<=/)O', '0', result)
+    result = re.sub(r'O(?=/)', '0', result)
+
+    # Fix year: 2O26 -> 2026
+    result = re.sub(r'2O(\d\d)\b', r'20\1', result)
+
+    # Fix l/1 confusions
+    result = re.sub(r'(?<=\d)l(?=\d)', '1', result)
+    result = re.sub(r'(?<=/)[lI](?=\d)', '1', result)
+
+    # Remove extra spaces
+    result = re.sub(r'\s+', ' ', result).strip()
+
+    return result
 
 
 def clean_ocr_artifacts(text: str) -> str:
     """Remove common OCR artifacts from redacted/blacked-out areas."""
     if not text:
         return text
+
+    # First normalize OCR text
+    text = normalize_ocr_text(text)
 
     # Remove lines that are mostly non-readable characters
     lines = text.split('\n')
@@ -68,42 +137,76 @@ def clean_ocr_artifacts(text: str) -> str:
 class RegexExtractor:
     """Extract fields from text using regex patterns and heuristics.
 
+    Optimized for OCR text with common recognition errors.
     Only extracts clearly visible text - skips redacted or unclear content.
     """
 
-    # Permit number patterns
+    # Permit number patterns - more flexible for OCR
     PERMIT_PATTERNS = [
-        r"Permit\s*#\s*:?\s*([A-Z0-9-]+)",
-        r"Permit\s+Number\s*:?\s*([A-Z0-9-]+)",
-        r"Permit\s*:?\s*#?\s*([A-Z0-9-]{6,})",
-        r"#\s*(\d{7,})",
+        # Explicit labels with flexible spacing
+        r"Permit\s*#\s*:?\s*([A-Z0-9][A-Z0-9\-\s]{4,}[A-Z0-9])",
+        r"Permit\s+(?:Number|No\.?)\s*:?\s*([A-Z0-9][A-Z0-9\-\s]{4,}[A-Z0-9])",
+        r"Permit\s*:?\s*#?\s*([A-Z]{1,3}[\-\s]?\d{4}[\-\s]?\d{3,6})",
+        # Common formats: BP-2026-00142, CP-2026-00201, IP-2026-00050
+        r"\b([A-Z]{2}[\-\s]?\d{4}[\-\s]?\d{4,6})\b",
+        # Standalone permit-like numbers
+        r"#\s*(\d{6,})",
         r"(?:permit|application)\s*(?:no|number|#)?\s*:?\s*([A-Z]?\d{6,})",
+        # More relaxed pattern for OCR
+        r"\b([A-Z]{1,3}[\-\s]?20\d{2}[\-\s]?\d{3,6})\b",
     ]
 
-    # Date patterns
+    # Date patterns - expanded for OCR variations
     DATE_PATTERNS = [
         # Full date with day name: Monday, December 22, 2025
-        r"(?:Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday),?\s+"
-        r"((?:January|February|March|April|May|June|July|August|September|October|November|December)\s+\d{1,2},?\s+\d{4})",
-        # MM/DD/YYYY or MM-DD-YYYY
-        r"(\d{1,2}[/-]\d{1,2}[/-]\d{2,4})",
-        # Month DD, YYYY
-        r"((?:January|February|March|April|May|June|July|August|September|October|November|December)\s+\d{1,2},?\s+\d{4})",
-        # YYYY-MM-DD
-        r"(\d{4}-\d{2}-\d{2})",
+        r"(?:Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)[,\s]+"
+        r"((?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|"
+        r"Jul(?:y)?|Aug(?:ust)?|Sep(?:t(?:ember)?)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)"
+        r"[\s\.]+\d{1,2}[,\s]+\d{4})",
+
+        # MM/DD/YYYY or MM-DD-YYYY with flexible spacing (OCR often adds spaces)
+        r"(\d{1,2}\s*[/\-]\s*\d{1,2}\s*[/\-]\s*\d{2,4})",
+
+        # Month DD, YYYY with abbreviations
+        r"((?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|"
+        r"Jul(?:y)?|Aug(?:ust)?|Sep(?:t(?:ember)?)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)"
+        r"[\s\.]+\d{1,2}[,\s]+\d{4})",
+
+        # DD-Mon-YYYY: 15-Jan-2026
+        r"(\d{1,2}[\-\s]+(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*[\-\s]+\d{4})",
+
+        # YYYY-MM-DD (ISO)
+        r"(\d{4}\s*-\s*\d{1,2}\s*-\s*\d{1,2})",
+
+        # Written out: "January 15, 2026" or "January 15 2026"
+        r"((?:January|February|March|April|May|June|July|August|September|October|November|December)"
+        r"\s+\d{1,2}[,\s]+\d{4})",
+
+        # Date with label context
+        r"[Dd]ate[:\s]+(\d{1,2}[/\-]\d{1,2}[/\-]\d{2,4})",
+        r"[Dd]ate[:\s]+(\d{4}[/\-]\d{1,2}[/\-]\d{1,2})",
     ]
 
-    # Status patterns
+    # Status patterns - expanded
     STATUS_PATTERNS = [
+        # Explicit status labels
         (r"(?:inspection\s+)?status\s*:?\s*(pass(?:ed)?)", "pass"),
         (r"(?:inspection\s+)?status\s*:?\s*(fail(?:ed)?)", "fail"),
         (r"(?:inspection\s+)?status\s*:?\s*(partial)", "partial"),
+        (r"[Rr]esult\s*:?\s*(pass(?:ed)?)", "pass"),
+        (r"[Rr]esult\s*:?\s*(fail(?:ed)?)", "fail"),
+        (r"[Rr]esult\s*:?\s*(partial)", "partial"),
+        # Status values
         (r"\b(approved)\b", "pass"),
         (r"\b(passed)\b", "pass"),
+        (r"\b(pass)\b", "pass"),
         (r"\b(failed)\b", "fail"),
+        (r"\b(fail)\b", "fail"),
         (r"\b(rejected)\b", "fail"),
         (r"\bre-?inspection\s+required\b", "fail"),
         (r"\bcorrections?\s+(?:needed|required)\b", "fail"),
+        (r"\b(conditional(?:ly)?(?:\s+approved)?)\b", "partial"),
+        (r"\b(pending)\b", "partial"),
     ]
 
     # Phone patterns
@@ -116,25 +219,50 @@ class RegexExtractor:
     # Email patterns
     EMAIL_PATTERN = r"[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
 
-    # Address patterns
+    # Address patterns - more flexible for OCR
     ADDRESS_PATTERNS = [
-        r"Address\s*:?\s*(.+?)(?:\n|$)",
-        r"Location\s*:?\s*(.+?)(?:\n|$)",
-        r"Property\s*:?\s*(.+?)(?:\n|$)",
-        r"Site\s*:?\s*(.+?)(?:\n|$)",
-        r"(\d+\s+[A-Za-z0-9\s]+(?:Street|St|Avenue|Ave|Road|Rd|Drive|Dr|Lane|Ln|Way|Court|Ct|Circle|Cir|Boulevard|Blvd)\.?(?:\s*,?\s*[A-Za-z\s]+)?)",
+        # Labeled addresses
+        r"(?:Site\s+)?[Aa]ddress\s*:?\s*(.+?)(?:\n|$)",
+        r"[Ll]ocation\s*:?\s*(.+?)(?:\n|$)",
+        r"[Pp]roperty\s*:?\s*(.+?)(?:\n|$)",
+        r"[Ss]ite\s*:?\s*(.+?)(?:\n|$)",
+        # Street address patterns with common street types
+        r"(\d+\s+[A-Za-z0-9\s\.]+(?:Street|St\.?|Avenue|Ave\.?|Road|Rd\.?|Drive|Dr\.?|"
+        r"Lane|Ln\.?|Way|Court|Ct\.?|Circle|Cir\.?|Boulevard|Blvd\.?|"
+        r"Parkway|Pkwy\.?|Place|Pl\.?|Highway|Hwy\.?|Trail|Trl\.?)\.?"
+        r"(?:[,\s]+[A-Za-z\s]+)?(?:[,\s]+\d{5}(?:-\d{4})?)?)",
+        # Simpler pattern: number + words + optional city/zip
+        r"(\d{1,5}\s+[A-Za-z][A-Za-z0-9\s\.]{5,40}(?:,\s*[A-Za-z\s]+)?(?:,?\s*\d{5})?)",
+    ]
+
+    # Structure type patterns
+    STRUCTURE_TYPE_PATTERNS = [
+        r"(?:Structure|Building|Property)\s+[Tt]ype\s*:?\s*([A-Za-z\-\s]+?)(?:\n|,|$)",
+        r"[Tt]ype\s*:?\s*(Residential|Commercial|Industrial|Mixed[\-\s]?Use)",
+        r"\b(Residential|Commercial|Industrial|Mixed[\-\s]?Use)\b",
     ]
 
     # Inspection type patterns
     INSPECTION_TYPE_PATTERNS = [
-        r"(?:inspection\s+)?type\s*:?\s*([A-Za-z\s]+?)(?:\n|$)",
-        r"((?:Electrical|Plumbing|Mechanical|Building|Fire|Final|Rough|Framing|Foundation|Footing|Slab|Roofing|Insulation|Drywall)\s*(?:Inspection)?)",
+        r"(?:[Ii]nspection\s+)?[Tt]ype\s*:?\s*([A-Za-z\s]+?)(?:\n|$)",
+        r"((?:Electrical|Plumbing|Mechanical|Building|Fire|Final|Rough|"
+        r"Framing|Foundation|Footing|Slab|Roofing|Insulation|Drywall|HVAC|"
+        r"Gas|Water|Sewer|Grading|Demolition|Certificate\s+of\s+Occupancy|CO)\s*"
+        r"(?:Inspection)?)",
     ]
 
     # Release type patterns
     RELEASE_TYPE_PATTERNS = [
-        r"Release\s+Type\s*:?\s*(.+?)(?:\n|$)",
-        r"((?:Electrical|Plumbing|Mechanical|Building|Utility|Power|Gas|Water)\s+(?:Power\s+)?Release)",
+        r"[Rr]elease\s+[Tt]ype\s*:?\s*(.+?)(?:\n|$)",
+        r"((?:Electrical|Plumbing|Mechanical|Building|Utility|Power|Gas|Water|Meter)\s+"
+        r"(?:Power\s+)?[Rr]elease)",
+    ]
+
+    # Inspector name patterns
+    INSPECTOR_PATTERNS = [
+        r"[Ii]nspector\s*:?\s*([A-Z][a-z]+\s+[A-Z][a-z]+)",
+        r"[Ii]nspected\s+[Bb]y\s*:?\s*([A-Z][a-z]+\s+[A-Z][a-z]+)",
+        r"[Ii]nspector\s+[Nn]ame\s*:?\s*([A-Z][a-z]+\s+[A-Z][a-z]+)",
     ]
 
     def extract(self, clean_text: str, attachment_text: Optional[str] = None) -> dict:
@@ -151,6 +279,9 @@ class RegexExtractor:
         combined_text = clean_text
         if attachment_text:
             combined_text += "\n\n" + attachment_text
+
+        # Apply OCR normalization
+        combined_text = normalize_ocr_text(combined_text)
 
         result = {
             "permit": {},
@@ -170,9 +301,10 @@ class RegexExtractor:
         # Extract dates
         dates = self._extract_dates(combined_text)
         if dates:
-            # Try to categorize dates based on context
             result["_extracted_dates"] = dates
-            result["field_confidence"]["dates"] = 0.7
+            # Assign dates based on context
+            self._assign_dates(result, dates, combined_text)
+            result["field_confidence"]["dates"] = 0.75
 
         # Extract status
         status, conf = self._extract_status(combined_text)
@@ -185,6 +317,12 @@ class RegexExtractor:
         if address:
             result["site"]["address_full"] = address
             result["field_confidence"]["site.address_full"] = conf
+
+        # Extract structure type
+        struct_type, conf = self._extract_structure_type(combined_text)
+        if struct_type:
+            result["site"]["structure_type"] = struct_type
+            result["field_confidence"]["site.structure_type"] = conf
 
         # Extract contacts (emails and phones)
         contacts = self._extract_contacts(combined_text)
@@ -204,6 +342,14 @@ class RegexExtractor:
             result["release"]["release_type"] = release_type
             result["field_confidence"]["release.release_type"] = conf
 
+        # Extract inspector name
+        inspector, conf = self._extract_inspector(combined_text)
+        if inspector:
+            # Add to contacts if not already present
+            inspector_contact = {"name": inspector, "role": "inspector"}
+            if not any(c.get("name") == inspector for c in result["contacts"]):
+                result["contacts"].append(inspector_contact)
+
         return result
 
     def _extract_permit_number(self, text: str) -> tuple[Optional[str], float]:
@@ -212,32 +358,45 @@ class RegexExtractor:
             match = re.search(pattern, text, re.IGNORECASE)
             if match:
                 permit_num = match.group(1).strip()
+                # Normalize: remove extra spaces, fix O/0
+                permit_num = re.sub(r'\s+', '', permit_num)
+                permit_num = re.sub(r'O(?=\d)', '0', permit_num)
+                permit_num = re.sub(r'(?<=\d)O', '0', permit_num)
+
                 # Skip if it looks like garbage/redacted content
                 if is_garbage_text(permit_num):
                     continue
                 # Permit numbers should be mostly alphanumeric
-                alnum_ratio = sum(1 for c in permit_num if c.isalnum()) / max(len(permit_num), 1)
-                if alnum_ratio < 0.7:
+                alnum_ratio = sum(1 for c in permit_num if c.isalnum() or c == '-') / max(len(permit_num), 1)
+                if alnum_ratio < 0.6:
+                    continue
+                # Should have at least some digits
+                if not any(c.isdigit() for c in permit_num):
                     continue
                 # Higher confidence for explicit labels
-                conf = 0.9 if "permit" in pattern.lower() else 0.7
-                return permit_num, conf
+                conf = 0.9 if "permit" in pattern.lower() else 0.75
+                return permit_num.upper(), conf
         return None, 0.0
 
     def _extract_dates(self, text: str) -> list[dict]:
-        """Extract and parse dates from text."""
+        """Extract and parse dates from text with OCR error tolerance."""
         dates = []
         for pattern in self.DATE_PATTERNS:
             for match in re.finditer(pattern, text, re.IGNORECASE):
                 try:
                     date_str = match.group(1) if match.lastindex else match.group(0)
-                    parsed = date_parser.parse(date_str)
+                    # Preprocess for OCR errors
+                    date_str = preprocess_ocr_date(date_str)
+                    parsed = date_parser.parse(date_str, fuzzy=True)
+                    # Sanity check: year should be reasonable (1990-2100)
+                    if parsed.year < 1990 or parsed.year > 2100:
+                        continue
                     dates.append({
                         "original": date_str,
                         "parsed": parsed.strftime("%Y-%m-%d"),
                         "position": match.start(),
                     })
-                except (ValueError, TypeError):
+                except (ValueError, TypeError, OverflowError):
                     continue
 
         # Sort by position in text and deduplicate
@@ -251,6 +410,31 @@ class RegexExtractor:
 
         return unique_dates
 
+    def _assign_dates(self, result: dict, dates: list[dict], text: str) -> None:
+        """Assign extracted dates to appropriate fields based on context."""
+        if not dates:
+            return
+
+        text_lower = text.lower()
+
+        for date_info in dates:
+            pos = date_info["position"]
+            parsed = date_info["parsed"]
+
+            # Look at context around the date (50 chars before)
+            context_start = max(0, pos - 50)
+            context = text_lower[context_start:pos]
+
+            if "inspection" in context and "date" in context:
+                result["inspection"]["inspection_date"] = parsed
+            elif "schedule" in context:
+                result["inspection"]["scheduled_date"] = parsed
+            elif "release" in context:
+                result["release"]["release_date"] = parsed
+            elif not result["inspection"].get("inspection_date"):
+                # Default first date to inspection date
+                result["inspection"]["inspection_date"] = parsed
+
     def _extract_status(self, text: str) -> tuple[Optional[str], float]:
         """Extract inspection status from text."""
         text_lower = text.lower()
@@ -258,7 +442,7 @@ class RegexExtractor:
         for pattern, status in self.STATUS_PATTERNS:
             if re.search(pattern, text_lower):
                 # Higher confidence for explicit status labels
-                conf = 0.9 if "status" in pattern else 0.7
+                conf = 0.9 if "status" in pattern or "result" in pattern.lower() else 0.75
                 return status, conf
 
         return None, 0.0
@@ -266,19 +450,33 @@ class RegexExtractor:
     def _extract_address(self, text: str) -> tuple[Optional[str], float]:
         """Extract address from text. Only returns clearly readable values."""
         for pattern in self.ADDRESS_PATTERNS:
-            match = re.search(pattern, text, re.IGNORECASE)
+            match = re.search(pattern, text, re.IGNORECASE | re.MULTILINE)
             if match:
                 address = match.group(1).strip()
                 # Clean up the address
                 address = re.sub(r"\s+", " ", address)
+                address = re.sub(r"[,\s]+$", "", address)
                 # Skip if it looks like garbage/redacted content
                 if is_garbage_text(address):
                     continue
-                # Address should have reasonable readable content
+                # Address should have reasonable length
                 if len(address) < 5:
                     continue
-                conf = 0.8 if any(label in pattern.lower() for label in ["address", "location", "property"]) else 0.6
+                # Should contain at least one digit (street number)
+                if not any(c.isdigit() for c in address):
+                    continue
+                conf = 0.85 if any(label in pattern.lower() for label in ["address", "location", "property", "site"]) else 0.65
                 return address, conf
+        return None, 0.0
+
+    def _extract_structure_type(self, text: str) -> tuple[Optional[str], float]:
+        """Extract structure/building type from text."""
+        for pattern in self.STRUCTURE_TYPE_PATTERNS:
+            match = re.search(pattern, text, re.IGNORECASE)
+            if match:
+                struct_type = match.group(1).strip()
+                struct_type = struct_type.title()
+                return struct_type, 0.8
         return None, 0.0
 
     def _extract_contacts(self, text: str) -> list[dict]:
@@ -288,10 +486,13 @@ class RegexExtractor:
         # Extract emails
         emails = re.findall(self.EMAIL_PATTERN, text)
         for email in set(emails):
-            contacts.append({
-                "email": email,
-                "role": "inspector" if any(kw in email.lower() for kw in ["inspector", "county", "gov", "city"]) else "unknown"
-            })
+            role = "unknown"
+            email_lower = email.lower()
+            if any(kw in email_lower for kw in ["inspector", "inspect"]):
+                role = "inspector"
+            elif any(kw in email_lower for kw in ["county", "gov", "city", "state"]):
+                role = "government"
+            contacts.append({"email": email, "role": role})
 
         # Extract phones
         for pattern in self.PHONE_PATTERNS:
@@ -300,10 +501,9 @@ class RegexExtractor:
                 # Normalize phone
                 phone_digits = re.sub(r"\D", "", phone)
                 if len(phone_digits) >= 10:
-                    contacts.append({
-                        "phone": phone_digits,
-                        "role": "unknown"
-                    })
+                    # Avoid duplicates
+                    if not any(c.get("phone") == phone_digits for c in contacts):
+                        contacts.append({"phone": phone_digits, "role": "unknown"})
 
         return contacts
 
@@ -313,6 +513,7 @@ class RegexExtractor:
             match = re.search(pattern, text, re.IGNORECASE)
             if match:
                 insp_type = match.group(1).strip()
+                insp_type = re.sub(r"\s+", " ", insp_type).title()
                 return insp_type, 0.8
         return None, 0.0
 
@@ -322,5 +523,16 @@ class RegexExtractor:
             match = re.search(pattern, text, re.IGNORECASE)
             if match:
                 release_type = match.group(1).strip()
+                release_type = release_type.title()
                 return release_type, 0.8
+        return None, 0.0
+
+    def _extract_inspector(self, text: str) -> tuple[Optional[str], float]:
+        """Extract inspector name from text."""
+        for pattern in self.INSPECTOR_PATTERNS:
+            match = re.search(pattern, text)
+            if match:
+                name = match.group(1).strip()
+                if not is_garbage_text(name) and len(name) >= 3:
+                    return name, 0.8
         return None, 0.0

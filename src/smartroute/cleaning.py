@@ -68,8 +68,8 @@ OCR_GARBAGE_PATTERNS = [
     r'\[CENSORED\]',
 ]
 
-# Minimum readable ratio for a line to be kept
-MIN_LINE_READABLE_RATIO = 0.5
+# Minimum readable ratio for a line to be kept (lowered for OCR tolerance)
+MIN_LINE_READABLE_RATIO = 0.4
 
 
 def remove_security_banners(text: str) -> str:
@@ -160,9 +160,13 @@ def is_line_readable(line: str) -> bool:
         if re.search(pattern, line, re.IGNORECASE):
             return False
 
-    # Check readable character ratio
-    readable_chars = sum(1 for c in line if c.isalnum() or c.isspace() or c in '.,;:!?()-\'\"')
-    if len(line) > 3 and readable_chars / len(line) < MIN_LINE_READABLE_RATIO:
+    # Check readable character ratio - expanded set for OCR tolerance
+    # Includes common characters in dates, addresses, permits, etc.
+    readable_chars = sum(
+        1 for c in line
+        if c.isalnum() or c.isspace() or c in '.,;:!?()-\'\"/#@&$%+='
+    )
+    if len(line) > 5 and readable_chars / len(line) < MIN_LINE_READABLE_RATIO:
         return False
 
     return True
