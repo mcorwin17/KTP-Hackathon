@@ -1,0 +1,14 @@
+--- INSPECTION PORTAL EXPORT ---
+Generated = 2026-02-28 17:15:17
+
+Permit Number = ***REDACTED***
+Inspection Date = 07/17/2025
+Address = 6166 Main St, Brockway, 62707
+Structure Type = Commercial
+Status = Denied
+Inspector = Ryan Taylor
+Notes = Final inspection completed successfully.
+
+--- END OF RECORD ---
+
+[Permit Reference: EP-2026-89800]

@@ -1,0 +1,182 @@
+[
+  {
+    "permit_number": "BP-2026-00142",
+    "inspection_date": "2026-01-15",
+    "status": "pass",
+    "site_address": "123 Main St, Springfield, 62704",
+    "structure_type": "residential",
+    "inspector_name": "John Smith",
+    "notes": "All clear"
+  },
+  {
+    "permit_number": "BP-2026-00143",
+    "inspection_date": "2026-01-16",
+    "status": "fail",
+    "site_address": "456 Oak Ave, Springfield, 62705",
+    "structure_type": "commercial",
+    "inspector_name": "Jane Doe",
+    "notes": "Wiring issues found"
+  },
+  {
+    "permit_number": "CP-2026-00201",
+    "inspection_date": "2026-01-15",
+    "status": "pass",
+    "site_address": "789 Industrial Pkwy, Shelbyville, 62706",
+    "structure_type": "industrial",
+    "inspector_name": "Robert Garcia",
+    "notes": ""
+  },
+  {
+    "permit_number": "BP-2026-00144",
+    "inspection_date": "2026-01-17",
+    "status": "partial",
+    "site_address": "321 Elm Blvd, Springfield, 62704",
+    "structure_type": "mixed-use",
+    "inspector_name": "Maria Chen",
+    "notes": "Needs follow-up"
+  },
+  {
+    "permit_number": "BP-2026-00145",
+    "inspection_date": "2026-01-18",
+    "status": "pass",
+    "site_address": "654 Pine Dr, Capital City, 62707",
+    "structure_type": "residential",
+    "inspector_name": "Tom Wilson",
+    "notes": "Quick pass"
+  },
+  {
+    "permit_number": "IP-2026-00050",
+    "inspection_date": "2026-01-19",
+    "status": "fail",
+    "site_address": "100 Factory Ln, Shelbyville, 62706",
+    "structure_type": "industrial",
+    "inspector_name": "Sarah Kim",
+    "notes": "Safety violations"
+  },
+  {
+    "permit_number": "BP-2026-00146",
+    "inspection_date": "2026-02-01",
+    "status": "pass",
+    "site_address": "222 Birch Ct, Springfield, 62705",
+    "structure_type": "residential",
+    "inspector_name": "James Lee",
+    "notes": ""
+  },
+  {
+    "permit_number": "CP-2026-00202",
+    "inspection_date": "2026-02-03",
+    "status": "unknown",
+    "site_address": "333 Commerce Way, Capital City, 62707",
+    "structure_type": "commercial",
+    "inspector_name": "Lisa Wang",
+    "notes": "Awaiting docs"
+  },
+  {
+    "permit_number": "BP-2026-00147",
+    "inspection_date": "2026-02-05",
+    "status": "unknown",
+    "site_address": "444 Maple Rd, Springfield, 62704",
+    "structure_type": "residential",
+    "inspector_name": "David Park",
+    "notes": ""
+  },
+  {
+    "permit_number": "MP-2026-00010",
+    "inspection_date": "2026-02-06",
+    "status": "pass",
+    "site_address": "555 Center Pl, Springfield, 62705",
+    "structure_type": "mixed-use",
+    "inspector_name": "Anna Lopez",
+    "notes": "Mixed-use approval"
+  },
+  {
+    "permit_number": "BP-2026-00148",
+    "inspection_date": "2026-02-07",
+    "status": "fail",
+    "site_address": "666 Sunset Ave, Shelbyville, 62706",
+    "structure_type": "residential",
+    "inspector_name": "Chris Brown",
+    "notes": "Structural issue"
+  },
+  {
+    "permit_number": "BP-2026-00149",
+    "inspection_date": "2026-02-08",
+    "status": "pass",
+    "site_address": "777 Lake Dr, Capital City, 62707",
+    "structure_type": "commercial",
+    "inspector_name": "Michelle Lee",
+    "notes": "Commercial OK"
+  },
+  {
+    "permit_number": "IP-2026-00051",
+    "inspection_date": "2026-02-09",
+    "status": "partial",
+    "site_address": "888 River Rd, Shelbyville, 62706",
+    "structure_type": "industrial",
+    "inspector_name": "Kevin Nguyen",
+    "notes": "Conditional pass"
+  },
+  {
+    "permit_number": "BP-2026-00150",
+    "inspection_date": "2026-02-10",
+    "status": "pass",
+    "site_address": "999 Valley St, Springfield, 62704",
+    "structure_type": "residential",
+    "inspector_name": "Diane Cruz",
+    "notes": ""
+  },
+  {
+    "permit_number": "CP-2026-00203",
+    "inspection_date": "2026-02-11",
+    "status": "fail",
+    "site_address": "111 Business Blvd, Capital City, 62707",
+    "structure_type": "commercial",
+    "inspector_name": "Ryan Taylor",
+    "notes": "Code violations"
+  },
+  {
+    "permit_number": "BP-2026-00151",
+    "inspection_date": "2026-02-12",
+    "status": "pass",
+    "site_address": "131 Cherry Ln, Springfield, 62705",
+    "structure_type": "residential",
+    "inspector_name": "Amy Johnson",
+    "notes": "No issues"
+  },
+  {
+    "permit_number": "BP-2026-00152",
+    "inspection_date": "2026-02-13",
+    "status": "unknown",
+    "site_address": "242 Walnut Ct, Shelbyville, 62706",
+    "structure_type": "residential",
+    "inspector_name": "Eric Martinez",
+    "notes": "Inspector busy"
+  },
+  {
+    "permit_number": "MP-2026-00011",
+    "inspection_date": "2026-02-14",
+    "status": "unknown",
+    "site_address": "353 Broadway, Capital City, 62707",
+    "structure_type": "mixed-use",
+    "inspector_name": "Nicole White",
+    "notes": "Multi-tenant"
+  },
+  {
+    "permit_number": "IP-2026-00052",
+    "inspection_date": "2026-02-15",
+    "status": "fail",
+    "site_address": "464 Industrial Ave, Shelbyville, 62706",
+    "structure_type": "industrial",
+    "inspector_name": "Brian Hall",
+    "notes": "Major violations"
+  },
+  {
+    "permit_number": "BP-2026-00153",
+    "inspection_date": "2026-02-16",
+    "status": "pass",
+    "site_address": "575 Oak Pl, Springfield, 62704",
+    "structure_type": "residential",
+    "inspector_name": "Stephanie Adams",
+    "notes": "Final inspection"
+  }
+]

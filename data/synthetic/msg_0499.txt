@@ -1,0 +1,4 @@
+FYI here is today's batch:
+Permit	Date	Address	Type	Result	Inspector	Notes
+FP-2026-74284	Feb 24 2026	3215 Sequoia Dr, Shelbyville, 62701	Industrial	Under Review	Stephanie Adams	Conditional pass — minor corrections required.
+MP-2025-75954	Aug 16 2025	107 Walnut Way, Shelbyvil1e, 62702	Mixed-Use	Conditional	Michelle Lee	Plumbing code violation in basement unit.

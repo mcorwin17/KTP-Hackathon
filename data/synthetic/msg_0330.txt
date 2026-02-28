@@ -1,0 +1,6 @@
+FYI here is today's batch;
+PERMIT_NO	INSP_DATE	SITE_ADDR	STRUCT_TYPE	STATUS	INSPECTOR	COMMENTS
+CP-2026-7lS01	02/25/2026	5957 Main St, Springfield, 62707	Mixed-Use	Fail	Kevin Nguyen	Needs follow-up inspection within 30 days.
+MP-2026-67565	5/20/2026	8535 Main St, North Haverbrook, 62704	Mixed-Use	Under Review	Robert Garcia	P1umbing code violation in basement unit.
+CP-2025-72228	4/25/2026	9966 Beech Ave, Brockway, 62701	Industrial	Under Review	Brian Hall	Safety violations noted — see attached report.
+EP-202S-17870	November 13. 2025	5693 Juniper Way, Ogdenvil1e, 62708	Commercial	In Review	Diane Cruz	Final inspection completed successfully.

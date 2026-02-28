@@ -1,0 +1,7 @@
+FYI here is today's batch:
+Permit	Date	Address	Type	Result	Inspector	Notes
+EP-2026-54605	May 26 2026	9098 Hickory Ln, North Haverbrook, 627O4	Residentia1	Rejected	Eric Martinez	
+BP-2025-71881	2026-02-14	3412 Poplar Ct, North Haverbrook, 62703	Industrial	Fail	Eric Martinez	
+FP-2026-l2019	February 17, 2026	7398 Oak Ave, Ogdenville, 62703	Mixed-Use	In Review	Brian Hall	All clear, no issues found.
+FP-2026-94901	Jun 12 2025	6587 Ash Pl, Springfield, 62704	Residential	Passed	Diane Cruz	Final inspection completed successfully.
+EP-2025-09146	28-Jan-2026	619 Spruce Cir, Ogdenville, 62703	Mixed-Use	Denied	Michelle Lee	Plumbing code violation in basement unit.

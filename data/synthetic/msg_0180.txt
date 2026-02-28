@@ -1,0 +1,7 @@
+FYI here is today's batch:
+Permit	Date	Address	Type	Result	Inspector	Notes
+MP-2026-72879	20-Aug-2025	9829 Chestnut St, Capital City, 62702	Mixed-Use	Conditional	David Park	Safety violations noted — see attached report.
+CP-2026-02322	August 03, 2025	9S8 Willow Ter, North Haverbrook, 62708	Commercial	Partial	Chris Brown	Plumbing code violation in basement unit.
+FP-2O26-84815	November 13, 2025	6580 Cedar Ln, Capital City, 62701	Industrial	Partial	Brian Hall	All clear. no issues found.
+FP-2025-65200	07/03/25	1212 Maple Rd, Shelbyville, 62702	Commercial	Rejected	Robert Garcia	Final inspection completed successfully.
+BP-2026-45132	6/20/2026	1239 Hickory Ln, Ogdenville, 62701	Mixed-Use	Scheduled	Tom Wilson	Wiring issues in panel B-3.

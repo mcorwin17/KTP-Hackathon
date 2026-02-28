@@ -1,0 +1,12 @@
+--- INSPECTION PORTAL EXPORT ---
+Generated - 2026-02-28 17:15:17
+
+PERMIT - BP-2026-56081
+Insp Date - 16-Sep-2025
+Property Address - 5790 Elm Blvd, Brockway, 62705
+Structure Type - Mixed-Use
+Result - Conditional
+Examiner - Nicole White
+Notes - Fina1 inspection completed successfully.
+
+--- END OF RECORD ---

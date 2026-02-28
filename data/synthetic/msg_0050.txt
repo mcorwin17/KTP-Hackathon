@@ -1,0 +1,13 @@
+--- INSPECTION P0RTAL EXPORT ---
+Generated → 2026-02-28 17:15:17
+
+Permit No → MP-2025-30222
+Insp Date → 11-Dec-2025
+Site Address → 6415 Maple Rd, Springfield, 6270l
+Structure Type → Mixed-Use
+Outcome → Not Approved
+Examiner → Tom Wi1son
+Notes → Wiring issues in panel B-3.
+
+SessionID → f728b4fa
+--- END OF RECORD ---

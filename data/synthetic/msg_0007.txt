@@ -1,0 +1,12 @@
+--- INSPECTION PORTAL EXPORT ---
+Generated → 2026-02-28 17:15:17
+
+Permit # → BP-2026-02640
+Inspection Date → 6/19/2026
+Property Address → 8937 Oak Ave, Capital City, 62704
+Bldg Type → Residential
+Status → Passed
+Examiner → John Smith
+Notes → Safety violations noted — see attached report.
+
+--- END OF RECORD ---

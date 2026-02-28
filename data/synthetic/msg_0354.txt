@@ -1,0 +1,14 @@
+--- INSPECTION PORTAL EXPORT ---
+Generated: 2026-02-28 17:l5:l8
+
+PERMIT: ***REDACTED***
+Date: January 14, 2026
+Address: 2615 Magnolia Blvd, Capital City, 62701
+Bldg Type: Residential
+Result: Fail
+Inspector: Michelle Lee
+Notes: Final inspection completed successfully.
+
+--- END OF RECORD ---
+
+[Permit Reference: CP-2026-53678]

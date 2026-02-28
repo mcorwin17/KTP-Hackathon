@@ -1,0 +1,15 @@
+--- INSPECTION PORTAL EXPORT ---
+Generated - 2026-02-28 17:15:17
+
+Permit # - ***REDACTED***
+Date - Jun 16 2025
+Site Address - 1978 Cedar Ln, Capital City, 62707
+Structure Type - Industrial
+SessionID - 1846d424
+Inspection Result - Rejected
+Examiner - Lisa Wang
+Notes - Wiring issues in panel B-3.
+
+--- END OF RECORD ---
+
+Ref: FP-2026-52306

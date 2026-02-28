@@ -1,0 +1,2 @@
+Permit	Date	Address	Type	Result	Inspector	Notes
+EP-2025-50093	Jan 19 2026	9476 Sequoia Dr, Ogdenville, 62704	Mixed-Use	In Review	Sarah Kim	All clear, no issues found.

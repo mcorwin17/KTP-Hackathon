@@ -1,0 +1,12 @@
+--- INSPECTION PORTAL EXP0RT ---
+Generated:	2026-02-28 17:15:18
+
+PERMIT:	BP-2026-42648
+Date:	7/1/2026
+Site Address:	2883 Cedar Ln, Ogdenville, 62703
+Structure Type:	Mixed-Use
+Status:	Conditional Approva1
+Inspector:	Chris Brown
+Notes:	Needs fo1low-up inspection within 30 days.
+
+--- END OF RECORD ---

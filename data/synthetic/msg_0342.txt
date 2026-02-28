@@ -1,0 +1,6 @@
+PERMIT_NO	INSP_DATE	SITE_ADDR	STRUCT_TYPE	STATUS	INSPECTOR	COMMENTS
+***REDACTED***	May 13, 2026	7443 Magnolia Blvd, North Haverbrook, 62705	Industrial	Pending	Brian Hall	
+CP-2025-64368	August 03, 2025	1908 Ash Pl, North Haverbrook, 62707	Mixed-Use	Conditional Approval	Michelle Lee	Wiring issues in panel B-3.
+
+---
+Permit tracking ID: BP-2026-43965

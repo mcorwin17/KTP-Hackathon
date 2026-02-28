@@ -1,0 +1,12 @@
+--- INSPECTION PORTAL EXPORT ---
+Generated - 2026-02-28 17:15:17
+
+Permit No - CP-2025-17012
+Date - 01/08/26
+Property Address - 8338 Oak Ave, Springfield, 62703
+Type - Commercial
+Inspection Result - Conditional Approval
+Inspector - Sarah Kim
+Notes - Final inspection completed successfully.
+
+--- END OF RECORD ---

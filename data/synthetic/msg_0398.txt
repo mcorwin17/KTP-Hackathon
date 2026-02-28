@@ -1,0 +1,7 @@
+FYI here is today's batch:
+Permit	Date	Address	Type	Result	Inspector	Notes
+FP-2025-75911	12/12/2025	6852 Spruce Cir, Capital City, 62703	Residential	Not Approved	Brian Hall	Wiring issues in panel B-3.
+CP-2025-88010	9/20/2025	3248 Willow Ter, Ogdenville. 62704	Mixed-Use	OK	Tom Wilson	Safety violations noted — see attached report.
+FP-2026-64201	Jun 28 2025	5021 A1der Ln, Brockway, 62702	Residentia1	Pending	John Smith	Safety vio1ations noted — see attached report.
+EP-2025-66445	6/26/2026	7950 Spruce Cir, Springfield, 62706	Residential	Pass	Lisa Wang	Safety violations noted — see attached report.
+BP-2025-35808	10/13/2025	9806 Cypress Way, Ogdenville, 62701	Residential	In Review	David Park	

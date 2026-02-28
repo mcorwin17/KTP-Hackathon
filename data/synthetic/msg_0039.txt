@@ -1,0 +1,15 @@
+--- INSPECTION PORTAL EXPORT ---
+Generated - 2026-02-28 17:15:17
+
+PERMIT - ***REDACTED***
+Inspection Date - Mar 17 2026
+Address - 1805 Hickory Ln. Shelbyville, 62706
+SessionID - e3e70682
+Structure Type - Commercial
+Result - Passed
+Examiner - Michelle Lee
+Notes - Final inspection completed successfully.
+
+--- END OF RECORD ---
+
+[Permit Reference: EP-2025-83939]

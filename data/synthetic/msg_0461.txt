@@ -1,0 +1,13 @@
+--- INSPECTION PORTAL EXPORT ---
+Generated - 2026-02-28 l7:15:18
+
+Permit Number - BP-2025-37842
+Insp Date - 2025-09-O5
+Address - 22S4 Sequoia Dr, Shelbyvi1le, 62706
+SessionID - d3fbf47a
+Structure Type - Residential
+Inspection Result - Denied
+Inspector - David Park
+Notes - All clear, no issues found.
+
+--- END OF RECORD ---

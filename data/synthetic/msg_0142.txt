@@ -1,0 +1,12 @@
+--- INSPECTION PORTAL EXPORT ---
+Generated:	2026-02-28 17:15:17
+
+PERMIT:	EP-2025-03684
+Insp Date:	04/03/26
+Property Address:	751 Sycamore Rd, North Haverbrook, 62704
+Bldg Type:	Mixed-Use
+Inspection Result:	Complete
+Inspector:	John Smith
+Notes:	Final inspection completed successfully.
+
+--- END OF RECORD ---

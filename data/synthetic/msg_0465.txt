@@ -1,0 +1,6 @@
+PERMIT_NO	INSP_DATE	SITE_ADDR	STRUCT_TYPE	STATUS	INSPECTOR	COMMENTS
+FP-2025-60837	2026-04-19	2561 Cedar Ln, Ogdenville, 62707	Industrial	Not Approved	Sarah Kim	
+IP-2O26-14049	June 29, 2025	9956 Birch Ct, Shelbyville, 62706	Residential	Failed	John Smith	All clear, no issues found.
+BP-2026-27848	21-Apr-2026	2402 Willow Ter, North Haverbrook, 62707	Mixed-Use	Under Review	Chris Brown	Conditional pass — minor corrections required.
+EP-2026-15906	02/01/26	2814 Sycamore Rd, Brockway, 62705	Residential	In Review	Lisa Wang	Conditional pass — minor corrections required.
+FP-2025-28964	Sep 03 2025	4802 Sequoia Dr, Capital City, 62707	Residential	Conditional	Chris Brown	Conditional pass — minor corrections required.

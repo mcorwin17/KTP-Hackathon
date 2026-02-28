@@ -1,0 +1,13 @@
+--- INSPECTION PORTAL EXPORT ---
+Generated → 2026-02-28 17:15:18
+
+Permit Number → EP-2026-11074
+Inspection Date → 08/18/2025
+Site Address → 9782 Walnut Way, Shelbyville, 62703
+Structure Type → Commercial
+Outcome → Passed
+Examiner → David Park
+SessionID → a0116be5
+Notes → Final inspection completed successfully.
+
+--- END OF RECORD ---

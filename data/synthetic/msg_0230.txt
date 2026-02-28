@@ -1,0 +1,12 @@
+--- INSPECTION PORTAL EXPORT ---
+Generated → 2026-02-28 17:15:18
+
+PERMIT → EP-2025-59180
+Insp Date → 1/11/2026
+Property Address → 6623 Birch Ct. Shelbyville, 62705
+Structure Type → Mixed-Use
+Outcome → Not Approved
+Inspected By → Sarah Kim
+Notes → All clear, no issues found.
+
+--- END OF RECORD ---

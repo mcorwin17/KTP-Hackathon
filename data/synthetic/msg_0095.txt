@@ -1,0 +1,4 @@
+FYI here is today's batch:
+PERMIT_NO	INSP_DATE	SITE_ADDR	STRUCT_TYPE	STATUS	INSPECTOR	COMMENTS
+EP-2026-34662	03/27/2O26	8272 Dogwood Dr, Ogdenville, 62708	Mixed-Use	In Review	Sarah Kim	Needs follow-up inspection within 3O days.
+FP-2025-91125	2025-09-17	7561 Hickory Ln, Springfield, 62703	Residential	Partial	Stephanie Adams	Plumbing code violation in basement unit.

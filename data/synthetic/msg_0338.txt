@@ -1,0 +1,12 @@
+--- INSPECTION PORTAL EXPORT ---
+Generated - 2026-02-28 17:15:18
+
+Permit No - FP-2026-83717
+Insp Date - Nov 25 2025
+Property Address - 1005 Cedar Ln, North Haverbrook, 62706
+Bldg Type - Mixed-Use
+Outcome - Pending
+Examiner - Kevin Nguyen
+Notes - All clear, no issues found.
+
+--- END OF RECORD ---

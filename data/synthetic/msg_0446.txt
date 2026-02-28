@@ -1,0 +1,12 @@
+--- INSPECTION PORTAL EXPORT ---
+Generated:	2026-02-28 17:15:18
+
+Permit No:	IP-2025-55125
+Insp Date:	May 26, 2026
+Property Address:	8076 Magnolia Blvd, Ogdenvil1e, 62701
+Bldg Type:	Commercial
+Inspection Result:	Failed
+Examiner:	James Lee
+Notes:	Wiring issues in panel B-3.
+
+--- END OF RECORD ---

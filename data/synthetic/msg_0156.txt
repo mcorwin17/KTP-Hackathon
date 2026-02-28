@@ -1,0 +1,7 @@
+Permit	Date	Address	Type	Result	Inspector	Notes
+IP-2025-40641	Sep 14 2025	3775 Maple Rd, Capital City, 62702	Industrial	Failed	Amy Johnson	
+CP-2026-87163	6/17/202S	6628 Dogwood Dr, Springfield, 62706	Industrial	Passed	Nicole White	Wiring issues in panel B-3.
+MP-2025-32172	October 10, 2025	3093 Alder Ln, Brockway, 62704	Mixed-Use	Rejected	Sarah Kim	All clear, no issues found.
+EP-2026-12074	June 16, 2026	3213 Elm Blvd, Shelbyville, 62705	Commercial	Complete	Lisa Wang	Safety violations noted — see attached report.
+MP-2026-1298O	2026-03-02	936 Willow Ter, Brockway, 62702	Mixed-Use	Denied	Maria Chen	
+CP-2025-71189	3/29/2O26	3622 Juniper Way, Ogdenville, 62705	Mixed-Use	Pass	Maria Chen	

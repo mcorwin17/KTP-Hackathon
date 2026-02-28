@@ -1,0 +1,11 @@
+--- INSPECTION PORTAL EXPORT ---
+Generated:	2026-02-28 17:15:18
+
+Permit No:	CP-2026-61298
+Insp Date:	Jun 04 2025
+Location:	2042 Pine Dr, Brockway, 62706
+Type:	Residential
+Inspection Result:	Partial
+Inspected By:	Ryan Taylor
+
+--- END OF RECORD ---

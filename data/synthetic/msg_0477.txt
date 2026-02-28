@@ -1,0 +1,12 @@
+--- INSPECTION PORTAL EXPORT ---
+Generated:	2026-02-28 17:15:18
+
+Permit Number:	MP-2025-63823
+Insp Date:	Nov 15 2025
+Address:	1441 Cedar Ln, Springfield, 62701
+Structure Type:	Industrial
+Status:	Pass
+Inspector:	Tom Wilson
+Notes:	Plumbing code violation in basement unit.
+
+--- END OF RECORD ---

@@ -1,0 +1,12 @@
+--- INSPECTION PORTAL EXPORT ---
+Generated: 2026-02-28 17:15:18
+
+Permit Number: BP-2025-01535
+Date: 09/19/25
+Property Address: 9711 Oak Ave, North Haverbrook, 62702
+Type: Residential
+Result: Fail
+Inspected By: Lisa Wang
+Notes: All clear, no issues found.
+
+--- END OF RECORD ---

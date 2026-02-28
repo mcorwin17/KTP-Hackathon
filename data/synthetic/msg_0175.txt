@@ -1,0 +1,4 @@
+FYI here is today's batch:
+PERMIT_NO	INSP_DATE	SITE_ADDR	STRUCT_TYPE	STATUS	INSPECTOR	COMMENTS
+CP-2026-14340	03/05/2026	7S10 Spruce Cir, North Haverbrook, 62707	Commercial	OK	James Lee	Final inspection completed successfully.
+MP-2025-91059	09/14/2025	6423 Poplar Ct, Brockway, 62703	Commercial	Conditional	Kevin Nguyen	Safety violations noted — see attached report.

@@ -1,0 +1,12 @@
+--- INSPECTION PORTAL EXPORT ---
+Generated - 2026-02-28 17:15:18
+
+Permit No - FP-2026-28132
+Inspection Date - O7/24/25
+Location - 5172 Ash Pl, Springfield, 62708
+Structure Type - Mixed-Use
+Inspection Result - Approved
+Inspected By - Anna Lopez
+Notes - Plumbing code violation in basement unit.
+
+--- END OF RECORD ---

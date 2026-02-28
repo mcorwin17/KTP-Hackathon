@@ -1,0 +1,13 @@
+--- INSPECTION PORTAL EXPORT ---
+Generated: 2026-02-28 17:15:18
+
+PERMIT: FP-2025-27046
+SessionID: 85776e9a
+Date: 09/l0/2025
+Address: 6823 Pine Dr, Springfield, 62705
+Bldg Type: Residential
+Status: Conditional Approval
+Examiner: Diane Cruz
+Notes: Conditional pass — minor corrections required.
+
+--- END OF RECORD ---

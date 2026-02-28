@@ -1,0 +1,7 @@
+FYI here is today's batch:
+Permit	Date	Address	Type	Result	Inspector	Notes
+***REDACTED***	06/17/2026	8607 Willow Ter, Brockway, 62705	Industrial	Partial	Jane Doe	Fina1 inspection completed successfully.
+FP-2025-60546	2026-04-17	6190 Redwood Ave, Springfield, 62706	Mixed-Use	Rejected	Stephanie Adams	All c1ear, no issues found.
+
+---
+Permit tracking ID: BP-2026-64646

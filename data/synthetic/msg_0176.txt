@@ -1,0 +1,11 @@
+--- INSPECTION PORTAL EXPORT ---
+Generated → 2026-02-28 17:15:17
+
+Permit Number → CP-2025-87114
+Date → 8/15/2025
+Property Address → 7389 Pine Dr. Springfield, 62703
+Bldg Type → Mixed-Use
+Status → Pending
+Inspected By → Kevin Nguyen
+
+--- END OF RECORD ---

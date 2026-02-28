@@ -1,0 +1,8 @@
+FYI here is today's batch:
+PERMIT_NO	INSP_DATE	SITE_ADDR	STRUCT_TYPE	STATUS	INSPECTOR	COMMENTS
+BP-2025-24089	06/09/2025	5107 Alder Ln, Springfield, 62701	Commercial	Partial	Stephanie Adams	Conditional pass — minor corrections required.
+MP-2025-11902	2026-01-28	7415 Maple Rd. Ogdenville, 62705	Commercial	Complete	Eric Martinez	Safety vio1ations noted — see attached report.
+BP-2025-28849	01/08/2026	7018 Redwood Ave, Springfield, 62703	Residential	Pass	John Smith	Final inspection completed successfully.
+EP-2026-25448	03/06/26	6588 Birch Ct, Springfield, 62701	Residential	Partial	Chris Brown	Needs follow-up inspection within 30 days.
+EP-2025-72167	2026-05-30	131 Cypress Way, North Haverbrook, 62703	Commercia1	In Review	Brian Hall	All c1ear, no issues found.
+MP-2026-21597	1/21/2026	7245 Walnut Way, Shelbyville, 62703	Mixed-Use	Denied	James Lee	Safety violations noted — see attached report.

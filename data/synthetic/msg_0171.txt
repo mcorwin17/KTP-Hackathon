@@ -1,0 +1,11 @@
+--- INSPECTION PORTAL EXPORT ---
+Generated; 2026-02-28 17:15:17
+
+Permit #: IP-2025-89774
+Date: 01/09/2026
+Property Address: 8429 Magnolia Blvd, Shelbyville, 62706
+Type: Commercial
+Status: Approved
+Inspector: Maria Chen
+
+--- END OF RECORD ---

@@ -1,0 +1,12 @@
+--- INSPECTION PORTAL EXPORT ---
+Generated = 2026-02-28 17:15:17
+
+Permit Number = MP-2025-86995
+Insp Date = May 20, 2026
+Location = 3753 Elm Blvd, Brockway, 62702
+Bldg Type = Commercial
+Inspection Result = Approved
+Inspected By = Amy Johnson
+Notes = Wiring issues in panel B-3.
+
+--- END OF REC0RD ---

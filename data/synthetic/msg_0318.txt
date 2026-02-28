@@ -1,0 +1,13 @@
+--- INSPECTION PORTAL EXPORT ---
+Generated:	2026-02-28 17:15:18
+
+Permit No:	MP-2026-37827
+Insp Date:	6/11/2O26
+SessionID:	eb2083e6
+Property Address:	22l1 Sycamore Rd, Springfield, 62703
+Bldg Type:	Commercial
+Status:	Approved
+Examiner:	John Smith
+Notes:	Plumbing code violation in basement unit.
+
+--- END OF RECORD ---

@@ -1,0 +1,12 @@
+--- INSPECTION PORTAL EXPORT ---
+Generated = 2026-O2-28 17:15:l8
+
+Permit No = BP-2025-74210
+Inspection Date = 05/25/2026
+Address = 9959 Elm Blvd, Capital City, 62701
+Bldg Type = Industrial
+Result = In Review
+Inspector = Robert Garcia
+Notes = Safety violations noted — see attached report.
+
+--- END OF RECORD ---

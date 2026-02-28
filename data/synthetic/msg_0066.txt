@@ -1,0 +1,13 @@
+--- INSPECTION PORTAL EXPORT ---
+Generated → 2026-02-28 17:15:17
+
+Permit # → ***REDACTED***
+Insp Date → 01/19/26
+Site Address → 8087 Main St, Springfield, 62708
+Bldg Type → Industrial
+Status → Approved
+Inspected By → Amy Johnson
+
+--- END OF RECORD ---
+
+[Permit Reference: CP-2026-42667]

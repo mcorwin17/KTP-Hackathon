@@ -1,0 +1,13 @@
+--- INSPECTION PORTAL EXPORT ---
+Generated → 2026-02-28 17:15:18
+
+Permit No → CP-2026-23592
+Date → Jan 23 2026
+Property Address → 935 Maple Rd, Springfield, 62706
+SessionID → baf3897a
+Bldg Type → Residential
+Inspection Result → Pass
+Examiner → James Lee
+Notes → Conditional pass — minor corrections required.
+
+--- END OF RECORD ---

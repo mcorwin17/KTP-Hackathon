@@ -1,0 +1,6 @@
+FYI here is today's batch:
+Permit	Date	Address	Type	Result	Inspector	Notes
+CP-2025-84794	08/10/2025	8097 Redwood Ave, Shelbyville. 6270l	Mixed-Use	Conditional Approval	Jane Doe	All clear, no issues found.
+EP-2026-94586	May 05, 2026	2428 Redwood Ave, North Haverbrook, 62701	Commercial	Denied	Tom Wilson	All clear, no issues found.
+IP-2026-88774	06/12/25	6660 Pine Dr, Ogdenville, 62701	Mixed-Use	Pending	John Smith	Wiring issues in panel B-3.
+CP-2025-07416	09/l5/2025	9668 Birch Ct, Capital City, 62705	Mixed-Use	Passed	Diane Cruz	

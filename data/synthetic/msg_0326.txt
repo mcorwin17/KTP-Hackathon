@@ -1,0 +1,5 @@
+PERMIT_NO	INSP_DATE	SITE_ADDR	STRUCT_TYPE	STATUS	INSPECTOR	COMMENTS
+IP-2025-50942	12/22/2025	2426 Pine Dr, Ogdenville, 62708	Residential	Conditional	Robert Garcia	Final inspection completed successfully.
+EP-2026-79366	09/15/2025	170 Birch Ct, Springfield, 62703	Commercial	Conditional	Sarah Kim	
+MP-2026-77763	03/14/2026	3736 Ash Pl, Capital City, 62702	Residential	Conditional Approval	Sarah Kim	Final inspection completed successfully.
+IP-2026-55998	07/25/202S	4008 Main St, North Haverbrook, 62708	Residential	Failed	Nicole White	

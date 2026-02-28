@@ -1,0 +1,5 @@
+Permit	Date	Address	Type	Result	Inspector	Notes
+***REDACTED***	05/25/2026	8841 Pine Dr, North Haverbrook, 62708	Commercial	Scheduled	Jane Doe	Needs follow-up inspection within 30 days.
+
+---
+Permit tracking ID: BP-2025-96700

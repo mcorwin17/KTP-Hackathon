@@ -1,0 +1,4 @@
+FYI here is today's batch:
+PERMIT_NO	INSP_DATE	SITE_ADDR	STRUCT_TYPE	STATUS	INSPECTOR	COMMENTS
+CP-2026-24436	February 12, 2026	6649 Spruce Cir, Capital City, 62708	Residential	In Review	Sarah Kim	Conditional pass — minor corrections required.
+IP-2025-97804	Jun 28 2025	9657 Cypress Way, Shelbyville, 62707	Mixed-Use	Under Review	Lisa Wang	Conditional pass — minor corrections required.

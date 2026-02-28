@@ -1,0 +1,12 @@
+--- INSPECTION PORTAL EXPORT ---
+Generated = 2026-02-28 17:15:17
+
+Permit # = FP-2026-28147
+Inspection Date = 2025-09-12
+Site Address = 8924 Ash Pl, North Haverbrook, 62705
+Bldg Type = Residential
+Inspection Result = Not Approved
+Examiner = Stephanie Adams
+Notes = Safety violations noted — see attached report.
+
+--- END OF RECORD ---

@@ -1,0 +1,11 @@
+--- INSPECTION PORTAL EXPORT ---
+Generated → 2026-02-28 17:15:18
+
+Permit # → BP-2026-83476
+Inspection Date → 29-Mar-2026
+Address → 3091 Sycamore Rd, Capital City, 62708
+Type → Industrial
+Outcome → Fail
+Examiner → Eric Martinez
+
+--- END OF RECORD ---

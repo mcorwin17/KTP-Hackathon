@@ -1,0 +1,12 @@
+--- INSPECTION PORTAL EXPORT ---
+Generated: 2026-02-28 17:15:17
+
+Permit Number: EP-2025-93107
+Insp Date: 11/03/2025
+Site Address: 7596 Dogwood Dr, Shelbyville, 62703
+Type: Mixed-Use
+Result: Schedu1ed
+Inspected By: Anna Lopez
+Notes: Needs follow-up inspection within 30 days.
+
+--- END OF RECORD ---

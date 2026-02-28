@@ -1,0 +1,12 @@
+--- INSPECTION PORTAL EXPORT ---
+Generated: 2026-02-28 17:1S:18
+
+Permit No: IP-2026-23401
+Inspection Date: 2/13/2026
+Address: 2211 Spruce Cir, North Haverbrook, 62702
+Bldg Type: Mixed-Use
+Result: Passed
+Examiner: Chris Brown
+Notes: All clear. no issues found.
+
+--- END OF RECORD ---

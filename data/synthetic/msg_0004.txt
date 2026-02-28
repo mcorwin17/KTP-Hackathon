@@ -1,0 +1,12 @@
+--- INSPECTION PORTAL EXPORT ---
+Generated = 2026-02-28 17:15:17
+
+PERMIT = BP-2026-81516
+Insp Date = 03/16/26
+Address = 1738 Elm B1vd, North Haverbrook, 62704
+Type = Commercial
+Status = Conditional
+Examiner = Michel1e Lee
+Notes = Wiring issues in panel B-3.
+
+--- END OF RECORD ---

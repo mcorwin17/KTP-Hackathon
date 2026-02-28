@@ -1,0 +1,28 @@
+From: dispatch@springfield.gov
+To: team-leads@springfield.gov
+Subject: FW: FW: Inspection Update — FP-2025-76426
+Date: 02/26/2026 04:15 AM
+
+Team,
+
+Please see the inspection result below for permit FP-2025-76426.
+Routing action needed: YES
+
+────────────────────────────────────────
+---------- Forwarded message ----------
+From; tom.wilson@springfield.gov
+Date: Wed, Feb 25, 2026 at 1O:l5 PM
+Subject: Inspection Report
+
+Inspection completed.
+Permit: FP-2025-76426
+Date: 2026-03-28
+Address: 4340 Elm Blvd, Springfield, 62702
+Type: Mixed-Use
+Result: Failed
+Inspector: Tom Wilson
+Notes: Wiring issues in panel B-3.
+
+--
+Tom Wilson
+Building Inspector

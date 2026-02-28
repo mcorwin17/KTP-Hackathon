@@ -1,0 +1,2 @@
+PERMIT_NO	INSP_DATE	SITE_ADDR	STRUCT_TYPE	STATUS	INSPECTOR	COMMENTS
+MP-2026-52857	6/24/2026	8777 Maple Rd, Springfield, 62701	Commercial	Passed	Amy Johnson	All clear, no issues found.

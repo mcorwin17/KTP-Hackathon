@@ -1,0 +1,8 @@
+FYI here is today's batch:
+PERMIT_NO	INSP_DATE	SITE_ADDR	STRUCT_TYPE	STATUS	INSPECTOR	COMMENTS
+BP-2026-29030	Apr 07 2026	1261 Main St, Shelbyville, 62708	Mixed-Use	OK	Jane Doe	Final inspection completed successfully.
+BP-2026-69439	06/21/2025	1253 Spruce Cir, Springfield, 62704	Residential	Pass	Lisa Wang	Plumbing code violation in basement unit.
+EP-2025-74814	2026-O4-17	3031 Sycamore Rd, Brockway, 62707	Industrial	Pass	Ryan Taylor	Plumbing code violation in basement unit.
+CP-2026-66251	11/20/2025	2691 Sycamore Rd, North Haverbrook, 62708	Industrial	Conditional	Nicole White	Final inspection completed successfully.
+MP-2026-95240	13-Nov-2025	4043 Poplar Ct, North Haverbrook, 62704	Industrial	In Review	Michelle Lee	
+BP-202S-37387	4/2/2026	367 Magnolia Blvd, Shelbyville, 62705	Industrial	Approved	Lisa Wang	Safety violations noted — see attached report.

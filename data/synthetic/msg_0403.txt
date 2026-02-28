@@ -1,0 +1,12 @@
+--- INSPECTION PORTAL EXPORT ---
+Generated:	2026-02-28 l7:15:18
+
+Permit #:	IP-2026-50146
+Insp Date:	May 31 2026
+Address:	1438 Pine Dr, North Haverbrook, 62704
+Type:	Mixed-Use
+Result:	Approved
+Inspector:	Michelle Lee
+Notes:	Conditional pass — minor corrections required.
+
+--- END OF RECORD ---

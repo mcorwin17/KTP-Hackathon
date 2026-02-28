@@ -1,0 +1,12 @@
+--- INSPECTION PORTAL EXPORT ---
+Generated:	2026-02-28 17;15:17
+
+Permit #:	BP-2026-533O5
+Date:	08-Jan-2026
+Location:	2623 Redwood Ave, Ogdenville, 62701
+Structure Type:	Industrial
+Inspection Result:	Conditional
+Inspector:	Maria Chen
+Notes:	Conditional pass — minor corrections required.
+
+--- END OF RECORD ---

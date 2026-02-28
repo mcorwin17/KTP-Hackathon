@@ -1,0 +1,5 @@
+Permit	Date	Address	Type	Result	Inspector	Notes
+IP-2026-92095	August 18, 2025	3466 A1der Ln, Brockway, 62701	Mixed-Use	Conditional Approval	Maria Chen	Conditional pass — minor corrections required.
+BP-2025-37154	07/29/25	1841 Hickory Ln, Shelbyville, 62704	Commercial	Partial	Michelle Lee	Plumbing code violation in basement unit.
+BP-2026-27322	05/19/2026	7975 Willow Ter, Shelbyville, 627O1	Residential	Passed	Maria Chen	
+EP-2025-94938	2026-06-06	1759 Ash Pl, Brockway, 62704	Industrial	Pending	David Park	

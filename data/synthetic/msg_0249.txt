@@ -1,0 +1,13 @@
+--- INSPECTION PORTAL EXPORT ---
+Generated - 2026-02-28 17:15:18
+
+Permit Number - BP-2026-17019
+Date - 07/02/25
+Property Address - 2939 Pine Dr, Ogdenville, 62701
+SessionID - 5487ce1e
+Structure Type - Industrial
+Status - In Review
+Inspector - Anna Lopez
+Notes - Final inspection completed successfully.
+
+--- END OF RECORD ---

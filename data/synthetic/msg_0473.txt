@@ -1,0 +1,12 @@
+--- INSPECTION PORTAL EXPORT ---
+Generated:	2026-02-28 17:15:18
+
+PERMIT:	MP-2026-21860
+Inspection Date:	2025-08-19
+Property Address:	7854 Walnut Way, Capital City, 62704
+Bldg Type:	Industrial
+Status:	Failed
+Inspector:	John Smith
+Notes:	Plumbing code violation in basement unit.
+
+--- END OF RECORD ---

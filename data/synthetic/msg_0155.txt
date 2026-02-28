@@ -1,0 +1,28 @@
+From: dispatch@springfield.gov
+To: team-leads@springfield.gov
+Subject: FW: FW: Inspection Update — FP-2025-47728
+Date: 02/24/2026 07:15 PM
+
+Team,
+
+Please see the inspection result below for permit FP-2025-47728.
+Routing action needed: NO
+
+────────────────────────────────────────
+---------- Forwarded message ----------
+From: maria.chen@springfield.gov
+Date: Tue, Feb 24, 2026 at 07:15 AM
+Subject: Inspection Report
+
+Inspection comp1eted.
+Permit: FP-2025-47728
+Date: 12/22/2025
+Address: 8481 Dogwood Dr, Brockway, 62708
+Type: Residential
+Result: Pending
+Inspector: Maria Chen
+Notes: Needs follow-up inspection within 30 days.
+
+--
+Maria Chen
+Bui1ding Inspector

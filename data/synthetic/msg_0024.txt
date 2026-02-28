@@ -1,0 +1,27 @@
+From: dispatch@springfield.gov
+To: team-leads@springfield.gov
+Subject: FW: FW: Inspection Update — FP-2026-62345
+Date: 02/24/2026 07:15 PM
+
+Team,
+
+Please see the inspection result below for permit FP-2026-62345.
+Routing action needed: NO
+
+────────────────────────────────────────
+---------- Forwarded message ----------
+From: john.smith@springfield.gov
+Date: Tue, Feb 24, 2026 at 12:15 AM
+Subject: Inspection Report
+
+Inspection completed.
+Permit: FP-2026-62345
+Date: Jun 09 2025
+Address: 6135 Willow Ter, Brockway, 62702
+Type: Industrial
+Result: Scheduled
+Inspector: John Smith
+
+--
+John Smith
+Building Inspector

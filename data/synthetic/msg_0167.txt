@@ -1,0 +1,12 @@
+--- INSPECTION PORTAL EXPORT ---
+Generated = 2026-02-28 17:15:17
+
+Permit No = MP-2025-32331
+Date = 08-Mar-2026
+Property Address = 2639 Beech Ave, Capital City, 62701
+Structure Type = Commercial
+Outcome = Scheduled
+Inspected By = Lisa Wang
+Notes = Safety violations noted — see attached report.
+
+--- END OF RECORD ---

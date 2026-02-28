@@ -1,0 +1,8 @@
+FYI here is today's batch:
+PERMIT_NO	INSP_DATE	SITE_ADDR	STRUCT_TYPE	STATUS	INSPECTOR	COMMENTS
+EP-2025-24681	2025-08-01	6537 Birch Ct, Ogdenville, 62704	Residential	Conditional	Diane Cruz	All clear, no issues found.
+EP-2025-6S482	Jun 03 2025	8789 Oak Ave, North Haverbrook, 62707	Commercial	Scheduled	Brian Hall	Needs follow-up inspection within 30 days.
+BP-2026-86282	04/04/26	5373 Magnolia Blvd, Ogdenville, 62707	Industrial	Denied	Kevin Nguyen	Final inspection completed successfully.
+CP-2025-54199	Apr 05 2026	8493 Spruce Cir, Brockway, 62706	Commercial	Rejected	James Lee	Conditional pass — minor corrections required.
+FP-2025-93213	April 29, 2026	3013 Magnolia Blvd, North Haverbrook, 62706	Industria1	Complete	Nicole White	
+FP-2026-88474	2026-06-18	8847 Spruce Cir, Ogdenville, 62701	Residential	Passed	Kevin Nguyen	Needs follow-up inspection within 30 days.

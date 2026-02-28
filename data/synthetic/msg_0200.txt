@@ -1,0 +1,12 @@
+--- INSPECTION PORTAL EXPORT ---
+Generated = 2026-02-28 17:15:18
+
+PERMIT = BP-2025-62192
+Inspection Date = 12/11/2025
+Location = 224 Cedar Ln, Capital City, 62701
+Structure Type = Mixed-Use
+Result = Failed
+Inspected By = Maria Chen
+Notes = Wiring issues in panel B-3.
+
+--- END OF RECORD ---

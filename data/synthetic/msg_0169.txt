@@ -1,0 +1,3 @@
+PERMIT_NO	INSP_DATE	SITE_ADDR	STRUCT_TYPE	STATUS	INSPECTOR	COMMENTS
+MP-2026-92403	6/27/2026	2284 Sequoia Dr, Shelbyville, 62708	Industrial	Conditional Approval	Chris Brown	Safety violations noted — see attached report.
+EP-2026-00988	Apr 09 2026	967 Alder Ln, Capital City, 62702	Residential	Pass	Eric Martinez	Plumbing code violation in basement unit.

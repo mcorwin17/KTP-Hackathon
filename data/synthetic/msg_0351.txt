@@ -1,0 +1,7 @@
+Permit	Date	Address	Type	Result	Inspector	Notes
+FP-2025-03102	Jan 01 2O26	1814 Alder Ln, Brockway, 62707	Residential	Scheduled	John Smith	All clear, no issues found.
+IP-2025-97100	08/03/25	6727 Sycamore Rd, Shelbyville, 62707	Commercial	Denied	Robert Garcia	
+CP-2026-81139	Mar 19 2026	6349 Maple Rd, Springfield, 62704	Mixed-Use	Partial	Brian Hall	Wiring issues in panel B-3.
+BP-2026-74641	2025-09-26	2379 Beech Ave, Brockway. 62706	Commercial	Scheduled	Tom Wilson	
+CP-2025-04O98	June 24, 2025	7690 Ash Pl, North Haverbrook, 62706	Commercial	In Review	David Park	Safety violations noted — see attached report.
+BP-2025-80061	Nov 27 2025	1547 Spruce Cir, Capital City, 62703	Industrial	Pass	Eric Martinez	All clear, no issues found.

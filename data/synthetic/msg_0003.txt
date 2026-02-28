@@ -1,0 +1,28 @@
+From: dispatch@springfield.gov
+To: team-leads@springfield.gov
+Subject: FW: FW: Inspection Update — BP-2025-86474
+Date; 02/27/2026 08:15 AM
+
+Team,
+
+Please see the inspection resu1t below for permit BP-2025-86474.
+Routing action needed: NO
+
+────────────────────────────────────────
+---------- Forwarded message ----------
+From: jane.doe@springfield.gov
+Date: Fri, Feb 27, 2026 at 01:15 AM
+Subject: Inspection Report
+
+Inspection completed.
+Permit: BP-2025-86474
+Date: 1/7/2026
+Address: 5904 Redwood Ave, Ogdenville, 62708
+Type: Residential
+Result: Passed
+Inspector: Jane Doe
+Notes: Plumbing code violation in basement unit.
+
+--
+Jane Doe
+Building Inspector

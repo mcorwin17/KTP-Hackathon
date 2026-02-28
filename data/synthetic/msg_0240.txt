@@ -1,0 +1,7 @@
+PERMIT_NO	INSP_DATE	SITE_ADDR	STRUCT_TYPE	STATUS	INSPECTOR	C0MMENTS
+BP-2026-50945	2025-O7-07	644 Oak Ave, Ogdenville, 62708	Residential	Passed	Kevin Nguyen	Plumbing code violation in basement unit.
+MP-2026-34541	06/23/25	4058 Hickory Ln, North Haverbrook, 62705	Commercia1	Not Approved	James Lee	Conditional pass — minor corrections required.
+FP-2026-29594	2025-06-11	145 Sequoia Dr, Ogdenville, 627O8	Commercial	Scheduled	Chris Brown	Final inspection completed successfully.
+CP-2026-01548	07/08/2S	8181 Birch Ct, Ogdenville, 62706	Commercial	Partial	Kevin Nguyen	Needs follow-up inspection within 30 days.
+MP-2026-24187	3/26/2026	1101 Dogwood Dr, Shelbyville, 62703	Commercial	Failed	Anna Lopez	Final inspection completed successfully.
+BP-2025-96730	Jun 17 2025	9460 Oak Ave, Brockway. 62707	Industrial	Complete	Lisa Wang	All clear, no issues found.

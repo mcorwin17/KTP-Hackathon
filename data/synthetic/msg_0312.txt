@@ -1,0 +1,12 @@
+--- INSPECTION PORTAL EXPORT ---
+Generated = 2026-02-28 17:15:18
+
+PERMIT = MP-2026-51717
+Date = O1/09/2026
+Property Address = 5306 Beech Ave, Shelbyville, 62706
+Bldg Type = Mixed-Use
+Status = Rejected
+Inspected By = Tom Wilson
+Notes = Final inspection completed successfully.
+
+--- END OF RECORD ---

@@ -1,0 +1,12 @@
+--- INSPECTION PORTAL EXPORT ---
+Generated: 2026-02-28 17:15:18
+
+Permit Number: MP-2026-06614
+Date: 06/04/26
+Location; 6332 Sycamore Rd, Ogdenville, 62704
+Type: Industrial
+Outcome: Conditional
+Inspected By: David Park
+Notes: Final inspection completed successfully.
+
+--- END OF RECORD ---

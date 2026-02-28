@@ -1,0 +1,7 @@
+Permit	Date	Address	Type	Result	Inspector	Notes
+BP-2025-27606	31-Oct-202S	7879 Pine Dr, Shelbyville, 62702	Residential	Pending	Brian Hall	
+MP-2025-99788	11/29/2025	934 Magnolia Blvd, Capita1 City, 62702	Mixed-Use	Conditional	Eric Martinez	Final inspection completed successfully.
+BP-2025-10197	09/14/2025	7268 Willow Ter. Shelbyville, 62706	Residential	Not Approved	John Smith	
+EP-2026-68596	17-Jun-2026	156 Hickory Ln, Shelbyville, 62708	Commercial	Passed	Ryan Tay1or	Wiring issues in panel B-3.
+MP-2025-72520	05/20/26	8488 Pine Dr, North Haverbrook, 62708	Commercial	Denied	James Lee	Plumbing code violation in basement unit.
+MP-2025-70285	2025-09-10	8048 Willow Ter, Shelbyville, 62701	Mixed-Use	Scheduled	Nicole White	Wiring issues in panel B-3.

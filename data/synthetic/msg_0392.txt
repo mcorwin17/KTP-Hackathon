@@ -1,0 +1,6 @@
+FYI here is today's batch:
+PERMIT_NO	INSP_DATE	SITE_ADDR	STRUCT_TYPE	STATUS	INSPECTOR	COMMENTS
+BP-2025-82091	7/10/2025	3535 Sycamore Rd. Brockway, 62701	Commercial	Pending	Nicole White	
+BP-2026-91451	31-Oct-2025	5780 Juniper Way, North Haverbrook, 62706	Mixed-Use	Under Review	Lisa Wang	Final inspection completed successfully.
+FP-2026-10573	Feb 23 2O26	570 Cedar Ln, Brockway, 62703	Commercial	Conditional Approval	Robert Garcia	Needs follow-up inspection within 30 days.
+FP-2026-56826	Mar 27 2026	779 Willow Ter, North Haverbrook, 62705	Industrial	Under Review	Sarah Kim	Needs follow-up inspection within 30 days.

@@ -1,0 +1,6 @@
+FYI here is today's batch:
+Permit	Date	Address	Type	Result	Inspector	Notes
+EP-2026-51957	04-Nov-2025	5165 Sycamore Rd, Brockway, 62707	Mixed-Use	Under Review	Anna Lopez	
+CP-2026-45655	01/05/26	653 Ash Pl, Capital City, 62701	Mixed-Use	Pass	Lisa Wang	Final inspection completed successfully.
+MP-2025-05032	2026-03-29	6426 Ash Pl, North Haverbrook, 62707	Mixed-Use	Not Approved	Ryan Taylor	Wiring issues in panel B-3.
+FP-2026-18103	Mar 19 2026	6328 Walnut Way, Capital City, 62704	Industrial	Passed	Brian Hall	

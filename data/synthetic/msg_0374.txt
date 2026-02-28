@@ -1,0 +1,7 @@
+FYI here is today's batch:
+PERMIT_NO	INSP_DATE	SITE_ADDR	STRUCT_TYPE	STATUS	INSPECTOR	C0MMENTS
+CP-2025-62904	05/04/2026	6457 Sycamore Rd, Ogdenville, 62702	Residential	Partial	Lisa Wang	Conditional pass — minor corrections required.
+MP-2026-04474	January O7, 2026	196 Cypress Way, Capital City, 62702	Commercial	Scheduled	Chris Brown	
+BP-2025-51032	09-Aug-2025	5654 Main St, Ogdenville, 62704	Industrial	Partial	Kevin Nguyen	Conditional pass — minor corrections required.
+EP-2026-02141	July 23, 2025	4949 Beech Ave, Brockway, 62706	Mixed-Use	Conditional Approval	John Smith	Safety violations noted — see attached report.
+CP-2026-86792	08/07/2025	7889 Alder Ln, Springfield, 62707	Commercial	Pending	Michelle Lee	Final inspection completed successfully.

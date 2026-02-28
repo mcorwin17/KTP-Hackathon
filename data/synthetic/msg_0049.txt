@@ -1,0 +1,5 @@
+Permit	Date	Address	Type	Result	Inspector	Notes
+BP-2026-77437	Sep 17 2025	700 Sycamore Rd, Capital City, 62708	Industrial	Rejected	Kevin Nguyen	Safety violations noted — see attached report.
+EP-202S-52107	12/04/2025	8327 Main St, Brockway, 62704	Commercial	Not Approved	Ryan Taylor	Needs follow-up inspection within 30 days.
+EP-2025-96558	06/10/26	8021 Cypress Way, Springfield, 62704	Commercial	Scheduled	Robert Garcia	Conditional pass — minor corrections required.
+BP-2025-67980	12/2/2025	6458 Hickory Ln, Ogdenville, 62701	Industrial	Approved	Maria Chen	Conditional pass — minor corrections required.

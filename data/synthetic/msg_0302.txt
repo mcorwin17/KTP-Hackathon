@@ -1,0 +1,4 @@
+Permit	Date	Address	Type	Result	Inspector	Notes
+BP-2026-83720	07/04/25	7892 Juniper Way, Ogdenville, 62708	Industrial	Failed	Chris Brown	Needs follow-up inspection within 30 days.
+MP-2026-69126	06/07/25	4995 Willow Ter, Springfield, 62708	Industrial	Not Approved	Kevin Nguyen	
+BP-2026-65408	2026-04-24	3749 Poplar Ct, Capital City, 62701	Residential	Partial	Tom Wilson	Plumbing code violation in basement unit.

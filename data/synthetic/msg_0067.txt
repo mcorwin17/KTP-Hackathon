@@ -1,0 +1,12 @@
+--- INSPECTION PORTAL EXPORT ---
+Generated → 2026-02-28 17:15:17
+
+Permit No → CP-2026-53288
+Inspection Date → 7/6/2025
+Property Address → 9901 Pine Dr, Brockway, 627O7
+Bldg Type → Mixed-Use
+Inspection Result → Partial
+Inspected By → Jane Doe
+Notes → Wiring issues in panel B-3.
+
+--- END OF RECORD ---

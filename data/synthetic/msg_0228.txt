@@ -1,0 +1,12 @@
+--- INSPECTION PORTAL EXPORT ---
+Generated = 2026-02-28 17:15:18
+
+Permit Number = EP-2026-07960
+Date = 6/4/2025
+Site Address = 8895 Main St, Springfield, 62708
+Bldg Type = Mixed-Use
+Outcome = Pending
+Inspector = Amy Johnson
+Notes = Needs follow-up inspection within 30 days.
+
+--- END OF RECORD ---

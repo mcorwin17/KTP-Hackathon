@@ -1,0 +1,2 @@
+Permit	Date	Address	Type	Result	Inspector	Notes
+MP-2025-68929	12-Jun-2025	2648 Main St, Brockway, 62708	Residential	Pending	Tom Wilson	Safety violations noted — see attached report.

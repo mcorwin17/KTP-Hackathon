@@ -1,0 +1,4 @@
+PERMIT_NO	INSP_DATE	SITE_ADDR	STRUCT_TYPE	STATUS	INSPECTOR	COMMENTS
+MP-2026-58489	04/14/26	584 Birch Ct, Shelbyville, 62704	Residential	Passed	Diane Cruz	All clear, no issues found.
+BP-2025-96338	October 22, 2025	2094 Walnut Way, Springfield, 62701	Mixed-Use	In Review	Amy Johnson	Final inspection completed successfully.
+IP-2026-89592	03/05/26	5639 Main St, North Haverbrook, 62706	Industrial	Complete	Chris Brown	All clear, no issues found.

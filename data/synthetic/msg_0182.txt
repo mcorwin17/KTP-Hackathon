@@ -1,0 +1,7 @@
+FYI here is today's batch:
+Permit	Date	Address	Type	Result	Inspector	Notes
+FP-2026-59183	Jun 21 2026	8934 Beech Ave, Shelbyville, 62701	Commercial	Conditional Approval	Stephanie Adams	Final inspection completed successfully.
+CP-2025-90961	Dec 20 2025	1439 Redwood Ave, Springfie1d, 62701	Residential	Pass	David Park	Needs follow-up inspection within 30 days.
+FP-2026-64217	Jul 30 2025	5432 Cypress Way, North Haverbrook, 62707	Commercial	In Review	Brian Hal1	Final inspection completed successfully.
+FP-2025-29697	2026-04-24	7532 Maple Rd, Brockway, 62704	Residential	Approved	Amy Johnson	Needs follow-up inspection within 30 days.
+CP-2026-39796	2025-09-16	8979 Dogwood Dr, Springfield, 627O4	Residential	Pass	John Smith	Conditional pass — minor corrections required.

@@ -1,0 +1,11 @@
+--- INSPECTION PORTAL EXPORT ---
+Generated → 2026-02-28 17:15:18
+
+Permit # → FP-2026-95622
+Inspection Date → 09-Jun-2025
+Property Address → 8773 Willow Ter, Capital City, 62703
+Bldg Type → Mixed-Use
+Outcome → Conditional
+Examiner → Sarah Kim
+
+--- END OF RECORD ---

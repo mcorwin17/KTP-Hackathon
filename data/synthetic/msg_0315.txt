@@ -1,0 +1,33 @@
+From: dispatch@springfield.gov
+To: team-leads@springfield.gov
+Subject: FW: FW: Inspection Update — EP-2026-64437
+Date: 02/25/2026 03:15 AM
+
+Team,
+
+Please see the inspection result below for permit EP-2026-64437.
+Routing action needed; YES
+
+────────────────────────────────────────
+---------- Forwarded message ----------
+From: jane.doe@springfield.gov
+Date: Tue, Feb 24, 2026 at 11:15 PM
+Subject: Inspection Report
+
+────────────────────────────────────────
+---------- Forwarded message ----------
+From: jane.doe@springfield.gov
+Date: Tue, Feb 24, 2026 at 08:15 AM
+Subject: Re: Inspection Report
+
+Inspection completed.
+Permit: EP-2026-64437
+Date: December 12, 2025
+Address: 4926 Redwood Ave, Shelbyville. 62702
+Type; Residentia1
+Result: Failed
+Inspector: Jane Doe
+
+--
+Jane Doe
+Building Inspector

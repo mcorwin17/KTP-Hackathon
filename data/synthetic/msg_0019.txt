@@ -1,0 +1,5 @@
+Permit	Date	Address	Type	Result	Inspector	Notes
+***REDACTED***	October O1, 2025	5l70 Hickory Ln, Shelbyville, 62706	Mixed-Use	In Review	Anna Lopez	Plumbing code violation in basement unit.
+EP-2025-32868	O6/27/25	7973 Cypress Way, North Haverbrook, 62702	Industrial	OK	Robert Garcia	Needs follow-up inspection within 30 days.
+
+[Permit Reference: MP-2025-70093]

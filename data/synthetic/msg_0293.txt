@@ -1,0 +1,12 @@
+--- INSPECTION PORTAL EXPORT ---
+Generated → 2026-O2-28 17:15:18
+
+Permit Number → MP-2026-10089
+Inspection Date → 7/4/2026
+Address → 1268 Hickory Ln, Brockway, 62701
+Bldg Type → Residentia1
+Outcome → Conditional Approva1
+Inspector → Amy Johnson
+Notes → Safety violations noted — see attached report.
+
+--- END OF RECORD ---

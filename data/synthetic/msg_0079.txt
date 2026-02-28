@@ -1,0 +1,13 @@
+--- INSPECTION PORTAL EXPORT ---
+Generated → 2026-02-28 17:15:17
+
+Permit Number → EP-2025-7136S
+SessionID → f7c1bd87
+Date → 2025-11-13
+Location → 5280 Beech Ave, Capital City, 62705
+Bldg Type → Residential
+Inspection Result → Partial
+Inspector → Nicole White
+Notes → Final inspection completed successfu1ly.
+
+--- END OF RECORD ---

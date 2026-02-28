@@ -1,0 +1,12 @@
+--- INSPECTION PORTAL EXPORT ---
+Generated - 2026-02-28 17:15:18
+
+Permit Number - IP-2026-55277
+Inspection Date - August 31, 2025
+Property Address - 1841 Alder Ln, Shelbyville, 62704
+Type - Residential
+Inspection Result - Under Review
+Inspected By - Maria Chen
+Notes - Plumbing code violation in basement unit.
+
+--- END OF RECORD ---

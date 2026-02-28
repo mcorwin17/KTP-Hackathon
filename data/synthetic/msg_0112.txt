@@ -1,0 +1,7 @@
+PERMIT_NO	INSP_DATE	SITE_ADDR	STRUCT_TYPE	STATUS	INSPECTOR	COMMENTS
+CP-2026-56936	12-Dec-2025	S24 Juniper Way, Shelbyville, 62702	Residential	Partial	Nicole White	Wiring issues in pane1 B-3.
+BP-2026-43814	O4-Jul-2026	4576 Maple Rd, Shelbyville, 62705	Residential	Passed	Kevin Nguyen	Safety violations noted — see attached report.
+BP-2025-69106	June 08, 2026	5122 Poplar Ct, Ogdenville, 62702	Industrial	Partial	Nico1e White	Conditional pass — minor corrections required.
+BP-2025-41780	Jun 20 2026	6482 Cedar Ln, Capital City, 62707	Commercia1	Scheduled	David Park	All clear, no issues found.
+FP-202S-18800	11-Dec-202S	9398 Ash Pl, Springfield, 62706	Mixed-Use	Rejected	Ryan Taylor	Needs follow-up inspection within 30 days.
+MP-2026-36252	1/6/2026	8629 A1der Ln, Shelbyville, 62705	Industrial	Passed	Diane Cruz	Final inspection completed successfully.

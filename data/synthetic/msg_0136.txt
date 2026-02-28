@@ -1,0 +1,12 @@
+--- INSPECTION PORTAL EXPORT ---
+Generated → 2026-02-28 17:15:17
+
+Permit No → MP-2025-15249
+Inspection Date → 01/11/2026
+Location → 2033 Juniper Way, Capital City, 62706
+Type → Industrial
+Status → Failed
+Inspector → Diane Cruz
+Notes → All clear, no issues found.
+
+--- END OF RECORD ---

@@ -1,0 +1,12 @@
+--- INSPECTI0N PORTAL EXPORT ---
+Generated = 2026-02-28 17:l5:18
+
+Permit No = CP-2026-37837
+Insp Date = 09/16/2025
+Address = 1240 Magnolia Blvd, Shelbyville, 62703
+Type = Commercial
+Status = Complete
+Inspector = James Lee
+Notes = Wiring issues in panel B-3.
+
+--- END OF RECORD ---

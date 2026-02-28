@@ -1,0 +1,12 @@
+--- INSPECTION PORTAL EXPORT ---
+Generated - 2026-02-28 17:15:17
+
+PERMIT - IP-2025-45990
+Inspection Date - 01/23/2026
+Location - 3387 Dogwood Dr, Springfield, 62707
+Structure Type - Commercial
+Result - Scheduled
+Examiner - Anna Lopez
+Notes - Wiring issues in panel B-3.
+
+--- END OF RECORD ---

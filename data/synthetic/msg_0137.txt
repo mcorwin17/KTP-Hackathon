@@ -1,0 +1,12 @@
+--- INSPECTION PORTAL EXPORT ---
+Generated:	2026-O2-28 17:15:17
+
+Permit No:	BP-2025-18074
+Inspection Date:	Feb 22 2026
+Location:	3877 Spruce Cir, Brockway, 62704
+Structure Type;	Industrial
+Inspection Result:	OK
+Inspected By:	Tom Wilson
+Notes:	All clear, no issues found.
+
+--- END OF RECORD ---

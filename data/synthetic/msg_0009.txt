@@ -1,0 +1,31 @@
+SECURITY WARNING: This system is for authorized use only. Unauthorized access or use may result in disciplinary action.
+From: dispatch@springfield.gov
+To: team-leads@springfield.gov
+Subject: FW: FW: Inspection Update — ***REDACTED***
+Date: 02/24/2026 07:15 PM
+
+Team,
+
+Please see the inspection resu1t below for permit IP-2026-72644.
+Routing action needed: YES
+
+────────────────────────────────────────
+---------- Forwarded message ----------
+From: david.park@springfield.gov
+Date: Tue, Feb 24, 2026 at 08:15 AM
+Subject: Inspection Report
+
+Inspection completed.
+Permit: IP-2026-72644
+Date: 02/27/2026
+Address: 5732 Redwood Ave, Brockway, 62706
+Type: Mixed-Use
+Result: Partial
+Inspector: David Park
+Notes: Conditional pass — minor corrections required.
+
+--
+David Park
+Building Inspector
+
+Ref: IP-2026-72644

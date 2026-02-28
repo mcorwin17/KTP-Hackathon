@@ -1,0 +1,12 @@
+--- INSPECTION PORTAL EXPORT ---
+Generated - 2026-02-28 17:15:17
+
+Permit Number - FP-2026-08077
+SessionID - fcbd04c3
+Insp Date - 08/02/2025
+Site Address - 9678 Beech Ave, North Haverbrook, 62701
+Bldg Type - Commercial
+Result - Fail
+Inspector - Nicole White
+
+--- END OF RECORD ---

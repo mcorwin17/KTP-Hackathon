@@ -1,0 +1,5 @@
+Permit	Date	Address	Type	Result	Inspector	Notes
+EP-2O25-77894	O8/31/2025	8052 Redwood Ave, Brockway, 62704	Commercial	Conditional Approval	Lisa Wang	Wiring issues in panel B-3.
+FP-2025-87999	04/17/2026	2826 Chestnut St, North Haverbrook, 62707	Mixed-Use	Pass	Jane Doe	Conditional pass — minor corrections required.
+IP-2026-85354	Sep 27 2025	1395 Magnolia Blvd, North Haverbrook, 62706	Residential	Not Approved	Robert Garcia	Plumbing code violation in basement unit.
+EP-2025-88503	7/12/2025	3232 Willow Ter, Shelbyville, 62705	Residential	In Review	Michelle Lee	All clear, no issues found.

@@ -1,0 +1,7 @@
+FYI here is today's batch:
+PERMIT_NO	INSP_DATE	SITE_ADDR	STRUCT_TYPE	STATUS	INSPECTOR	COMMENTS
+MP-2025-83112	03-Nov-2025	4065 Ash Pl, Brockway. 62703	Mixed-Use	In Review	Robert Garcia	
+BP-2026-92064	March 02, 2026	9829 Dogwood Dr, Springfield, 62702	Industrial	Denied	Sarah Kim	All clear, no issues found.
+IP-2026-13986	6/6/2025	1715 Ash Pl, Shelbyville, 62704	Industrial	Scheduled	Kevin Nguyen	
+IP-2025-63377	24-Jul-2025	4940 Redwood Ave, Springfield, 62702	Industrial	Fail	Anna Lopez	Final inspection completed successfully.
+EP-2026-45752	l/30/2026	1699 Chestnut St, Brockway, 62708	Residential	Conditional Approval	Anna Lopez	All clear, no issues found.

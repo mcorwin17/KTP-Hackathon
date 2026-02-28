@@ -1,0 +1,6 @@
+FYI here is today's batch:
+Permit	Date	Address	Type	Result	Inspector	Notes
+IP-2025-53481	01/24/2O26	8973 Cedar Ln, Springfield, 62706	Commercia1	Denied	Kevin Nguyen	Plumbing code violation in basement unit.
+CP-2025-46624	2026-06-20	640 Birch Ct, Springfield, 62704	Residential	Fail	Anna Lopez	Final inspection completed successfu1ly.
+CP-2025-54886	19-Jul-2025	9685 Oak Ave, Springfield, 62704	Commercial	Not Approved	Michelle Lee	Safety violations noted — see attached report.
+MP-2O25-79228	02-Jul-2025	133 Oak Ave, Brockway, 62701	Industrial	Fail	Diane Cruz	Wiring issues in panel B-3.

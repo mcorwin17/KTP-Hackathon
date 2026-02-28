@@ -1,0 +1,8 @@
+FYI here is today's batch:
+PERMIT_NO	INSP_DATE	SITE_ADDR	STRUCT_TYPE	STATUS	INSPECTOR	COMMENTS
+***REDACTED***	2025-11-26	4433 Cedar Ln, Springfield, 62705	Commercial	Approved	Lisa Wang	Wiring issues in panel B-3.
+CP-2025-35296	06/24/2026	4679 Elm Blvd, Springfield, 62701	Industrial	Under Review	Maria Chen	Safety violations noted — see attached report.
+IP-2025-72299	4/26/2026	l333 Oak Ave, North Haverbrook, 62708	Residential	Conditional	Tom Wilson	Needs fol1ow-up inspection within 30 days.
+EP-2026-03791	03/28/2026	9242 Hickory Ln, Shelbyville, 62707	Mixed-Use	Conditional	James Lee	Needs follow-up inspection within 30 days.
+
+[Permit Reference: CP-2026-17564]

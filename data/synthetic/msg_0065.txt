@@ -1,0 +1,13 @@
+--- INSPECTION PORTAL EXPORT ---
+Generated: 2026-02-28 l7:15:17
+
+Permit No: CP-2026-26387
+Inspection Date: 09/07/25
+Address: 4795 Ash Pl, North Haverbrook, 62706
+SessionID: eb1167b3
+Type: Residential
+Inspection Result: Pending
+Inspected By: David Park
+Notes: Needs follow-up inspection within 30 days.
+
+--- END OF RECORD ---

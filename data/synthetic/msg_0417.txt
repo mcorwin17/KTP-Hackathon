@@ -1,0 +1,12 @@
+--- INSPECTION PORTAL EXPORT ---
+Generated = 2026-02-28 17:15:18
+
+PERMIT = EP-2025-29995
+Date = 7/18/2025
+Location = 3655 Hickory Ln, North Haverbrook, 62702
+Type = Residential
+Outcome = Approved
+Inspector = Jane Doe
+Notes = Plumbing code violation in basement unit.
+
+--- END OF RECORD ---

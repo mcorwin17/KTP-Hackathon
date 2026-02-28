@@ -1,0 +1,4 @@
+FYI here is today's batch:
+PERMIT_NO	INSP_DATE	SITE_ADDR	STRUCT_TYPE	STATUS	INSPECTOR	COMMENTS
+MP-2025-75843	05/13/2026	342 Hickory Ln, Shelbyville, 62703	Commercial	OK	Amy Johnson	Wiring issues in panel B-3.
+CP-2026-11953	01/21/2026	199 Sycamore Rd, Ogdenville, 62705	Commercial	Partial	Kevin Nguyen	Conditional pass — minor corrections required.

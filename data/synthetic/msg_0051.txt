@@ -1,0 +1,4 @@
+FYI here is today's batch:
+PERMIT_NO	INSP_DATE	SITE_ADDR	STRUCT_TYPE	STATUS	INSPECTOR	COMMENTS
+IP-2026-47583	07/25/25	2635 Redwood Ave, Brockway, 62705	Mixed-Use	Conditional Approval	Brian Hall	Final inspection completed successfully.
+MP-2026-23525	12/7/2025	9260 Sycamore Rd, 0gdenville, 62705	Industrial	Conditional Approval	Kevin Nguyen	Needs follow-up inspection within 30 days.

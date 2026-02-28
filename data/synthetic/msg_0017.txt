@@ -1,0 +1,4 @@
+Permit	Date	Address	Type	Result	Inspector	Notes
+EP-202S-45342	2026-01-07	1916 Spruce Cir, Brockway, 62708	Residential	Partial	Lisa Wang	Plumbing code violation in basement unit.
+CP-2025-33591	October 27, 2025	5475 Pine Dr, Springfield, 62708	Commercial	Scheduled	Tom Wilson	Plumbing code violation in basement unit.
+EP-2026-09547	December 21, 2025	793 Redwood Ave, Springfield, 62708	Industrial	OK	Brian Hall	Plumbing code violation in basement unit.

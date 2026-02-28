@@ -1,0 +1,8 @@
+FYI here is today's batch:
+Permit	Date	Address	Type	Result	Inspector	Notes
+MP-2025-27121	08/13/2025	4539 Magnolia Blvd, Ogdenville, 62707	Commercial	Denied	Stephanie Adams	All clear, no issues found.
+IP-2026-54991	03-Jun-2025	9237 Walnut Way, Shelbyville, 62702	Industrial	Pass	Nicole White	Safety violations noted — see attached report.
+IP-2O25-25491	Jul 28 2025	2544 Beech Ave, Ogdenville, 627O8	Commercial	Rejected	Jane Doe	All clear, no issues found.
+IP-2025-57073	10/O7/2025	5577 Juniper Way, Ogdenville, 62701	Residential	Passed	Nicole White	Needs follow-up inspection within 30 days.
+MP-2025-09387	9/29/2025	7387 Poplar Ct, North Haverbrook, 62706	Commercial	Pending	Chris Brown	Safety violations noted — see attached report.
+IP-2025-12953	2025-09-30	6859 Birch Ct, Ogdenville, 62704	Mixed-Use	OK	Brian Hall	

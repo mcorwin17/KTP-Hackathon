@@ -1,0 +1,4 @@
+FYI here is today's batch:
+PERMIT_NO	INSP_DATE	SITE_ADDR	STRUCT_TYPE	STATUS	INSPECTOR	COMMENTS
+BP-2025-03580	04/29/2026	8102 Main St, Ogdenville, 62707	Residential	Pass	Jane Doe	
+EP-2025-50906	Mar 11 2026	3884 Walnut Way, Capital City, 62707	Mixed-Use	Conditional	Jane Doe	Safety violations noted — see attached report.

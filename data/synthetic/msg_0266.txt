@@ -1,0 +1,13 @@
+--- INSPECTION PORTAL EXPORT ---
+Generated:	2026-02-28 17:15:18
+
+SessionID:	a3f2c9bf
+Permit Number:	BP-202S-71495
+Date:	April 01, 2026
+Site Address:	7011 Dogwood Dr, Ogdenville. 62707
+Type:	Industrial
+Outcome:	Passed
+Inspector:	Lisa Wang
+Notes:	Conditional pass — minor corrections required.
+
+--- END OF RECORD ---

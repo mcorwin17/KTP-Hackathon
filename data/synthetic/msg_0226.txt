@@ -1,0 +1,5 @@
+PERMIT_NO	INSP_DATE	SITE_ADDR	STRUCT_TYPE	STATUS	INSPECTOR	COMMENTS
+BP-2026-52799	July 03, 2025	7801 Hickory Ln, Brockway, 62702	Industrial	Failed	Stephanie Adams	All clear, no issues found.
+EP-2025-12800	18-Oct-2025	1404 Chestnut St, Capital City, 62707	Commercial	OK	Chris Brown	Needs follow-up inspection within 30 days.
+IP-2026-80901	May 06. 2026	8921 Juniper Way, Shelbyville, 62707	Industrial	Under Review	Eric Martinez	Plumbing code violation in basement unit.
+FP-2025-430O3	Nov 22 2025	9739 Ash Pl, Capital City, 62701	Residential	Complete	Stephanie Adams	Needs follow-up inspection within 30 days.

@@ -1,0 +1,15 @@
+--- INSPECTION PORTAL EXP0RT ---
+Generated: 2026-02-28 17:15:18
+
+PERMIT: ***REDACTED***
+Inspection Date: Aug 05 2025
+SessionID: 259f4329
+Property Address: 9547 Cedar Ln, Brockway, 62702
+Bldg Type: Commercial
+Status: Failed
+Examiner: Jane Doe
+Notes: Safety violations noted — see attached report.
+
+--- END OF RECORD ---
+
+[Permit Reference: CP-2026-90710]

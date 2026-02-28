@@ -1,0 +1,14 @@
+--- INSPECTION PORTAL EXPORT ---
+Generated = 2026-02-28 17:15:18
+
+Permit No = ***REDACTED***
+Inspection Date = Jun 16 2025
+Site Address = 7958 Sycamore Rd, Ogdenville, 62708
+Bldg Type = Residential
+Status = Scheduled
+Inspector = Sarah Kim
+Notes = All c1ear, no issues found.
+
+--- END OF RECORD ---
+
+Ref: CP-2026-43749

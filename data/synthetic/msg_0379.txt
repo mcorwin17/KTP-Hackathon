@@ -1,0 +1,28 @@
+From: dispatch@springfield.gov
+To: team-leads@springfield.gov
+Subject: FW: FW: Inspection Update — FP-2026-36900
+Date: 02/28/2026 09:15 AM
+
+Team,
+
+Please see the inspection result below for permit FP-2026-36900.
+Routing action needed: NO
+
+────────────────────────────────────────
+---------- Forwarded message ----------
+From: ryan.taylor@springfield.gov
+Date: Sat, Feb 28, 2026 at 02:15 AM
+Subject: Inspection Report
+
+Inspection completed.
+Permit: FP-2026-36900
+Date: Dec 17 2025
+Address: 1833 Pine Dr, Brockway, 62704
+Type: Commercial
+Result: In Review
+Inspector: Ryan Taylor
+Notes: Wiring issues in panel B-3.
+
+--
+Ryan Taylor
+Building Inspector

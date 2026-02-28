@@ -1,0 +1,4 @@
+PERMIT_NO	INSP_DATE	SITE_ADDR	STRUCT_TYPE	STATUS	INSPECTOR	COMMENTS
+BP-2026-52454	November 28, 2025	6574 Sequoia Dr, North Haverbrook, 62704	Residential	Approved	Robert Garcia	Conditional pass — minor corrections required.
+CP-2025-59706	December 24, 2025	9519 Main St, Capital City, 62703	Residential	Under Review	Nicole White	Wiring issues in panel B-3.
+IP-2025-67377	10/10/2025	8913 Pop1ar Ct, Capital City, 62708	Mixed-Use	In Review	Lisa Wang	Final inspection completed successfully.

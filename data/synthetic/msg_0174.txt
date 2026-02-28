@@ -1,0 +1,12 @@
+--- INSPECTION PORTAL EXPORT ---
+Generated = 2026-02-28 17:15:17
+
+PERMIT = MP-2025-89606
+Date = 02/07/2026
+Property Address = 4196 Cypress Way, Brockway, 62708
+Bldg Type = Commercial
+Status = Under Review
+Inspected By = Ryan Taylor
+Notes = Final inspection completed successfully.
+
+--- END OF RECORD ---

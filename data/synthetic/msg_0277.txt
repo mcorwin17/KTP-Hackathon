@@ -1,0 +1,12 @@
+--- INSPECTION PORTAL EXPORT ---
+Generated:	2026-02-28 17:15:18
+
+PERMIT:	CP-2025-58468
+Insp Date;	May 01 2026
+Property Address:	6280 Beech Ave, Shelbyville, 62703
+Bldg Type:	Residential
+Result:	In Review
+Inspector:	James Lee
+Notes:	Final inspection completed successfully.
+
+--- END OF RECORD ---

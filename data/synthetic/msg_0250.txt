@@ -1,0 +1,12 @@
+--- INSPECTION PORTAL EXPORT ---
+Generated = 2026-02-28 17:15:18
+
+Permit # = MP-202S-11194
+Inspection Date = 7/8/2025
+Property Address = 3750 Sycamore Rd, North Haverbrook, 62706
+Structure Type = Commercial
+Inspection Result = OK
+Inspected By = Anna Lopez
+Notes = Needs follow-up inspection within 30 days.
+
+--- END OF RECORD ---

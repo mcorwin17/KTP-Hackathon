@@ -1,0 +1,6 @@
+Permit	Date	Address	Type	Result	Inspector	Notes
+FP-2026-72693	2025-09-26	1744 Chestnut St, Ogdenville, 62705	Mixed-Use	Complete	Sarah Kim	Plumbing code violation in basement unit.
+BP-2O26-58788	07/25/2025	2526 Pop1ar Ct, Springfield, 62702	Residential	Conditional Approval	Ryan Taylor	Wiring issues in panel B-3.
+BP-2026-59470	07/23/25	4138 Oak Ave, Ogdenville, 62704	Residential	Conditional Approval	Jane Doe	Conditional pass — minor corrections required.
+IP-2026-39452	09/11/2025	6663 Cedar Ln, Springfield, 62704	Residential	Approved	Brian Hall	Plumbing code violation in basement unit.
+EP-2026-58665	01/05/26	7136 Juniper Way, Capital City, 62708	Commercial	Pass	Maria Chen	All clear, no issues found.

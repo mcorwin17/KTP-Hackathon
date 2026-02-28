@@ -1,0 +1,28 @@
+From: dispatch@springfield.gov
+To: team-leads@springfield.gov
+Subject: FW: FW: Inspection Update — IP-2026-52360
+Date: 02/27/2O26 09:15 PM
+
+Team,
+
+Please see the inspection result below for permit IP-2026-52360.
+Routing action needed: YES
+
+────────────────────────────────────────
+---------- Forwarded message ----------
+From: ryan.taylor@springfield.gov
+Date: Fri, Feb 27, 2026 at 07:15 PM
+Subject: Inspection Report
+
+Inspection completed.
+Permit: IP-2026-52360
+Date: 06-Aug-2025
+Address: 6170 Magnolia Blvd, North Haverbrook, 62702
+Type: Commercial
+Result: Partial
+Inspector: Ryan Taylor
+Notes: Wiring issues in panel B-3.
+
+--
+Ryan Taylor
+Building Inspector

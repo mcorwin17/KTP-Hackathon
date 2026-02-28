@@ -1,0 +1,11 @@
+--- INSPECTION PORTAL EXPORT ---
+Generated → 2026-02-28 17:15:17
+
+Permit Number → FP-2026-09138
+Insp Date → 15-Feb-2026
+Location → 5690 Main St, Ogdenville, 62708
+Bldg Type → Mixed-Use
+Outcome → Pass
+Examiner → Miche1le Lee
+
+--- END OF RECORD ---

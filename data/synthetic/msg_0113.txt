@@ -1,0 +1,12 @@
+--- INSPECTION PORTAL EXPORT ---
+Generated → 2026-02-28 17:15:17
+
+Permit No → MP-2026-89456
+Insp Date → 06/01/2026
+Property Address → 2187 Willow Ter, Ogdenville, 62707
+Structure Type → Residential
+Inspection Result → Rejected
+Inspected By → Maria Chen
+Notes → All clear, no issues found.
+
+--- END OF RECORD ---

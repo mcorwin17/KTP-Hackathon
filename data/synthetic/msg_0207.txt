@@ -1,0 +1,6 @@
+PERMIT_NO	INSP_DATE	SITE_ADDR	STRUCT_TYPE	STATUS	INSPECTOR	COMMENTS
+FP-2O25-3802S	October 25, 2025	950S Cedar Ln, Springfield, 62708	Commercial	Conditional	Kevin Nguyen	Plumbing code violation in basement unit.
+FP-2026-11851	February 23, 2026	4942 Maple Rd, North Haverbrook, 62706	Commercial	Pending	Tom Wilson	Final inspection completed successfully.
+IP-2025-65693	11/06/25	9430 Juniper Way, Shelbyville, 627O3	Residential	Fail	Sarah Kim	Safety violations noted — see attached report.
+MP-2026-74013	14-Mar-2026	997 Redwood Ave, North Haverbrook, 62701	Commercial	In Review	Kevin Nguyen	Wiring issues in panel B-3.
+BP-2026-2289S	Jun 19 2026	3637 Spruce Cir, North Haverbrook, 62704	Industrial	Fail	Stephanie Adams	Final inspection completed successfully.

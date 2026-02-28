@@ -1,0 +1,8 @@
+FYI here is today's batch:
+PERMIT_NO	INSP_DATE	SITE_ADDR	STRUCT_TYPE	STATUS	INSPECTOR	COMMENTS
+***REDACTED***	21-Apr-2026	8934 Poplar Ct, Capital City, 62701	Residential	Conditional Approval	Amy Johnson	
+IP-2026-38007	August 25, 2025	678 Alder Ln, North Haverbrook, 62705	Residential	Partia1	Amy Johnson	Needs follow-up inspection within 30 days.
+FP-2026-96749	04/16/2026	547 Spruce Cir, Ogdenville, 62702	Residential	Not Approved	David Park	Conditional pass — minor corrections required.
+IP-2026-33779	6/8/2025	1927 Juniper Way, Shelbyville, 62703	Industrial	Scheduled	Sarah Kim	Conditiona1 pass — minor corrections required.
+
+Ref: FP-2025-89762

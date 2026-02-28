@@ -1,0 +1,7 @@
+FYI here is today's batch:
+PERMIT_NO	INSP_DATE	SITE_ADDR	STRUCT_TYPE	STATUS	INSPECTOR	COMMENTS
+FP-202S-27258	09/21/2025	3425 Chestnut St, Shelbyville, 62707	Industrial	Rejected	Diane Cruz	Plumbing code violation in basement unit.
+BP-2025-98616	14-Jul-2025	4934 Chestnut St, North Haverbrook, 62706	Residential	Denied	Ryan Taylor	Final inspection completed successfully.
+MP-2026-53702	12/06/25	8251 Willow Ter, Capital City, 62707	Commercial	Passed	Ryan Taylor	Safety violations noted — see attached report.
+IP-2025-38703	2026-02-12	8501 Sycamore Rd, Brockway, 627O2	Commercial	Conditional	Maria Chen	Wiring issues in panel B-3.
+BP-2025-43846	2025-09-O9	5494 Ash Pl, Capital City, 62705	Commercial	Rejected	Nicole White	Conditional pass — minor corrections required.

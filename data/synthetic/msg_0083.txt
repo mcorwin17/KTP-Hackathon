@@ -1,0 +1,13 @@
+--- INSPECTION PORTAL EXPORT ---
+Generated - 2026-02-28 17:15:17
+
+Permit No - IP-2025-82040
+Insp Date - 11/22/2025
+Site Address - 6335 Pine Dr, Ogdenville, 62706
+Bldg Type - Mixed-Use
+Status - Partial
+Inspected By - Michelle Lee
+Notes - All clear, no issues found.
+SessionID - e443df78
+
+--- END OF RECORD ---

@@ -1,0 +1,6 @@
+PERMIT_NO	INSP_DATE	SITE_ADDR	STRUCT_TYPE	STATUS	INSPECTOR	COMMENTS
+EP-2026-22147	7/5/2026	7592 Poplar Ct, Brockway, 62708	Residential	Passed	David Park	Final inspection completed successfu1ly.
+CP-2026-13523	6/12/2026	4155 Spruce Cir, Springfield, 62708	Industrial	Partial	Robert Garcia	
+CP-2025-96780	3/29/2026	5844 Alder Ln, North Haverbrook, 62707	Commercial	Failed	James Lee	Safety vio1ations noted — see attached report.
+EP-2026-69867	10/22/2025	9878 Sycamore Rd, Shelbyville, 62706	Industrial	Conditional Approval	Brian Hall	Conditional pass — minor corrections required.
+FP-2025-l7871	6/20/2026	6843 Oak Ave. Capital City, 62703	Commercial	Fail	Tom Wilson	Final inspection completed successfully.

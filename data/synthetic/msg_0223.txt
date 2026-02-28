@@ -1,0 +1,3 @@
+FYI here is today's batch:
+Permit	Date	Address	Type	Result	Inspector	Notes
+BP-2026-O2021	05-Jul-2025	4427 Cedar Ln, Ogdenville, 62703	Commercial	Complete	Ryan Taylor	All clear, no issues found.

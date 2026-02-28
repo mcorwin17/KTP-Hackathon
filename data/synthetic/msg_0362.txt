@@ -1,0 +1,8 @@
+FYI here is today's batch:
+PERMIT_NO	INSP_DATE	SITE_ADDR	STRUCT_TYPE	STATUS	INSPECTOR	COMMENTS
+MP-2026-61020	5/8/2026	7236 Oak Ave, Springfield, 62707	Commercial	Conditional Approval	Anna Lopez	Final inspection completed successfully.
+FP-2025-10589	Apr 24 2026	7840 Walnut Way, Springfield, 62704	Commercial	Denied	David Park	Plumbing code violation in basement unit.
+IP-2026-34706	11/22/2025	2005 Main St, Capital City, 62705	Industrial	Passed	Ryan Taylor	Safety violations noted — see attached report.
+EP-2025-45246	12/16/2025	420 Willow Ter, Capital City, 62703	Residential	Under Review	Ryan Taylor	Final inspection completed successfully.
+MP-2026-15483	07/24/25	1861 Oak Ave, Ogdenville, 62708	Industrial	Under Review	Ryan Taylor	Final inspection completed successfully.
+MP-2026-60568	08/16/25	8484 Poplar Ct. Ogdenville, 62703	Mixed-Use	Not Approved	Brian Hall	Safety violations noted — see attached report.

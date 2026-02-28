@@ -1,0 +1,12 @@
+--- INSPECTION P0RTAL EXP0RT ---
+Generated: 2026-02-28 17:1S:18
+
+Permit #: EP-2025-46324
+Inspection Date: Jun 09 2026
+Property Address: 6747 Cedar Ln, Capital City, 62708
+Bldg Type: Mixed-Use
+Status: Failed
+Inspected By: James Lee
+Notes: Conditional pass — minor corrections required.
+
+--- END OF RECORD ---

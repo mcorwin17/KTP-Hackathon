@@ -1,0 +1,6 @@
+FYI here is today's batch:
+Permit	Date	Address	Type	Result	Inspector	Notes
+IP-2026-46770	11/9/2025	1944 Birch Ct, North Haverbrook, 62702	Residential	Scheduled	James Lee	Conditional pass — minor corrections required.
+MP-2025-71901	2026-05-30	8112 Birch Ct, Ogdenvi1le, 62704	Commercial	Rejected	Nicole White	All clear, no issues found.
+FP-2025-53996	Oct 09 2025	7292 Cypress Way, North Haverbrook, 62705	Mixed-Use	In Review	David Park	Plumbing code violation in basement unit.
+FP-2026-12979	19-Dec-2025	3882 Hickory Ln, Springfie1d, 62703	Mixed-Use	Approved	Lisa Wang	Wiring issues in panel B-3.

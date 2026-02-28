@@ -1,0 +1,15 @@
+--- INSPECTION PORTAL EXPORT ---
+Generated → 2026-02-28 17:15:17
+
+Permit Number → ***REDACTED***
+Insp Date → 03/02/26
+Site Address → 7315 Maple Rd, North Haverbrook, 62701
+Bldg Type → Mixed-Use
+Outcome → Conditional Approval
+Examiner → Amy Johnson
+Notes → Conditional pass — minor corrections required.
+
+--- END OF RECORD ---
+
+---
+Permit tracking ID: MP-2026-54504

@@ -1,0 +1,11 @@
+--- INSPECTION PORTAL EXPORT ---
+Generated: 2026-02-28 17:15:18
+
+Permit #: CP-2025-60209
+Inspection Date: 09/30/25
+Property Address: 5237 Alder Ln, Brockway, 62706
+Structure Type: Industrial
+Inspection Result: Complete
+Inspected By: Stephanie Adams
+
+--- END OF RECORD ---

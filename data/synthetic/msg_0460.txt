@@ -1,0 +1,2 @@
+Permit	Date	Address	Type	Result	Inspector	Notes
+BP-2025-00614	Aug 07 2025	8201 Elm Blvd, North Haverbrook, 62701	Commercial	Conditional	John Smith	Safety violations noted — see attached report.

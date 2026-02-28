@@ -1,0 +1,2 @@
+Permit	Date	Address	Type	Result	Inspector	Notes
+EP-2025-97987	08/14/2025	9829 Pine Dr, Brockway, 62703	Residentia1	Under Review	Kevin Nguyen	Final inspection completed successfully.

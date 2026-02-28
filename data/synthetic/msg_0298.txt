@@ -1,0 +1,7 @@
+Permit	Date	Address	Type	Result	Inspector	Notes
+BP-2025-21588	Jun 14 202S	9987 Cypress Way, Ogdenville, 62708	Commercial	Denied	James Lee	Needs follow-up inspection within 30 days.
+CP-2025-74224	12/25/2025	4836 Ash Pl, Springfield, 62703	Industria1	Denied	Lisa Wang	Needs fol1ow-up inspection within 30 days.
+MP-2026-81012	03/31/2026	3161 Ash Pl, Shelbyville, 62708	Commercial	Under Review	Stephanie Adams	Needs follow-up inspection within 30 days.
+FP-2025-06225	09-Aug-2025	4004 Beech Ave, Shelbyville, 62701	Industrial	Complete	John Smith	Wiring issues in panel B-3.
+CP-2025-99864	August 29, 2025	8558 Ash Pl, Capital City, 62703	Industrial	Not Approved	Amy Johnson	Wiring issues in panel B-3.
+EP-2025-79805	05-Jun-2025	8017 Willow Ter, Capital City, 62702	Industrial	Partial	Chris Brown	Needs follow-up inspection within 30 days.

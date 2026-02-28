@@ -1,0 +1,12 @@
+--- INSPECTION PORTAL EXPORT ---
+Generated - 2026-02-28 17:15:18
+
+Permit # - IP-202S-16627
+Inspection Date - May 03, 2026
+Property Address - 6552 Hickory Ln, Springfield, 62705
+Type - Mixed-Use
+Status - Scheduled
+Inspector - Chris Brown
+Notes - Plumbing code violation in basement unit.
+
+--- END OF RECORD ---

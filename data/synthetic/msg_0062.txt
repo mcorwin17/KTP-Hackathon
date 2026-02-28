@@ -1,0 +1,12 @@
+--- INSPECTION PORTAL EXPORT ---
+Generated → 2026-02-28 17:15:17
+
+Permit # → CP-2025-87524
+Date → Mar 23 2026
+Address → 9984 Spruce Cir, Capital City, 62702
+Structure Type → Residential
+Status → Approved
+Inspected By → Diane Cruz
+Notes → Needs follow-up inspection within 30 days.
+
+--- END OF RECORD ---

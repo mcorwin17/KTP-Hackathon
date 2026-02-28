@@ -1,0 +1,12 @@
+--- INSPECTION PORTAL EXPORT ---
+Generated = 2026-02-28 17:15:17
+
+PERMIT = FP-2026-61882
+Inspection Date = June 09, 2025
+Site Address = 4600 Dogwood Dr, Capital City, 62701
+Type = Commercial
+Result = Fail
+Examiner = Sarah Kim
+Notes = All c1ear, no issues found.
+
+--- END OF RECORD ---

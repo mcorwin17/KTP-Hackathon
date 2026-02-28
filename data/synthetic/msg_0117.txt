@@ -1,0 +1,5 @@
+Permit	Date	Address	Type	Result	Inspector	Notes
+MP-2026-78971	April 22, 2026	5563 Maple Rd, Brockway, 62704	Mixed-Use	In Review	Nicole White	
+BP-2026-69167	03/23/26	3693 Alder Ln, Springfield, 62704	Residential	Conditional Approval	James Lee	Al1 clear, no issues found.
+MP-2025-14538	07/01/2025	5823 Cypress Way, Shelbyville, 62705	Commercial	Scheduled	Nicole White	Plumbing code violation in basement unit.
+CP-2025-98010	2025-08-10	2O20 Alder Ln, Brockway, 62703	Residential	Pending	Diane Cruz	Final inspection completed successfully.

@@ -1,0 +1,2 @@
+Permit	Date	Address	Type	Result	Inspector	Notes
+FP-2026-46173	Sep 21 2025	4741 Ash Pl, Shelbyville, 62701	Residential	Passed	Jane Doe	Safety violations noted — see attached report.

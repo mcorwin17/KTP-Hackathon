@@ -1,0 +1,13 @@
+--- INSPECTION PORTAL EXPORT ---
+Generated = 2026-02-28 17:15:17
+
+Permit No = ***REDACTED***
+Insp Date = l6-Jan-2026
+Address = 8945 Cedar Ln, North Haverbrook, 62705
+Type = Residential
+Inspection Result = Approved
+Inspected By = Kevin Nguyen
+
+--- END OF RECORD ---
+
+[Permit Reference: IP-2025-48978]

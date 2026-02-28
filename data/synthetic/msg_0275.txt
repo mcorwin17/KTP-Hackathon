@@ -1,0 +1,13 @@
+--- INSPECTION PORTAL EXPORT ---
+Generated → 2026-02-28 17:15:18
+SessionID → 8d723104
+
+PERMIT → CP-2026-42167
+Insp Date → 06/l7/2026
+Site Address → 1921 Maple Rd, North Haverbrook, 62702
+Bldg Type → Mixed-Use
+Inspection Result → Under Review
+Inspected By → Chris Brown
+Notes → Wiring issues in panel B-3.
+
+--- END OF RECORD ---

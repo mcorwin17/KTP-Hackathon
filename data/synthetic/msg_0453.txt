@@ -1,0 +1,12 @@
+--- INSPECTION PORTAL EXPORT ---
+Generated: 2026-02-28 17:15:18
+
+Permit No: IP-2025-36559
+Date: June 08, 2026
+Site Address: 6480 Willow Ter, Brockway, 62706
+Structure Type: Residential
+Result: Passed
+Examiner: Sarah Kim
+Notes; Plumbing code violation in basement unit.
+
+--- END OF RECORD ---

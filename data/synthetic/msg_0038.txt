@@ -1,0 +1,12 @@
+--- INSPECTION PORTAL EXPORT ---
+Generated: 2026-02-28 17:15:17
+
+PERMIT: EP-2025-73907
+Inspection Date: September 05, 2025
+Address: 8164 Sycamore Rd, Capital City, 62703
+Type: Residential
+Result: Scheduled
+Inspector; Robert Garcia
+Notes: All clear, no issues found.
+
+--- END OF RECORD ---

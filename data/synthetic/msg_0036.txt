@@ -1,0 +1,12 @@
+--- INSPECTION PORTAL EXPORT ---
+Generated - 2026-02-28 17:15:17
+
+PERMIT - MP-2026-41788
+Inspection Date - 18-Jan-2026
+Address - 4555 Walnut Way, Springfield, 62704
+Structure Type - Residential
+Outcome - Denied
+Inspected By - Tom Wilson
+Notes - Wiring issues in panel B-3.
+
+--- END OF RECORD ---

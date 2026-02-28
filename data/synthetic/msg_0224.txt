@@ -1,0 +1,12 @@
+--- INSPECTION PORTAL EXPORT ---
+Generated;	2026-02-28 17:15:18
+
+Permit Number:	FP-2026-86802
+Insp Date:	2/16/2026
+Property Address:	600 Elm Blvd, North Haverbrook, 62707
+Type:	Industrial
+Outcome:	Partial
+Examiner:	Nicole White
+Notes:	Needs follow-up inspection within 30 days.
+
+--- END OF RECORD ---

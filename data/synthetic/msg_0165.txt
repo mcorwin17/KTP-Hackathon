@@ -1,0 +1,4 @@
+FYI here is today's batch:
+PERMIT_NO	INSP_DATE	SITE_ADDR	STRUCT_TYPE	STATUS	INSPECTOR	COMMENTS
+FP-2025-68338	Nov 07 2025	8689 Pine Dr, Brockway, 62708	Mixed-Use	Not Approved	Anna Lopez	Wiring issues in panel B-3.
+BP-2026-35765	06/21/202S	6350 Ash Pl, Springfield, 62708	Commercial	Pending	Amy Johnson	Conditional pass — minor corrections required.

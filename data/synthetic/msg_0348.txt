@@ -1,0 +1,7 @@
+Permit	Date	Address	Type	Result	Inspector	Notes
+MP-2026-97692	08/28/2025	6266 Spruce Cir, North Haverbrook, 62702	Commercial	In Review	Eric Martinez	Conditional pass — minor corrections required.
+MP-2025-42446	February 18, 2026	5847 Walnut Way, Springfield, 62702	Residential	Complete	Tom Wilson	
+MP-2026-11117	April 09, 2026	3514 Main St, Capital City, 62706	Mixed-Use	Denied	Ryan Taylor	Final inspection completed successfully.
+MP-2025-28442	12/16/25	5466 Redwood Ave, Shelbyville, 62701	Mixed-Use	Rejected	James Lee	Conditional pass — minor corrections required.
+CP-2026-52917	Feb 16 2026	9893 Sequoia Dr, Brockway, 62704	Residential	Fail	Nicole White	Wiring issues in panel B-3.
+CP-2025-48699	01/12/26	7008 Elm Blvd, Ogdenville, 62701	Commercial	Under Review	Maria Chen	

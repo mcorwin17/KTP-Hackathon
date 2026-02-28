@@ -1,0 +1,6 @@
+FYI here is today's batch:
+PERMIT_NO	INSP_DATE	SITE_ADDR	STRUCT_TYPE	STATUS	INSPECTOR	COMMENTS
+IP-2O26-86431	06/27/2025	4755 Cedar Ln, Brockway, 62704	Mixed-Use	Passed	Stephanie Adams	
+IP-2026-74929	Sep 24 2025	3318 Spruce Cir, Shelbyville, 62707	Industrial	Complete	Chris Brown	Safety violations noted — see attached report.
+CP-2026-22974	2/18/2026	7780 Sycamore Rd, Brockway, 62704	Mixed-Use	Conditional Approval	James Lee	Safety violations noted — see attached report.
+BP-2025-32379	06/11/2025	7987 Walnut Way, Capital City, 62706	Commercial	Denied	Jane Doe	Needs fol1ow-up inspection within 30 days.

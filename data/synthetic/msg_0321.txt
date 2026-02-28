@@ -1,0 +1,12 @@
+--- INSPECTION PORTAL EXPORT ---
+Generated: 2026-02-28 17:1S;18
+
+Permit Number: MP-2025-50743
+Insp Date: Apr 19 2026
+Property Address: 7928 Dogwood Dr, Ogdenville, 62704
+Structure Type: Commercial
+Result: Conditional
+Inspected By: Tom Wilson
+Notes: Needs follow-up inspection within 30 days.
+
+--- END OF RECORD ---

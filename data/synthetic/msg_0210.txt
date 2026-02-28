@@ -1,0 +1,7 @@
+PERMIT_NO	INSP_DATE	SITE_ADDR	STRUCT_TYPE	STATUS	INSPECTOR	COMMENTS
+BP-2026-36196	2025-10-24	966 Walnut Way, Ogdenville, 62704	Residential	Partial	Kevin Nguyen	
+MP-2025-24564	07/09/25	329 Cedar Ln, Brockway, 62702	Commercial	In Review	Maria Chen	Safety violations noted — see attached report.
+CP-2026-96378	February 07, 2026	7275 Walnut Way, Ogdenville, 62704	Residential	Rejected	Eric Martinez	Needs follow-up inspection within 30 days.
+MP-2025-44464	26-Sep-2025	9478 Chestnut St, Brockway, 62701	Mixed-Use	In Review	Kevin Nguyen	Wiring issues in panel B-3.
+FP-2025-52877	February 10, 2026	3965 Sequoia Dr, North Haverbrook, 62703	Industrial	Pass	John Smith	Plumbing code violation in basement unit.
+BP-2025-23751	9/23/2025	5822 Willow Ter, Brockway, 62703	Mixed-Use	Approved	Michelle Lee	All clear, no issues found.

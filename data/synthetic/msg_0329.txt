@@ -1,0 +1,4 @@
+FYI here is today's batch:
+Permit	Date	Address	Type	Result	Inspector	Notes
+FP-2025-83115	1/14/2026	6934 Redwood Ave, Springfield, 62704	Mixed-Use	Pending	Sarah Kim	All clear, no issues found.
+FP-2026-68246	Jul 05 2025	S814 Poplar Ct, Capital City, 62708	Mixed-Use	Partial	John Smith	Final inspection completed successfully.

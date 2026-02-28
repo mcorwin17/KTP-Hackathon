@@ -1,0 +1,13 @@
+--- INSPECTION PORTAL EXPORT ---
+Generated: 2026-02-28 17:15:18
+
+Permit No: IP-2026-66570
+Inspection Date: 2026-06-07
+Site Address: 2515 Walnut Way, Ogdenville, 62704
+Type: Mixed-Use
+SessionID; 5a921187
+Outcome: Fail
+Examiner: Brian Hall
+Notes: Wiring issues in panel B-3.
+
+--- END OF REC0RD ---

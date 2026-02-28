@@ -1,0 +1,13 @@
+--- INSPECTION PORTAL EXPORT ---
+Generated = 2026-O2-28 17:l5:17
+
+Permit Number = MP-2025-52569
+Inspection Date = 09/03/25
+Site Address = 210 Cypress Way, Springfield, 62702
+SessionID = 23a7711a
+Structure Type = Residential
+Result = Conditional
+Inspected By = Nicole White
+Notes = Wiring issues in panel B-3.
+
+--- END OF RECORD ---

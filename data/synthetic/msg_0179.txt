@@ -1,0 +1,5 @@
+PERMIT_NO	INSP_DATE	SITE_ADDR	STRUCT_TYPE	STATUS	INSPECTOR	COMMENTS
+CP-2026-87366	01-Jul-2025	5889 Pine Dr, Springfield, 62706	Industrial	Scheduled	Tom Wilson	Safety violations noted — see attached report.
+BP-2026-82873	08/21/25	5647 Dogwood Dr. Capital City, 62707	Commercial	Approved	Eric Martinez	Conditional pass — minor corrections required.
+FP-2025-48539	03/17/26	7858 Elm Blvd, Springfield, 62708	Mixed-Use	Conditional Approval	Lisa Wang	Safety violations noted — see attached report.
+CP-2026-83182	Jan 30 2026	4696 Sycamore Rd, Capita1 City, 62706	Commercial	Not Approved	Chris Brown	Safety violations noted — see attached report.

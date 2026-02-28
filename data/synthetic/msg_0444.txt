@@ -1,0 +1,5 @@
+Permit	Date	Address	Type	Result	Inspector	Notes
+BP-2025-06868	04/14/26	8391 Dogwood Dr, Capital City, 62705	Mixed-Use	Pending	Kevin Nguyen	Final inspection completed successfully.
+CP-2025-32513	May 05 2026	6417 Chestnut St, Brockway, 62706	Mixed-Use	Complete	Anna Lopez	Conditional pass — minor corrections required.
+BP-2026-25185	August 16, 2025	1962 Sycamore Rd, Brockway, 62701	Residential	Approved	James Lee	All clear, no issues found.
+CP-2025-135l4	Dec 01 2025	6696 Sycamore Rd, Shelbyville, 62704	Commercial	Partial	Nicole White	Conditional pass — minor corrections required.

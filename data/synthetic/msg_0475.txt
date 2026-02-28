@@ -1,0 +1,13 @@
+--- INSPECTION PORTAL EXPORT ---
+Generated:	2026-02-28 17:15:18
+
+Permit #:	BP-2025-61011
+Date:	2O25-11-09
+Address:	2053 Ash Pl, Capital City, 62702
+Type:	Industrial
+Result:	Rejected
+Inspector:	Amy Johnson
+Notes:	Needs follow-up inspection within 30 days.
+SessionID:	101fbccc
+
+--- END OF RECORD ---

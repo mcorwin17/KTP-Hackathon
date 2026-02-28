@@ -1,0 +1,12 @@
+--- INSPECTION PORTAL EXPORT ---
+Generated → 2026-02-28 17:15:18
+
+Permit No → MP-2026-06102
+Insp Date → 09-Jun-2025
+Location → 4454 Maple Rd, Brockway, 62702
+Type → Residential
+Status → Conditional
+Examiner → Jane Doe
+Notes → Final inspection completed successfully.
+
+--- END OF RECORD ---

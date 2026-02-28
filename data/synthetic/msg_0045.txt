@@ -1,0 +1,12 @@
+--- INSPECTION PORTAL EXPORT ---
+Generated: 2026-02-28 17:15;17
+
+Permit #: CP-2025-01626
+Insp Date: 04/26/26
+Location: 2671 Magnolia Blvd, Ogdenville, 62708
+Bldg Type: Residential
+Result: Rejected
+Inspector: Amy Johnson
+Notes: Final inspection completed successfully.
+
+--- END OF RECORD ---

@@ -1,0 +1,14 @@
+--- INSPECTION PORTAL EXPORT ---
+Generated = 2026-02-28 17:15:17
+
+Permit Number = ***REDACTED***
+Date = 2025-12-31
+Address = 8970 Maple Rd, Ogdenville, 62706
+Type = Mixed-Use
+Inspection Result = Pending
+Inspected By = John Smith
+Notes = Conditional pass — minor corrections required.
+
+--- END OF RECORD ---
+
+[Permit Reference: CP-2025-38526]

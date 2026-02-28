@@ -1,0 +1,13 @@
+--- INSPECTION PORTAL EXPORT ---
+Generated - 2026-02-28 17:15:18
+
+Permit # - MP-2026-09916
+Insp Date - 06/13/26
+Property Address - 4022 Oak Ave, Capital City, 62705
+Type - Residential
+Result - Conditional Approval
+Inspected By - Anna Lopez
+Notes - Needs follow-up inspection within 30 days.
+SessionID - b5d32b16
+
+--- END OF RECORD ---

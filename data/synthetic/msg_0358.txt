@@ -1,0 +1,5 @@
+Permit	Date	Address	Type	Result	Inspector	Notes
+CP-2026-58449	December 23, 2025	4195 Cypress Way, Shelbyville, 62707	Commercial	In Review	Michelle Lee	Final inspection completed successfully.
+BP-2026-16888	8/8/2025	8848 Sycamore Rd, Shelbyville, 62705	Commercial	Passed	Lisa Wang	Final inspection completed successfully.
+CP-2025-09853	October 18, 2025	3205 Oak Ave, North Haverbrook, 62708	Commercial	Partial	Amy Johnson	Conditional pass — minor corrections required.
+MP-2026-88229	09/24/2025	5238 Hickory Ln, Brockway, 62707	Residential	Pending	David Park	All clear, no issues found.

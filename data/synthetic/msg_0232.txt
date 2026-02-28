@@ -1,0 +1,11 @@
+--- INSPECTION PORTAL EXPORT ---
+Generated = 2026-02-28 17:15:18
+
+Permit No = FP-2025-40217
+Inspection Date = 11/09/25
+Location = 7984 Poplar Ct, Brockway, 62703
+Type = Residential
+Inspection Result = In Review
+Inspector = David Park
+
+--- END 0F RECORD ---

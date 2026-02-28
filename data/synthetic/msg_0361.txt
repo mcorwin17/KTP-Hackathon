@@ -1,0 +1,12 @@
+--- INSPECTION PORTAL EXPORT ---
+Generated = 2026-02-28 17:1S:18
+
+Permit No = EP-2025-90574
+Insp Date = May 28, 2026
+Address = 5755 Pine Dr, Springfield, 62703
+Bldg Type = Industrial
+Outcome = Pass
+Examiner = Jane Doe
+Notes = Wiring issues in panel B-3.
+
+--- END OF RECORD ---

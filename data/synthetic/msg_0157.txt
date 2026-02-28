@@ -1,0 +1,3 @@
+FYI here is today's batch:
+Permit	Date	Address	Type	Result	Inspector	Notes
+BP-2025-21126	November 14, 2025	7959 Poplar Ct, Ogdenville, 62701	Mixed-Use	In Review	Lisa Wang	Conditional pass — minor corrections required.

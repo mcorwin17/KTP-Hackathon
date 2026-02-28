@@ -1,0 +1,5 @@
+FYI here is today's batch:
+Permit	Date	Address	Type	Result	Inspector	Notes
+IP-2026-08429	June 09, 2026	3512 Ash Pl, Capital City, 62705	Mixed-Use	Scheduled	Tom Wilson	Needs follow-up inspection within 30 days.
+MP-2025-30695	July 04, 2025	4240 Cypress Way, Capital City, 62707	Industrial	Pass	Amy Johnson	Conditional pass — minor corrections required.
+CP-2026-12262	07/29/2025	4371 Alder Ln, North Haverbrook, 62708	Industrial	Pending	James Lee	Wiring issues in panel B-3.

@@ -1,0 +1,3 @@
+PERMIT_NO	INSP_DATE	SITE_ADDR	STRUCT_TYPE	STATUS	INSPECTOR	COMMENTS
+BP-2025-S1911	04/27/2026	7255 Chestnut St, Brockway, 62703	Industrial	In Review	Robert Garcia	
+MP-2026-06966	Jul 08 2025	2723 Ash Pl, North Haverbrook, 62704	Mixed-Use	Complete	David Park	Final inspection completed successfully.

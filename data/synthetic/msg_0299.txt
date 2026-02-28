@@ -1,0 +1,3 @@
+FYI here is today's batch:
+PERMIT_NO	INSP_DATE	SITE_ADDR	STRUCT_TYPE	STATUS	INSPECTOR	COMMENTS
+MP-2025-17239	07/22/25	2671 Alder Ln, North Haverbrook, 62702	Industrial	Pass	Stephanie Adams	Conditional pass — minor corrections required.

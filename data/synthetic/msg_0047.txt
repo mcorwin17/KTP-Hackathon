@@ -1,0 +1,12 @@
+--- INSPECTI0N PORTAL EXPORT ---
+Generated: 2026-02-28 17:15:17
+
+Permit #: BP-2026-85497
+Insp Date; 9/7/2025
+Location: 5348 Magnolia Blvd, Springfield, 62702
+Type: Residential
+Status: Denied
+Examiner: Robert Garcia
+Notes: Safety violations noted — see attached report.
+
+--- END OF RECORD ---

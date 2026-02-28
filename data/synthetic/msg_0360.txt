@@ -1,0 +1,4 @@
+FYI here is today's batch:
+Permit	Date	Address	Type	Result	Inspector	Notes
+FP-2026-84664	2025-06-08	3859 Spruce Cir, Shelbyvi1le, 62706	Mixed-Use	Approved	Jane Doe	Wiring issues in panel B-3.
+MP-2025-76066	2025-12-18	7711 Main St, Ogdenvi1le, 62705	Residential	Not Approved	Chris Brown	Safety violations noted — see attached report.

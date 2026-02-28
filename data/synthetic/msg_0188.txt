@@ -1,0 +1,5 @@
+Permit	Date	Address	Type	Result	Inspector	Notes
+EP-2026-75317	7/6/2O26	4675 Chestnut St, Shelbyville, 62708	Residential	Failed	Lisa Wang	Needs follow-up inspection within 30 days.
+CP-2025-37744	1/22/2026	8765 Hickory Ln, Brockway, 62707	Mixed-Use	In Review	Eric Martinez	Final inspection completed successfully.
+IP-2026-21975	February 13, 2026	8287 Maple Rd, Springfield. 62704	Industrial	0K	Anna Lopez	Wiring issues in panel B-3.
+MP-2026-39358	09-Dec-2025	491 Willow Ter, Ogdenville, 62704	Commercial	Complete	Diane Cruz	Needs follow-up inspection within 30 days.

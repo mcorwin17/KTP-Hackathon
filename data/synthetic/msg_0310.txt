@@ -1,0 +1,12 @@
+--- INSPECTION PORTAL EXPORT ---
+Generated: 2026-02-28 17:15:18
+
+Permit No: BP-2025-25690
+Date: 06/28/25
+Property Address: 313l Magnolia Blvd, Ogdenville, 62706
+Structure Type: Residential
+Outcome: Conditional Approval
+Inspected By: Chris Brown
+Notes: Needs follow-up inspection within 30 days.
+
+--- END OF RECORD ---

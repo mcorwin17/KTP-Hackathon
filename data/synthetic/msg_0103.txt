@@ -1,0 +1,12 @@
+--- INSPECTION PORTAL EXPORT ---
+Generated = 2026-02-28 17:1S:17
+
+Permit # = CP-2025-79659
+Insp Date = 22-Jul-2025
+Site Address = 3003 Spruce Cir, Springfield, 62707
+Type = Residential
+Result = Rejected
+Inspected By = John Smith
+Notes = Conditional pass — minor corrections required.
+
+--- END OF RECORD ---

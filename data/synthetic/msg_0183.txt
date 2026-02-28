@@ -1,0 +1,12 @@
+--- INSPECTION PORTAL EXPORT ---
+Generated → 2026-02-28 17:15:17
+
+Permit No → MP-2025-39720
+Date → 09/02/2O25
+Location → 3760 Willow Ter, Brockway, 62708
+Bldg Type → Mixed-Use
+Outcome → Fail
+Inspector → Maria Chen
+Notes → Wiring issues in panel B-3.
+
+--- END OF RECORD ---

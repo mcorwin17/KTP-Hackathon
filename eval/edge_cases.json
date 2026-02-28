@@ -1,0 +1,307 @@
+[
+  {
+    "id": "EC-01",
+    "name": "Two Conflicting Permit Numbers",
+    "description": "Email contains two different permit numbers",
+    "extracted_permit": "BP-2026-00200",
+    "extracted_status": "pass",
+    "confidence": 0.6,
+    "route_team": "PERMITTING",
+    "action_required": false,
+    "checks": [
+      [
+        "permit_found",
+        true
+      ]
+    ],
+    "all_passed": true
+  },
+  {
+    "id": "EC-02",
+    "name": "Completely Empty Email Body",
+    "description": "Message has subject line only",
+    "extracted_permit": "",
+    "extracted_status": "unknown",
+    "confidence": 0.0,
+    "route_team": "UNKNOWN",
+    "action_required": false,
+    "checks": [
+      [
+        "permit_found",
+        false
+      ]
+    ],
+    "all_passed": false
+  },
+  {
+    "id": "EC-03",
+    "name": "Date in the Future / Wrong Year",
+    "description": "Date is obviously wrong (year 2099)",
+    "extracted_permit": "BP-2099-00001",
+    "extracted_status": "pass",
+    "confidence": 0.6,
+    "route_team": "PERMITTING",
+    "action_required": false,
+    "checks": [],
+    "all_passed": null
+  },
+  {
+    "id": "EC-04",
+    "name": "Address Split Between Body and Signature",
+    "description": "Real site address in body, office address in signature",
+    "extracted_permit": "BP-2026-00300",
+    "extracted_status": "unknown",
+    "confidence": 0.6,
+    "route_team": "UNKNOWN",
+    "action_required": true,
+    "checks": [],
+    "all_passed": null
+  },
+  {
+    "id": "EC-05",
+    "name": "Permit Number Inside a URL",
+    "description": "Permit reference embedded in a hyperlink",
+    "extracted_permit": "",
+    "extracted_status": "unknown",
+    "confidence": 0.25,
+    "route_team": "UNKNOWN",
+    "action_required": false,
+    "checks": [
+      [
+        "permit_found",
+        false
+      ]
+    ],
+    "all_passed": false
+  },
+  {
+    "id": "EC-06",
+    "name": "Heavy OCR Corruption",
+    "description": "Text looks like badly scanned document",
+    "extracted_permit": "",
+    "extracted_status": "unknown",
+    "confidence": 0.25,
+    "route_team": "UNKNOWN",
+    "action_required": false,
+    "checks": [],
+    "all_passed": null
+  },
+  {
+    "id": "EC-07",
+    "name": "100% Banner / Disclaimer, No Content",
+    "description": "Email is entirely legal boilerplate",
+    "extracted_permit": "",
+    "extracted_status": "unknown",
+    "confidence": 0.0,
+    "route_team": "UNKNOWN",
+    "action_required": false,
+    "checks": [],
+    "all_passed": null
+  },
+  {
+    "id": "EC-08",
+    "name": "Tab-separated with Misaligned Columns",
+    "description": "Clipboard paste where tabs don't line up",
+    "extracted_permit": "",
+    "extracted_status": "unknown",
+    "confidence": 0.25,
+    "route_team": "UNKNOWN",
+    "action_required": true,
+    "checks": [],
+    "all_passed": null
+  },
+  {
+    "id": "EC-09",
+    "name": "Forward Chain 3 Levels Deep",
+    "description": "Actual data buried under 3 forward headers",
+    "extracted_permit": "",
+    "extracted_status": "unknown",
+    "confidence": 0.0,
+    "route_team": "UNKNOWN",
+    "action_required": false,
+    "checks": [
+      [
+        "permit_found",
+        false
+      ]
+    ],
+    "all_passed": false
+  },
+  {
+    "id": "EC-10",
+    "name": "Non-English Characters Mixed In",
+    "description": "Unicode from copy-paste or encoding issues",
+    "extracted_permit": "",
+    "extracted_status": "unknown",
+    "confidence": 0.0,
+    "route_team": "UNKNOWN",
+    "action_required": false,
+    "checks": [
+      [
+        "permit_found",
+        false
+      ]
+    ],
+    "all_passed": false
+  },
+  {
+    "id": "EC-11",
+    "name": "Multiple Dates \u2014 Which is Inspection?",
+    "description": "Email has scheduled date, inspection date, and follow-up date",
+    "extracted_permit": "BP-2026-00999",
+    "extracted_status": "unknown",
+    "confidence": 0.6,
+    "route_team": "UNKNOWN",
+    "action_required": true,
+    "checks": [],
+    "all_passed": null
+  },
+  {
+    "id": "EC-12",
+    "name": "Permit Number in Subject Only",
+    "description": "Permit only in email subject, no body reference",
+    "extracted_permit": "",
+    "extracted_status": "pass",
+    "confidence": 0.25,
+    "route_team": "PERMITTING",
+    "action_required": false,
+    "checks": [
+      [
+        "permit_found",
+        false
+      ]
+    ],
+    "all_passed": false
+  },
+  {
+    "id": "EC-13",
+    "name": "Result Contradiction",
+    "description": "Says 'passed' but mentions 'violations found'",
+    "extracted_permit": "BP-2026-01500",
+    "extracted_status": "pass",
+    "confidence": 0.6,
+    "route_team": "PERMITTING",
+    "action_required": true,
+    "checks": [],
+    "all_passed": null
+  },
+  {
+    "id": "EC-14",
+    "name": "Extremely Long Email with Data at End",
+    "description": "200+ words of irrelevant discussion before data",
+    "extracted_permit": "CP-2026-01600",
+    "extracted_status": "fail",
+    "confidence": 0.6,
+    "route_team": "FIELD_DISPATCH",
+    "action_required": true,
+    "checks": [
+      [
+        "permit_found",
+        true
+      ]
+    ],
+    "all_passed": true
+  },
+  {
+    "id": "EC-15",
+    "name": "All Caps Email",
+    "description": "Entire email in uppercase",
+    "extracted_permit": "BP-2026-01700",
+    "extracted_status": "pass",
+    "confidence": 0.6,
+    "route_team": "PERMITTING",
+    "action_required": false,
+    "checks": [
+      [
+        "permit_found",
+        true
+      ]
+    ],
+    "all_passed": true
+  },
+  {
+    "id": "EC-16",
+    "name": "JSON-like Data in Email",
+    "description": "Someone pasted JSON into the email",
+    "extracted_permit": "",
+    "extracted_status": "unknown",
+    "confidence": 0.25,
+    "route_team": "UNKNOWN",
+    "action_required": true,
+    "checks": [
+      [
+        "permit_found",
+        false
+      ]
+    ],
+    "all_passed": false
+  },
+  {
+    "id": "EC-17",
+    "name": "Raw Number Permit (No Prefix/Dashes)",
+    "description": "Just a raw number as permit reference",
+    "extracted_permit": "",
+    "extracted_status": "unknown",
+    "confidence": 0.25,
+    "route_team": "UNKNOWN",
+    "action_required": false,
+    "checks": [
+      [
+        "permit_found",
+        false
+      ]
+    ],
+    "all_passed": false
+  },
+  {
+    "id": "EC-18",
+    "name": "Spanish-Language Report",
+    "description": "Report partially in Spanish",
+    "extracted_permit": "",
+    "extracted_status": "unknown",
+    "confidence": 0.25,
+    "route_team": "UNKNOWN",
+    "action_required": false,
+    "checks": [
+      [
+        "permit_found",
+        false
+      ]
+    ],
+    "all_passed": false
+  },
+  {
+    "id": "EC-19",
+    "name": "Typo in Permit Prefix",
+    "description": "Typo in the permit prefix (BOP instead of BP)",
+    "extracted_permit": "",
+    "extracted_status": "unknown",
+    "confidence": 0.25,
+    "route_team": "UNKNOWN",
+    "action_required": false,
+    "checks": [
+      [
+        "permit_found",
+        false
+      ]
+    ],
+    "all_passed": false
+  },
+  {
+    "id": "EC-20",
+    "name": "Mixed Newlines and Formatting Chaos",
+    "description": "CR/LF chaos, random whitespace",
+    "extracted_permit": "BP-2026-02100",
+    "extracted_status": "pass",
+    "confidence": 0.6,
+    "route_team": "PERMITTING",
+    "action_required": false,
+    "checks": [
+      [
+        "permit_found",
+        true
+      ]
+    ],
+    "all_passed": true
+  }
+]

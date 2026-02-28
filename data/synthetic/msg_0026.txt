@@ -1,0 +1,11 @@
+--- INSPECTION PORTAL EXPORT ---
+Generated:	2026-02-28 17:15:17
+
+Permit Number:	IP-2025-01314
+Inspection Date:	10/31/202S
+Site Address:	9405 Juniper Way, Springfield, 62706
+Bldg Type:	Mixed-Use
+Result:	Conditional Approval
+Examiner:	Nicole White
+
+--- END OF RECORD ---

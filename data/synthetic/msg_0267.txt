@@ -1,0 +1,11 @@
+--- INSPECTION PORTAL EXPORT ---
+Generated: 2026-02-28 17:15:18
+
+PERMIT: CP-2026-80534
+Date: 2/16/2026
+Property Address: 7543 Ash Pl, Capital City, 62706
+Structure Type: Commercial
+Outcome: OK
+Examiner: Chris Brown
+
+--- END OF RECORD ---

@@ -1,0 +1,9 @@
+PERMIT_NO	INSP_DATE	SITE_ADDR	STRUCT_TYPE	STATUS	INSPECTOR	COMMENTS
+***REDACTED***	Nov 21 2025	8963 Oak Ave, Brockway, 62708	Residential	Conditional Approval	Sarah Kim	A1l clear. no issues found.
+FP-2025-84499	2026-03-14	1495 Birch Ct, North Haverbrook, 62701	Mixed-Use	Not Approved	Eric Martinez	All clear, no issues found.
+CP-2025-36139	14-Sep-2025	4118 Alder Ln, North Haverbrook, 62708	Industrial	Passed	Kevin Nguyen	All clear, no issues found.
+IP-2026-23759	December 30, 2025	494 Magnolia Blvd, Capital City, 62707	Residential	Partial	Maria Chen	Wiring issues in panel B-3.
+IP-2025-24042	10/09/2025	1568 Maple Rd, Capital City, 627O7	Residentia1	Failed	Stephanie Adams	Final inspection completed successfully.
+
+---
+Permit tracking ID: MP-2025-51925

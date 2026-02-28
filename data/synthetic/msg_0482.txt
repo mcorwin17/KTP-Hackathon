@@ -1,0 +1,14 @@
+--- INSPECTION PORTAL EXPORT ---
+Generated = 2026-02-28 17:l5:18
+
+PERMIT = ***REDACTED***
+Insp Date = 2026-02-04
+Site Address = 9167 Spruce Cir, North Haverbrook, 62708
+Bldg Type = Commercial
+Result = Under Review
+Inspected By = Robert Garcia
+Notes = Plumbing code violation in basement unit.
+
+--- END OF RECORD ---
+
+Ref: FP-2026-76086

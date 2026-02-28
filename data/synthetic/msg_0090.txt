@@ -1,0 +1,12 @@
+--- INSPECTION PORTAL EXPORT ---
+Generated: 2026-02-28 17:15:17
+
+Permit No: FP-2025-27804
+Inspection Date: 06/25/2025
+Property Address: 4735 Willow Ter, Springfield, 62702
+Bldg Type: Residential
+Outcome: In Review
+Inspected By: Kevin Nguyen
+Notes: Conditional pass — minor corrections required.
+
+--- END OF RECORD ---

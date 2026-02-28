@@ -1,0 +1,3 @@
+Permit	Date	Address	Type	Result	Inspector	Notes
+BP-2025-42616	Jun 29 2025	4906 Cypress Way, Capital City, 62707	Commercial	Fail	Eric Martinez	Plumbing code violation in basement unit.
+BP-2026-81326	0S/16/26	404S Hickory Ln, North Haverbrook, 62703	Mixed-Use	Failed	David Park	

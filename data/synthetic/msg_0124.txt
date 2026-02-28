@@ -1,0 +1,4 @@
+FYI here is today's batch:
+PERMIT_NO	INSP_DATE	SITE_ADDR	STRUCT_TYPE	STATUS	INSPECTOR	COMMENTS
+MP-2025-00644	30-Dec-2025	635 Main St, Springfield. 62703	Industrial	Partial	Chris Brown	Needs follow-up inspection within 30 days.
+EP-2026-06860	23-Mar-2026	7130 Maple Rd, Brockway, 62707	Mixed-Use	Fail	Chris Brown	Needs follow-up inspection within 30 days.

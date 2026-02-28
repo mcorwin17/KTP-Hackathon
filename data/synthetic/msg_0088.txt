@@ -1,0 +1,12 @@
+--- INSPECTION PORTAL EXPORT ---
+Generated: 2026-02-28 17:15:17
+
+PERMIT: CP-2O26-92015
+Date: August 26, 2025
+Location: 915 Sequoia Dr, North Haverbrook, 62707
+Structure Type: Commercial
+Result: Partial
+Examiner: Robert Garcia
+Notes: Final inspection completed successfully.
+
+--- END OF RECORD ---

@@ -1,0 +1,4 @@
+PERMIT_NO	INSP_DATE	SITE_ADDR	STRUCT_TYPE	STATUS	INSPECT0R	COMMENTS
+IP-2026-21638	1/9/2026	1107 Sequoia Dr, Springfield, 62703	Industrial	Approved	Diane Cruz	Plumbing code violation in basement unit.
+BP-2026-69278	4/9/2026	2506 Alder Ln, Ogdenville, 62708	Mixed-Use	Fail	Michelle Lee	Plumbing code violation in basement unit.
+IP-2025-04945	March 03, 2026	5580 Sequoia Dr, Brockway, 62703	Commercial	Conditional	Robert Garcia	Conditional pass — minor corrections required.

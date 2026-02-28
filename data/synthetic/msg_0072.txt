@@ -1,0 +1,40 @@
+From: dispatch@springfield.gov
+To: team-leads@springfield.gov
+Subject: FW; FW: Inspection Update — BP-2025-74987
+Date: 02/26/2026 01:15 PM
+
+Team,
+
+Please see the inspection result below for permit BP-2025-74987.
+Routing action needed: YES
+
+────────────────────────────────────────
+---------- Forwarded message ----------
+From: jane.doe@springfield.gov
+Date: Thu, Feb 26, 2026 at 12:15 PM
+Subject: Inspection Report
+
+────────────────────────────────────────
+---------- Forwarded message ----------
+From: jane.doe@springfield.gov
+Date: Wed, Feb 25, 2026 at 08:15 PM
+Subject: Re: Inspection Report
+
+────────────────────────────────────────
+---------- Forwarded message ----------
+From: jane.doe@springfield.gov
+Date: Wed, Feb 25, 2026 at 02:15 PM
+Subject: Re: Re: Inspection Report
+
+Inspection completed.
+Permit: BP-2025-74987
+Date: 06/08/2026
+Address: 4205 Chestnut St, Springfield, 62708
+Type: Residential
+Result: Rejected
+Inspector: Jane Doe
+Notes: Plumbing code violation in basement unit.
+
+--
+Jane Doe
+Building Inspector

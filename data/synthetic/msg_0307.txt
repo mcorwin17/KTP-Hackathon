@@ -1,0 +1,5 @@
+Permit	Date	Address	Type	Result	Inspector	Notes
+IP-2026-23258	2026-06-08	2104 Cypress Way, Brockway, 62706	Residential	Conditional	Amy Johnson	Conditional pass — minor corrections required.
+BP-2O26-01820	08/22/2025	2812 Elm Blvd, North Haverbrook, 62702	Residential	Under Review	Anna Lopez	Wiring issues in panel B-3.
+IP-2026-50772	2026-05-24	1059 Alder Ln, North Haverbrook, 62705	Mixed-Use	Fail	Ryan Taylor	Conditiona1 pass — minor corrections required.
+EP-2025-70356	12/25/2025	4828 Beech Ave, Brockway, 62704	Residential	Rejected	Tom Wilson	Plumbing code violation in basement unit.

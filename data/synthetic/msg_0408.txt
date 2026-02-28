@@ -1,0 +1,12 @@
+--- INSPECTION P0RTAL EXPORT ---
+Generated - 2026-02-28 17:15:18
+
+Permit # - IP-2025-40787
+Insp Date - Aug 15 2025
+Location - 7795 Sequoia Dr, Shelbyville, 62703
+Structure Type - Industrial
+Inspection Result - OK
+Examiner - Michelle Lee
+Notes - Plumbing code violation in basement unit.
+
+--- END OF RECORD ---

@@ -1,0 +1,5 @@
+Permit	Date	Address	Type	Result	Inspector	Notes
+EP-2025-66022	25-May-2026	8104 Ash Pl, North Haverbrook, 62708	Residential	Conditional Approval	Robert Garcia	Conditional pass — minor corrections required.
+MP-2026-99795	08/01/25	2030 Juniper Way, North Haverbrook. 62708	Industrial	In Review	Chris Brown	Safety violations noted — see attached report.
+IP-2026-09529	06/28/2026	5968 Dogwood Dr, Ogdenville, 62705	Mixed-Use	Passed	Ryan Taylor	Plumbing code violation in basement unit.
+BP-2025-46101	6/13/2026	8362 Cedar Ln, Springfield, 62702	Commercial	Under Review	Jane Doe	Wiring issues in panel B-3.
