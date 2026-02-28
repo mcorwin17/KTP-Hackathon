@@ -125,13 +125,20 @@ class LLMExtractor:
 
     EXTRACTION_PROMPT_TEMPLATE = '''Extract information from the following inspector communication text.
 
+CRITICAL INSTRUCTIONS:
+- ONLY extract text that is CLEARLY VISIBLE and READABLE
+- DO NOT guess or infer content that is blacked out, redacted, or obscured
+- If a field appears to be covered/redacted (black boxes, XXXX, [REDACTED], garbled characters), use null
+- If you cannot clearly read a value, use null - do NOT attempt to guess
+- OCR artifacts like random symbols, repeated characters, or garbled text should be treated as unreadable
+
 TEXT TO ANALYZE:
 {text}
 
 {hints_section}
 
 FIELD DEFINITIONS:
-- permit_number: The permit or application number
+- permit_number: The permit or application number (only if clearly visible)
 - permit_type: Type of permit (electrical, plumbing, building, etc.)
 - inspection_type: Type of inspection performed
 - inspection_date: Date inspection occurred (YYYY-MM-DD format)
@@ -141,7 +148,7 @@ FIELD DEFINITIONS:
 - release_date: Date of release (YYYY-MM-DD format)
 - structure_type: Type of structure (residential, commercial, etc.)
 - reason_for_release: Reason the release was granted
-- address_full: Complete address
+- address_full: Complete address (only if clearly readable)
 - street_number: House/building number
 - street_name: Street name
 - city: City name
@@ -157,7 +164,8 @@ FIELD DEFINITIONS:
 
 OUTPUT REQUIREMENTS:
 - Return ONLY valid JSON
-- Use null for fields that cannot be determined
+- Use null for ANY field that is redacted, unclear, or cannot be clearly read
+- NEVER guess values - if uncertain, use null
 - Use the exact field names shown above
 - Dates must be in YYYY-MM-DD format
 - Status must be one of: pass, fail, partial, unknown

@@ -6,8 +6,70 @@ from typing import Any, Optional
 from dateutil import parser as date_parser
 
 
+# Patterns that indicate redacted/unclear content (OCR artifacts from blacked-out areas)
+GARBAGE_PATTERNS = [
+    r'^[^a-zA-Z0-9]*$',  # Only special characters
+    r'^[█▓▒░■□▪▫]+',  # Block characters (redaction marks)
+    r'^\*+$',  # Only asterisks
+    r'^[_\-=]+$',  # Only underscores/dashes
+    r'^[x]{3,}$',  # Multiple x's (common redaction)
+    r'^\[redacted\]$',
+    r'^\[blocked\]$',
+    r'^\[removed\]$',
+]
+
+# Minimum readable character ratio for valid text
+MIN_READABLE_RATIO = 0.6
+
+
+def is_garbage_text(text: str) -> bool:
+    """Check if text appears to be garbage/OCR artifacts from redacted content."""
+    if not text or len(text.strip()) == 0:
+        return True
+
+    text = text.strip()
+
+    # Check against garbage patterns
+    for pattern in GARBAGE_PATTERNS:
+        if re.match(pattern, text, re.IGNORECASE):
+            return True
+
+    # Check readable character ratio
+    readable_chars = sum(1 for c in text if c.isalnum() or c.isspace())
+    if len(text) > 0 and readable_chars / len(text) < MIN_READABLE_RATIO:
+        return True
+
+    # Check for excessive repeated characters (OCR artifacts)
+    if len(text) >= 4:
+        for i in range(len(text) - 3):
+            if text[i] == text[i+1] == text[i+2] == text[i+3] and not text[i].isspace():
+                # Allow some repeats like "1111" for numbers but not random chars
+                if not text[i].isdigit():
+                    return True
+
+    return False
+
+
+def clean_ocr_artifacts(text: str) -> str:
+    """Remove common OCR artifacts from redacted/blacked-out areas."""
+    if not text:
+        return text
+
+    # Remove lines that are mostly non-readable characters
+    lines = text.split('\n')
+    clean_lines = []
+    for line in lines:
+        if not is_garbage_text(line):
+            clean_lines.append(line)
+
+    return '\n'.join(clean_lines)
+
+
 class RegexExtractor:
-    """Extract fields from text using regex patterns and heuristics."""
+    """Extract fields from text using regex patterns and heuristics.
+
+    Only extracts clearly visible text - skips redacted or unclear content.
+    """
 
     # Permit number patterns
     PERMIT_PATTERNS = [
@@ -145,11 +207,18 @@ class RegexExtractor:
         return result
 
     def _extract_permit_number(self, text: str) -> tuple[Optional[str], float]:
-        """Extract permit number from text."""
+        """Extract permit number from text. Only returns clearly readable values."""
         for pattern in self.PERMIT_PATTERNS:
             match = re.search(pattern, text, re.IGNORECASE)
             if match:
                 permit_num = match.group(1).strip()
+                # Skip if it looks like garbage/redacted content
+                if is_garbage_text(permit_num):
+                    continue
+                # Permit numbers should be mostly alphanumeric
+                alnum_ratio = sum(1 for c in permit_num if c.isalnum()) / max(len(permit_num), 1)
+                if alnum_ratio < 0.7:
+                    continue
                 # Higher confidence for explicit labels
                 conf = 0.9 if "permit" in pattern.lower() else 0.7
                 return permit_num, conf
@@ -195,13 +264,19 @@ class RegexExtractor:
         return None, 0.0
 
     def _extract_address(self, text: str) -> tuple[Optional[str], float]:
-        """Extract address from text."""
+        """Extract address from text. Only returns clearly readable values."""
         for pattern in self.ADDRESS_PATTERNS:
             match = re.search(pattern, text, re.IGNORECASE)
             if match:
                 address = match.group(1).strip()
                 # Clean up the address
                 address = re.sub(r"\s+", " ", address)
+                # Skip if it looks like garbage/redacted content
+                if is_garbage_text(address):
+                    continue
+                # Address should have reasonable readable content
+                if len(address) < 5:
+                    continue
                 conf = 0.8 if any(label in pattern.lower() for label in ["address", "location", "property"]) else 0.6
                 return address, conf
         return None, 0.0

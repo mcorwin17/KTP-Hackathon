@@ -54,6 +54,23 @@ SIGNATURE_PATTERNS = [
     r"\nBest,?\s*\n.*",
 ]
 
+# OCR artifacts from redacted/blacked-out content
+OCR_GARBAGE_PATTERNS = [
+    r'[█▓▒░■□▪▫]{2,}',  # Block characters (redaction marks)
+    r'[■]{2,}',  # Solid blocks
+    r'\*{4,}',  # Multiple asterisks (redaction)
+    r'X{4,}',  # Multiple X's (redaction)
+    r'x{4,}',  # Multiple x's (redaction)
+    r'_{4,}',  # Multiple underscores
+    r'\[REDACTED\]',
+    r'\[BLOCKED\]',
+    r'\[REMOVED\]',
+    r'\[CENSORED\]',
+]
+
+# Minimum readable ratio for a line to be kept
+MIN_LINE_READABLE_RATIO = 0.5
+
 
 def remove_security_banners(text: str) -> str:
     """Remove security warning banners from email text."""
@@ -131,13 +148,56 @@ def remove_html_artifacts(text: str) -> str:
     return result
 
 
-def clean_text(raw_text: str, preserve_signature: bool = False) -> str:
+def is_line_readable(line: str) -> bool:
+    """Check if a line has enough readable content to keep."""
+    if not line or len(line.strip()) == 0:
+        return True  # Keep empty lines for formatting
+
+    line = line.strip()
+
+    # Check for explicit redaction markers
+    for pattern in OCR_GARBAGE_PATTERNS:
+        if re.search(pattern, line, re.IGNORECASE):
+            return False
+
+    # Check readable character ratio
+    readable_chars = sum(1 for c in line if c.isalnum() or c.isspace() or c in '.,;:!?()-\'\"')
+    if len(line) > 3 and readable_chars / len(line) < MIN_LINE_READABLE_RATIO:
+        return False
+
+    return True
+
+
+def remove_ocr_artifacts(text: str) -> str:
+    """
+    Remove OCR artifacts from redacted/blacked-out areas.
+
+    This filters out lines that appear to be garbage from OCR trying to
+    read blacked-out or redacted content in PDFs/images.
+    """
+    if not text:
+        return text
+
+    # Remove explicit garbage patterns
+    result = text
+    for pattern in OCR_GARBAGE_PATTERNS:
+        result = re.sub(pattern, '', result, flags=re.IGNORECASE)
+
+    # Filter lines that are mostly unreadable
+    lines = result.split('\n')
+    clean_lines = [line for line in lines if is_line_readable(line)]
+
+    return '\n'.join(clean_lines)
+
+
+def clean_text(raw_text: str, preserve_signature: bool = False, remove_redactions: bool = True) -> str:
     """
     Clean raw email/portal text by removing noise.
 
     Args:
         raw_text: The raw text to clean
         preserve_signature: If True, keeps signature section (marked)
+        remove_redactions: If True, removes OCR artifacts from redacted content
 
     Returns:
         Cleaned text suitable for extraction
@@ -149,6 +209,10 @@ def clean_text(raw_text: str, preserve_signature: bool = False) -> str:
 
     # Remove HTML artifacts first
     text = remove_html_artifacts(text)
+
+    # Remove OCR artifacts from redacted/blacked-out content
+    if remove_redactions:
+        text = remove_ocr_artifacts(text)
 
     # Remove security banners
     text = remove_security_banners(text)
