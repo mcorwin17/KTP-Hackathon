@@ -150,7 +150,7 @@ class TestExtractFields:
     def test_extracts_with_attachment(self):
         main_text = "See attachment for details."
         attachment_text = """
-        Permit: #FROM-ATTACH
+        Permit: #ATT-2026-99999
         Result: Failed
         """
 

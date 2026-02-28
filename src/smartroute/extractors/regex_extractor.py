@@ -141,19 +141,20 @@ class RegexExtractor:
     Only extracts clearly visible text - skips redacted or unclear content.
     """
 
-    # Permit number patterns - more flexible for OCR
+    # Permit number patterns - ordered by specificity
     PERMIT_PATTERNS = [
-        # Explicit labels with flexible spacing
-        r"Permit\s*#\s*:?\s*([A-Z0-9][A-Z0-9\-\s]{4,}[A-Z0-9])",
-        r"Permit\s+(?:Number|No\.?)\s*:?\s*([A-Z0-9][A-Z0-9\-\s]{4,}[A-Z0-9])",
-        r"Permit\s*:?\s*#?\s*([A-Z]{1,3}[\-\s]?\d{4}[\-\s]?\d{3,6})",
-        # Common formats: BP-2026-00142, CP-2026-00201, IP-2026-00050
-        r"\b([A-Z]{2}[\-\s]?\d{4}[\-\s]?\d{4,6})\b",
-        # Standalone permit-like numbers
-        r"#\s*(\d{6,})",
-        r"(?:permit|application)\s*(?:no|number|#)?\s*:?\s*([A-Z]?\d{6,})",
-        # More relaxed pattern for OCR
-        r"\b([A-Z]{1,3}[\-\s]?20\d{2}[\-\s]?\d{3,6})\b",
+        # Structured format first: BP-2026-00142, CP-2026-00201, IP-2026-00050
+        r"(?:Permit\s*(?:#|Number|No\.?)\s*:?\s*)([A-Z]{1,3}-?\d{4}-?\d{3,6})",
+        r"(?:Permit\s*:?\s*#?\s*)([A-Z]{1,3}-?\d{4}-?\d{3,6})",
+        # Standalone structured format (no label needed)
+        r"\b([A-Z]{2}-\d{4}-\d{4,6})\b",
+        r"\b([A-Z]{1,3}-20\d{2}-\d{3,6})\b",
+        # Labeled with alphanumeric-only capture (no spaces allowed in permit)
+        r"Permit\s*#\s*:?\s*([A-Z0-9][A-Z0-9\-]{4,20})",
+        r"Permit\s+(?:Number|No\.?)\s*:?\s*([A-Z0-9][A-Z0-9\-]{4,20})",
+        # Standalone number references
+        r"#\s*(\d{5,})",
+        r"(?:permit|application)\s*(?:no|number|#)?\s*:?\s*([A-Z]?\d{5,})",
     ]
 
     # Date patterns - expanded for OCR variations
@@ -336,7 +337,9 @@ class RegexExtractor:
         struct_type, conf = self._extract_structure_type(combined_text)
         if struct_type:
             result["site"]["structure_type"] = struct_type
+            result["release"]["structure_type"] = struct_type
             result["field_confidence"]["site.structure_type"] = conf
+            result["field_confidence"]["release.structure_type"] = conf
 
         # Extract contacts (emails and phones)
         contacts = self._extract_contacts(combined_text)
@@ -435,28 +438,41 @@ class RegexExtractor:
             pos = date_info["position"]
             parsed = date_info["parsed"]
 
-            # Look at context around the date (50 chars before)
-            context_start = max(0, pos - 50)
+            # Look at context around the date (80 chars before)
+            context_start = max(0, pos - 80)
             context = text_lower[context_start:pos]
 
-            if "inspection" in context and "date" in context:
+            if any(kw in context for kw in ["inspection", "inspected", "insp ", "insp."]):
                 result["inspection"]["inspection_date"] = parsed
-            elif "schedule" in context:
+            elif any(kw in context for kw in ["schedule", "planned", "upcoming"]):
                 result["inspection"]["scheduled_date"] = parsed
-            elif "release" in context:
+            elif any(kw in context for kw in ["release", "approved on", "cleared on"]):
                 result["release"]["release_date"] = parsed
+            elif any(kw in context for kw in ["date", "completed", "conducted", " on ", "sent"]):
+                # Generic "date" label — likely inspection date
+                if not result["inspection"].get("inspection_date"):
+                    result["inspection"]["inspection_date"] = parsed
             elif not result["inspection"].get("inspection_date"):
-                # Default first date to inspection date
+                # Default first unassigned date to inspection date
                 result["inspection"]["inspection_date"] = parsed
 
     def _extract_status(self, text: str) -> tuple[Optional[str], float]:
         """Extract inspection status from text."""
-        text_lower = text.lower()
+        # First check for explicit labels (highest confidence)
+        label_patterns = [
+            (r"(?:inspection\s+)?(?:status|result|outcome)\s*:?\s*(?:is\s+)?(pass(?:ed)?|approv(?:ed|al)|ok|complete[d]?)", "pass", 0.95),
+            (r"(?:inspection\s+)?(?:status|result|outcome)\s*:?\s*(?:is\s+)?(fail(?:ed)?|reject(?:ed)?|denied|not\s+approv(?:ed|al))", "fail", 0.95),
+            (r"(?:inspection\s+)?(?:status|result|outcome)\s*:?\s*(?:is\s+)?(partial(?:ly)?|conditional(?:ly)?)", "partial", 0.95),
+            (r"(?:inspection\s+)?(?:status|result|outcome)\s*:?\s*(?:is\s+)?(pending|scheduled|under\s+review|in\s+review)", "unknown", 0.85),
+        ]
+        for pattern, status, conf in label_patterns:
+            if re.search(pattern, text, re.IGNORECASE):
+                return status, conf
 
+        # Then check for standalone keywords
         for pattern, status in self.STATUS_PATTERNS:
-            if re.search(pattern, text_lower):
-                # Higher confidence for explicit status labels
-                conf = 0.9 if "status" in pattern or "result" in pattern.lower() else 0.75
+            if re.search(pattern, text, re.IGNORECASE):
+                conf = 0.85 if "status" in pattern or "result" in pattern.lower() else 0.75
                 return status, conf
 
         return None, 0.0
@@ -587,10 +603,24 @@ class RegexExtractor:
 
     def _extract_inspector(self, text: str) -> tuple[Optional[str], float]:
         """Extract inspector name from text."""
-        for pattern in self.INSPECTOR_PATTERNS:
+        # Extended patterns — handle all-caps, varied labels, signatures
+        patterns = [
+            r"[Ii]nspector\s*:?\s*([A-Z][a-zA-Z]+\s+[A-Z][a-zA-Z]+)",
+            r"[Ii]nspected\s+[Bb]y\s*:?\s*([A-Z][a-zA-Z]+\s+[A-Z][a-zA-Z]+)",
+            r"[Ii]nspector\s+[Nn]ame\s*:?\s*([A-Z][a-zA-Z]+\s+[A-Z][a-zA-Z]+)",
+            r"[Ee]xaminer\s*:?\s*([A-Z][a-zA-Z]+\s+[A-Z][a-zA-Z]+)",
+            # All-caps: INSPECTOR: JOHN SMITH
+            r"INSPECTOR\s*:?\s*([A-Z][A-Z]+\s+[A-Z][A-Z]+)",
+            # "Inspector John Smith" without colon
+            r"[Ii]nspector\s+([A-Z][a-zA-Z]+\s+[A-Z][a-zA-Z]+)",
+        ]
+        for pattern in patterns:
             match = re.search(pattern, text)
             if match:
                 name = match.group(1).strip()
+                # Title-case if all caps
+                if name.isupper():
+                    name = name.title()
                 if not is_garbage_text(name) and len(name) >= 3:
-                    return name, 0.8
+                    return name, 0.85
         return None, 0.0
