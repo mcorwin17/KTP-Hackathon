@@ -235,12 +235,26 @@ class RegexExtractor:
         r"(\d{1,5}\s+[A-Za-z][A-Za-z0-9\s\.]{5,40}(?:,\s*[A-Za-z\s]+)?(?:,?\s*\d{5})?)",
     ]
 
-    # Structure type patterns
+    # Structure type patterns - order matters, most specific first
     STRUCTURE_TYPE_PATTERNS = [
-        r"(?:Structure|Building|Property)\s+[Tt]ype\s*:?\s*([A-Za-z\-\s]+?)(?:\n|,|$)",
-        r"[Tt]ype\s*:?\s*(Residential|Commercial|Industrial|Mixed[\-\s]?Use)",
-        r"\b(Residential|Commercial|Industrial|Mixed[\-\s]?Use)\b",
+        # Explicit "Structure Type:" label
+        r"(?:Structure|Building|Property)\s+[Tt]ype\s*:?\s*([A-Za-z\-]+)",
+        # Just "Type:" but only when followed by structure type values (not inspection types)
+        r"(?<![Ii]nspection\s)[Tt]ype\s*:?\s*(Residential|Commercial|Industrial|Mixed[\-\s]?Use)",
     ]
+
+    # Structure type abbreviation mappings
+    STRUCTURE_TYPE_ABBREVS = {
+        "res": "Residential",
+        "resi": "Residential",
+        "resid": "Residential",
+        "comm": "Commercial",
+        "com": "Commercial",
+        "ind": "Industrial",
+        "indus": "Industrial",
+        "mix": "Mixed-Use",
+        "mixed": "Mixed-Use",
+    }
 
     # Inspection type patterns
     INSPECTION_TYPE_PATTERNS = [
@@ -471,12 +485,56 @@ class RegexExtractor:
 
     def _extract_structure_type(self, text: str) -> tuple[Optional[str], float]:
         """Extract structure/building type from text."""
+        # First try explicit patterns
         for pattern in self.STRUCTURE_TYPE_PATTERNS:
             match = re.search(pattern, text, re.IGNORECASE)
             if match:
                 struct_type = match.group(1).strip()
-                struct_type = struct_type.title()
-                return struct_type, 0.8
+                # Remove trailing punctuation
+                struct_type = re.sub(r'[.,;:]+$', '', struct_type).strip()
+                # Check if it's an abbreviation
+                struct_lower = struct_type.lower()
+                if struct_lower in self.STRUCTURE_TYPE_ABBREVS:
+                    return self.STRUCTURE_TYPE_ABBREVS[struct_lower], 0.85
+                # Normalize known values
+                if struct_lower in ["residential", "res"]:
+                    return "Residential", 0.9
+                elif struct_lower in ["commercial", "comm", "com"]:
+                    return "Commercial", 0.9
+                elif struct_lower in ["industrial", "ind"]:
+                    return "Industrial", 0.9
+                elif "mixed" in struct_lower or struct_lower == "mix":
+                    return "Mixed-Use", 0.9
+                # Return as-is if not recognized abbreviation
+                return struct_type.title(), 0.8
+
+        # Look for standalone structure type keywords with context
+        # "type: res" or "type:res" patterns (common in mobile/short messages)
+        abbrev_pattern = r"[Tt]ype\s*:?\s*(res|comm?|ind|mix(?:ed)?)\b"
+        match = re.search(abbrev_pattern, text, re.IGNORECASE)
+        if match:
+            abbrev = match.group(1).lower()
+            if abbrev in self.STRUCTURE_TYPE_ABBREVS:
+                return self.STRUCTURE_TYPE_ABBREVS[abbrev], 0.8
+            # Handle partial matches
+            if abbrev.startswith("res"):
+                return "Residential", 0.8
+            elif abbrev.startswith("com"):
+                return "Commercial", 0.8
+            elif abbrev.startswith("ind"):
+                return "Industrial", 0.8
+            elif abbrev.startswith("mix"):
+                return "Mixed-Use", 0.8
+
+        # Last resort: look for standalone full structure type words
+        standalone_pattern = r"\b(Residential|Commercial|Industrial|Mixed[\-\s]?Use)\b"
+        match = re.search(standalone_pattern, text, re.IGNORECASE)
+        if match:
+            struct_type = match.group(1).strip()
+            if "mixed" in struct_type.lower():
+                return "Mixed-Use", 0.7
+            return struct_type.title(), 0.7
+
         return None, 0.0
 
     def _extract_contacts(self, text: str) -> list[dict]:
