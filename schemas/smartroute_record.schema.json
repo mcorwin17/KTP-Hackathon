@@ -1,0 +1,160 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SmartrouteRecord",
+  "description": "Normalized structured record for inspector communications",
+  "type": "object",
+  "properties": {
+    "source": {
+      "type": "object",
+      "properties": {
+        "source_type": {
+          "type": "string",
+          "enum": ["email", "portal", "attachment_ocr"]
+        },
+        "received_at": {
+          "type": ["string", "null"],
+          "format": "date-time"
+        },
+        "from": {
+          "type": "object",
+          "properties": {
+            "name": {"type": "string"},
+            "email": {"type": "string"}
+          }
+        },
+        "to": {
+          "type": "array",
+          "items": {"type": "string"}
+        },
+        "subject": {"type": "string"},
+        "raw_text": {"type": "string"},
+        "clean_text": {"type": "string"},
+        "attachments": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "filename": {"type": "string"},
+              "content_type": {"type": "string"},
+              "extracted_text": {"type": "string"}
+            }
+          }
+        }
+      }
+    },
+    "jurisdiction": {
+      "type": "object",
+      "properties": {
+        "name": {"type": "string"},
+        "county": {"type": "string"},
+        "state": {"type": "string", "default": "SC"}
+      }
+    },
+    "permit": {
+      "type": "object",
+      "properties": {
+        "permit_number": {"type": "string"},
+        "permit_type": {"type": "string"},
+        "permit_category": {"type": "string"}
+      }
+    },
+    "inspection": {
+      "type": "object",
+      "properties": {
+        "inspection_type": {"type": "string"},
+        "inspection_date": {"type": ["string", "null"], "format": "date"},
+        "scheduled_date": {"type": ["string", "null"], "format": "date"},
+        "completed_date": {"type": ["string", "null"], "format": "date"},
+        "status": {
+          "type": "string",
+          "enum": ["pass", "fail", "partial", "unknown"]
+        },
+        "description": {"type": "string"},
+        "notes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "date": {"type": "string"},
+              "text": {"type": "string"}
+            }
+          }
+        }
+      }
+    },
+    "release": {
+      "type": "object",
+      "properties": {
+        "release_date": {"type": ["string", "null"], "format": "date"},
+        "release_type": {"type": "string"},
+        "structure_type": {"type": "string"},
+        "reason_for_release": {"type": "string"}
+      }
+    },
+    "site": {
+      "type": "object",
+      "properties": {
+        "address_full": {"type": "string"},
+        "street_number": {"type": "string"},
+        "street_name": {"type": "string"},
+        "city": {"type": "string"},
+        "state": {"type": "string", "default": "SC"},
+        "zip": {"type": "string"},
+        "subdivision": {"type": "string"},
+        "lot_unit": {"type": "string"},
+        "parcel_id": {"type": "string"},
+        "flood_zone": {"type": "string"}
+      }
+    },
+    "contacts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "role": {
+            "type": "string",
+            "enum": ["inspector", "requester", "contractor", "owner"]
+          },
+          "name": {"type": "string"},
+          "org": {"type": "string"},
+          "phone": {"type": "string"},
+          "email": {"type": "string"}
+        }
+      }
+    },
+    "operational": {
+      "type": "object",
+      "properties": {
+        "action_required": {"type": "boolean"},
+        "action_reason": {"type": "string"},
+        "recommended_actions": {
+          "type": "array",
+          "items": {"type": "string"}
+        },
+        "route_to_team": {
+          "type": "string",
+          "enum": ["RELEASE_DESK", "FIELD_DISPATCH", "PERMITTING", "ENGINEERING", "CUSTOMER_SERVICE", "UNKNOWN"]
+        },
+        "priority": {
+          "type": "string",
+          "enum": ["low", "normal", "high"]
+        }
+      }
+    },
+    "quality": {
+      "type": "object",
+      "properties": {
+        "confidence_overall": {"type": "number", "minimum": 0, "maximum": 1},
+        "field_confidence": {
+          "type": "object",
+          "additionalProperties": {"type": "number"}
+        },
+        "missing_required_fields": {
+          "type": "array",
+          "items": {"type": "string"}
+        }
+      }
+    }
+  },
+  "required": ["source", "operational", "quality"]
+}
