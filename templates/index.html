@@ -279,6 +279,12 @@
             color: var(--accent-rose);
         }
 
+        .file-hint {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            font-style: italic;
+        }
+
         /* Results */
         .results-grid {
             display: grid;
@@ -469,11 +475,12 @@
                 <div class="textarea-wrapper">
                     <textarea id="inputText" placeholder="Paste your inspector message here...&#10;&#10;Examples: formal inspection report, portal export, forwarded email chain, mobile text, or pasted spreadsheet data."></textarea>
                     <div class="pdf-upload-row">
-                        <input type="file" id="pdfInput" class="pdf-input" accept=".pdf" onchange="handlePdfUpload(event)">
-                        <button type="button" id="pdfBtn" class="pdf-btn" onclick="document.getElementById('pdfInput').click()">
-                            📎 Attach PDF
+                        <input type="file" id="fileInput" class="pdf-input" accept=".pdf,.png,.jpg,.jpeg,.gif,.bmp,.tiff,.tif,.webp" onchange="handleFileUpload(event)">
+                        <button type="button" id="fileBtn" class="pdf-btn" onclick="document.getElementById('fileInput').click()">
+                            📎 Attach File
                         </button>
-                        <span id="pdfStatus" class="pdf-status"></span>
+                        <span class="file-hint">PDF, PNG, JPG, etc.</span>
+                        <span id="fileStatus" class="pdf-status"></span>
                     </div>
                 </div>
                 <div class="btn-row">
@@ -622,26 +629,29 @@ BP-2026-00146\t1-Feb-2026\t222 Birch Ct, Springfield, 62705\tResidential\tPass\t
         function loadSample(type) {
             document.getElementById('inputText').value = SAMPLES[type] || '';
             document.getElementById('inputText').focus();
-            clearPdfStatus();
+            clearFileStatus();
         }
 
-        async function handlePdfUpload(event) {
+        async function handleFileUpload(event) {
             const file = event.target.files[0];
             if (!file) return;
 
-            const pdfBtn = document.getElementById('pdfBtn');
-            const pdfStatus = document.getElementById('pdfStatus');
+            const fileBtn = document.getElementById('fileBtn');
+            const fileStatus = document.getElementById('fileStatus');
 
-            pdfBtn.classList.add('loading');
-            pdfBtn.disabled = true;
-            pdfStatus.textContent = 'Extracting text from PDF...';
-            pdfStatus.className = 'pdf-status';
+            fileBtn.classList.add('loading');
+            fileBtn.disabled = true;
+
+            const ext = file.name.split('.').pop().toLowerCase();
+            const isImage = ['png', 'jpg', 'jpeg', 'gif', 'bmp', 'tiff', 'tif', 'webp'].includes(ext);
+            fileStatus.textContent = isImage ? 'Running OCR on image...' : 'Extracting text from PDF...';
+            fileStatus.className = 'pdf-status';
 
             try {
                 const formData = new FormData();
                 formData.append('file', file);
 
-                const resp = await fetch('/upload-pdf', {
+                const resp = await fetch('/upload-file', {
                     method: 'POST',
                     body: formData
                 });
@@ -649,33 +659,37 @@ BP-2026-00146\t1-Feb-2026\t222 Birch Ct, Springfield, 62705\tResidential\tPass\t
                 const data = await resp.json();
 
                 if (data.error) {
-                    pdfStatus.textContent = data.error;
-                    pdfStatus.className = 'pdf-status error';
+                    fileStatus.textContent = data.error;
+                    fileStatus.className = 'pdf-status error';
                 } else {
                     document.getElementById('inputText').value = data.text;
-                    pdfStatus.textContent = `✓ Extracted ${data.pages} page(s) from ${file.name}`;
-                    pdfStatus.className = 'pdf-status success';
+                    if (data.type === 'pdf') {
+                        fileStatus.textContent = `✓ Extracted ${data.pages} page(s) from ${file.name}`;
+                    } else {
+                        fileStatus.textContent = `✓ OCR completed for ${file.name}`;
+                    }
+                    fileStatus.className = 'pdf-status success';
                 }
             } catch (err) {
-                pdfStatus.textContent = 'Failed to upload PDF: ' + err.message;
-                pdfStatus.className = 'pdf-status error';
+                fileStatus.textContent = 'Failed to process file: ' + err.message;
+                fileStatus.className = 'pdf-status error';
             } finally {
-                pdfBtn.classList.remove('loading');
-                pdfBtn.disabled = false;
+                fileBtn.classList.remove('loading');
+                fileBtn.disabled = false;
                 event.target.value = '';
             }
         }
 
-        function clearPdfStatus() {
-            document.getElementById('pdfStatus').textContent = '';
-            document.getElementById('pdfStatus').className = 'pdf-status';
-            document.getElementById('pdfInput').value = '';
+        function clearFileStatus() {
+            document.getElementById('fileStatus').textContent = '';
+            document.getElementById('fileStatus').className = 'pdf-status';
+            document.getElementById('fileInput').value = '';
         }
 
         function clearAll() {
             document.getElementById('inputText').value = '';
             document.getElementById('resultsSection').classList.add('hidden');
-            clearPdfStatus();
+            clearFileStatus();
         }
 
         function syntaxHighlight(json) {
