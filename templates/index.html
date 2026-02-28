@@ -5,56 +5,84 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SmartRoute — Inspector Message Extraction</title>
     <meta name="description" content="Paste a messy inspector email and instantly see extracted fields and routing decisions.">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Sora:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-primary: #0a0e1a;
-            --bg-secondary: #111827;
-            --bg-card: rgba(17, 24, 39, 0.8);
-            --bg-glass: rgba(255, 255, 255, 0.03);
-            --border: rgba(255, 255, 255, 0.08);
-            --border-focus: rgba(99, 102, 241, 0.5);
-            --text-primary: #f1f5f9;
-            --text-secondary: #94a3b8;
-            --text-muted: #64748b;
-            --accent-indigo: #6366f1;
-            --accent-cyan: #22d3ee;
-            --accent-emerald: #10b981;
-            --accent-rose: #f43f5e;
-            --accent-amber: #f59e0b;
-            --accent-purple: #a78bfa;
-            --gradient-1: linear-gradient(135deg, #6366f1, #8b5cf6, #a78bfa);
-            --gradient-2: linear-gradient(135deg, #06b6d4, #22d3ee);
-            --shadow-glow: 0 0 30px rgba(99, 102, 241, 0.15);
+            --bg-warm: #faf8f5;
+            --bg-card: #ffffff;
+            --bg-input: #f5f3f0;
+            --bg-code: #1a1d24;
+
+            --border-light: #e8e4df;
+            --border-medium: #d4cfc7;
+            --border-focus: #0d7377;
+
+            --text-primary: #1a1d24;
+            --text-secondary: #4a4a4a;
+            --text-muted: #7a7a7a;
+            --text-inverse: #faf8f5;
+
+            --accent-teal: #0d7377;
+            --accent-teal-light: #e8f4f4;
+            --accent-coral: #c9543d;
+            --accent-coral-light: #fdf0ed;
+            --accent-gold: #b8860b;
+            --accent-gold-light: #fdf8e8;
+            --accent-slate: #475569;
+
+            --success: #2d6a4f;
+            --success-light: #e9f5ef;
+            --warning: #b8860b;
+            --warning-light: #fdf8e8;
+            --error: #9b2c2c;
+            --error-light: #fdf0f0;
+
+            --shadow-sm: 0 1px 2px rgba(26, 29, 36, 0.04);
+            --shadow-md: 0 4px 12px rgba(26, 29, 36, 0.06);
+            --shadow-lg: 0 8px 24px rgba(26, 29, 36, 0.08);
+            --shadow-focus: 0 0 0 3px rgba(13, 115, 119, 0.12);
+
+            --radius-sm: 4px;
+            --radius-md: 8px;
+            --radius-lg: 12px;
+
+            --transition-fast: 150ms ease;
+            --transition-base: 250ms ease;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
-        body {
-            font-family: 'Inter', -apple-system, sans-serif;
-            background: var(--bg-primary);
-            color: var(--text-primary);
-            min-height: 100vh;
-            overflow-x: hidden;
+        html {
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
-        /* Animated background */
+        body {
+            font-family: 'Sora', sans-serif;
+            background: var(--bg-warm);
+            color: var(--text-primary);
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        /* Subtle texture overlay */
         body::before {
             content: '';
             position: fixed;
             top: 0; left: 0; right: 0; bottom: 0;
-            background:
-                radial-gradient(ellipse 80% 50% at 50% -20%, rgba(99, 102, 241, 0.15), transparent),
-                radial-gradient(ellipse 60% 40% at 80% 80%, rgba(34, 211, 238, 0.08), transparent),
-                radial-gradient(ellipse 50% 30% at 10% 60%, rgba(167, 139, 250, 0.08), transparent);
-            z-index: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%' height='100%' filter='url(%23noise)'/%3E%3C/svg%3E");
+            opacity: 0.015;
             pointer-events: none;
+            z-index: 0;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1000px;
             margin: 0 auto;
-            padding: 2rem;
+            padding: 3rem 2rem 4rem;
             position: relative;
             z-index: 1;
         }
@@ -62,144 +90,244 @@
         /* Header */
         .header {
             text-align: center;
-            margin-bottom: 3rem;
-            animation: fadeInDown 0.6s ease;
+            margin-bottom: 3.5rem;
+        }
+
+        .header-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.375rem 0.875rem;
+            background: var(--accent-teal-light);
+            color: var(--accent-teal);
+            font-size: 0.6875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            border-radius: 100px;
+            margin-bottom: 1.25rem;
+        }
+
+        .header-badge::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            background: var(--accent-teal);
+            border-radius: 50%;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(0.85); }
         }
 
         .header h1 {
-            font-size: 2.8rem;
-            font-weight: 800;
-            background: var(--gradient-1);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 0.5rem;
+            font-family: 'Instrument Serif', Georgia, serif;
+            font-size: 3.25rem;
+            font-weight: 400;
+            color: var(--text-primary);
             letter-spacing: -0.02em;
+            margin-bottom: 0.625rem;
+        }
+
+        .header h1 span {
+            font-style: italic;
+            color: var(--accent-teal);
         }
 
         .header p {
-            color: var(--text-secondary);
-            font-size: 1.1rem;
-            font-weight: 300;
+            font-size: 1.0625rem;
+            color: var(--text-muted);
+            font-weight: 400;
+            max-width: 480px;
+            margin: 0 auto;
         }
 
-        .badge {
-            display: inline-block;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-bottom: 1rem;
-            background: rgba(99, 102, 241, 0.15);
-            color: var(--accent-indigo);
-            border: 1px solid rgba(99, 102, 241, 0.3);
+        /* Cards */
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-lg);
+            padding: 1.75rem;
+            box-shadow: var(--shadow-sm);
+            transition: box-shadow var(--transition-base), border-color var(--transition-base);
+        }
+
+        .card:hover {
+            box-shadow: var(--shadow-md);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .card-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.125rem;
+            flex-shrink: 0;
+        }
+
+        .card-icon.teal {
+            background: var(--accent-teal-light);
+        }
+
+        .card-icon.coral {
+            background: var(--accent-coral-light);
+        }
+
+        .card-icon.gold {
+            background: var(--accent-gold-light);
+        }
+
+        .card-title {
+            font-family: 'Instrument Serif', Georgia, serif;
+            font-size: 1.25rem;
+            font-weight: 400;
+            color: var(--text-primary);
+            margin-bottom: 0.125rem;
+        }
+
+        .card-subtitle {
+            font-size: 0.8125rem;
+            color: var(--text-muted);
         }
 
         /* Input Section */
         .input-section {
             margin-bottom: 2rem;
-            animation: fadeInUp 0.6s ease 0.1s both;
         }
 
-        .glass-card {
-            background: var(--bg-card);
-            backdrop-filter: blur(20px);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 1.5rem;
-            box-shadow: var(--shadow-glow);
-            transition: border-color 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .glass-card:hover {
-            border-color: rgba(99, 102, 241, 0.2);
-        }
-
-        .card-header {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
+        .textarea-container {
+            position: relative;
             margin-bottom: 1rem;
-        }
-
-        .card-icon {
-            width: 36px;
-            height: 36px;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-        }
-
-        .card-title {
-            font-size: 1rem;
-            font-weight: 600;
-            color: var(--text-primary);
-        }
-
-        .card-subtitle {
-            font-size: 0.8rem;
-            color: var(--text-muted);
         }
 
         textarea {
             width: 100%;
-            min-height: 200px;
-            background: var(--bg-glass);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 1rem 1.25rem;
+            min-height: 220px;
+            padding: 1.125rem 1.25rem;
+            background: var(--bg-input);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-md);
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.875rem;
+            line-height: 1.7;
             color: var(--text-primary);
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.85rem;
-            line-height: 1.6;
             resize: vertical;
             outline: none;
-            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            transition: border-color var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast);
+        }
+
+        textarea:hover {
+            border-color: var(--border-medium);
         }
 
         textarea:focus {
+            background: var(--bg-card);
             border-color: var(--border-focus);
-            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+            box-shadow: var(--shadow-focus);
         }
 
         textarea::placeholder {
             color: var(--text-muted);
         }
 
+        /* File Upload Row */
+        .file-row {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.875rem 0;
+            border-bottom: 1px solid var(--border-light);
+            margin-bottom: 1rem;
+        }
+
+        .file-input {
+            display: none;
+        }
+
+        .file-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 0.875rem;
+            background: transparent;
+            border: 1px dashed var(--border-medium);
+            border-radius: var(--radius-sm);
+            font-family: 'Sora', sans-serif;
+            font-size: 0.8125rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all var(--transition-fast);
+        }
+
+        .file-btn:hover {
+            border-color: var(--accent-teal);
+            color: var(--accent-teal);
+            background: var(--accent-teal-light);
+        }
+
+        .file-btn.loading {
+            opacity: 0.6;
+            pointer-events: none;
+        }
+
+        .file-hint {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        .file-status {
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
+        .file-status.success { color: var(--success); }
+        .file-status.error { color: var(--error); }
+
+        /* Button Row */
         .btn-row {
             display: flex;
             gap: 0.75rem;
-            margin-top: 1rem;
             align-items: center;
         }
 
         .btn {
-            padding: 0.75rem 2rem;
-            border-radius: 12px;
-            border: none;
-            font-family: 'Inter', sans-serif;
-            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--radius-md);
+            font-family: 'Sora', sans-serif;
+            font-size: 0.875rem;
             font-weight: 600;
             cursor: pointer;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
+            transition: all var(--transition-fast);
+            border: none;
+            text-decoration: none;
         }
 
         .btn-primary {
-            background: var(--gradient-1);
-            color: white;
-            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+            background: var(--accent-teal);
+            color: var(--text-inverse);
+            box-shadow: var(--shadow-sm);
         }
 
         .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 25px rgba(99, 102, 241, 0.4);
+            background: #0b6366;
+            box-shadow: var(--shadow-md);
+            transform: translateY(-1px);
         }
 
         .btn-primary:active {
@@ -207,195 +335,235 @@
         }
 
         .btn-secondary {
-            background: var(--bg-glass);
+            background: transparent;
             color: var(--text-secondary);
-            border: 1px solid var(--border);
+            border: 1px solid var(--border-light);
         }
 
         .btn-secondary:hover {
-            color: var(--text-primary);
-            border-color: rgba(255, 255, 255, 0.15);
+            border-color: var(--border-medium);
+            background: var(--bg-input);
         }
 
         .btn:disabled {
             opacity: 0.5;
-            cursor: not-allowed;
-            transform: none !important;
+            pointer-events: none;
         }
 
-        /* PDF Upload */
-        .textarea-wrapper {
-            position: relative;
-        }
-
-        .pdf-upload-row {
+        /* Sample Chips */
+        .samples {
             display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            margin-top: 0.5rem;
-            padding-top: 0.5rem;
-            border-top: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border-light);
         }
 
-        .pdf-btn {
-            padding: 0.5rem 1rem;
-            border-radius: 8px;
-            background: var(--bg-glass);
-            border: 1px dashed var(--border);
-            color: var(--text-secondary);
-            font-size: 0.8rem;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            display: flex;
-            align-items: center;
-            gap: 0.4rem;
+        .samples-label {
+            font-size: 0.6875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-muted);
+            margin-right: 0.5rem;
+            align-self: center;
         }
 
-        .pdf-btn:hover {
-            border-color: var(--accent-indigo);
-            color: var(--accent-indigo);
-            background: rgba(99, 102, 241, 0.05);
-        }
-
-        .pdf-btn.loading {
-            opacity: 0.6;
-            cursor: wait;
-        }
-
-        .pdf-input {
-            display: none;
-        }
-
-        .pdf-status {
+        .sample-chip {
+            padding: 0.375rem 0.75rem;
+            background: var(--bg-input);
+            border: 1px solid var(--border-light);
+            border-radius: 100px;
             font-size: 0.75rem;
-            color: var(--text-muted);
+            font-weight: 500;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all var(--transition-fast);
         }
 
-        .pdf-status.success {
-            color: var(--accent-emerald);
+        .sample-chip:hover {
+            border-color: var(--accent-teal);
+            color: var(--accent-teal);
+            background: var(--accent-teal-light);
         }
 
-        .pdf-status.error {
-            color: var(--accent-rose);
+        /* Results Section */
+        .results-section {
+            margin-top: 2.5rem;
         }
 
-        .file-hint {
-            font-size: 0.7rem;
-            color: var(--text-muted);
-            font-style: italic;
-        }
-
-        /* Results */
         .results-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 1.5rem;
-            animation: fadeInUp 0.5s ease both;
+            margin-bottom: 1.5rem;
         }
 
         @media (max-width: 768px) {
             .results-grid { grid-template-columns: 1fr; }
+            .container { padding: 2rem 1.25rem; }
+            .header h1 { font-size: 2.5rem; }
         }
-
-        .result-card {
-            animation: slideIn 0.4s ease both;
-        }
-
-        .result-card:nth-child(2) { animation-delay: 0.1s; }
 
         /* JSON Display */
         .json-display {
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 10px;
-            padding: 1rem;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.8rem;
-            line-height: 1.7;
+            background: var(--bg-code);
+            border-radius: var(--radius-md);
+            padding: 1.125rem 1.25rem;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.8125rem;
+            line-height: 1.75;
             overflow-x: auto;
-            max-height: 400px;
+            max-height: 380px;
             overflow-y: auto;
+            color: #e2e8f0;
         }
 
-        .json-key { color: var(--accent-cyan); }
-        .json-string { color: var(--accent-emerald); }
-        .json-number { color: var(--accent-amber); }
-        .json-bool { color: var(--accent-purple); }
-        .json-null { color: var(--text-muted); }
+        .json-key { color: #7dd3fc; }
+        .json-string { color: #86efac; }
+        .json-number { color: #fcd34d; }
+        .json-bool { color: #c4b5fd; }
+        .json-null { color: #94a3b8; }
 
-        /* Routing Card */
-        .routing-field {
+        /* Routing Display */
+        .routing-list {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .routing-item {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0.75rem 0;
-            border-bottom: 1px solid var(--border);
+            padding: 0.875rem 0;
+            border-bottom: 1px solid var(--border-light);
         }
 
-        .routing-field:last-child { border-bottom: none; }
+        .routing-item:last-child { border-bottom: none; }
 
         .routing-label {
-            font-size: 0.8rem;
-            color: var(--text-muted);
+            font-size: 0.6875rem;
+            font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
-            font-weight: 500;
+            letter-spacing: 0.08em;
+            color: var(--text-muted);
         }
 
         .routing-value {
-            font-weight: 600;
-            font-size: 0.95rem;
+            font-size: 0.9375rem;
+            font-weight: 500;
+            color: var(--text-primary);
+            text-align: right;
         }
 
+        .routing-reason {
+            font-size: 0.8125rem;
+            font-weight: 400;
+            color: var(--text-secondary);
+            text-align: right;
+            max-width: 280px;
+        }
+
+        /* Tags */
         .tag {
-            display: inline-block;
-            padding: 3px 10px;
-            border-radius: 6px;
-            font-size: 0.75rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.375rem;
+            padding: 0.25rem 0.625rem;
+            border-radius: var(--radius-sm);
+            font-size: 0.6875rem;
             font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
         }
 
-        .tag-pass { background: rgba(16, 185, 129, 0.15); color: var(--accent-emerald); }
-        .tag-fail { background: rgba(244, 63, 94, 0.15); color: var(--accent-rose); }
-        .tag-action { background: rgba(244, 63, 94, 0.15); color: var(--accent-rose); }
-        .tag-no-action { background: rgba(16, 185, 129, 0.15); color: var(--accent-emerald); }
-        .tag-low { background: rgba(16, 185, 129, 0.15); color: var(--accent-emerald); }
-        .tag-medium { background: rgba(245, 158, 11, 0.15); color: var(--accent-amber); }
-        .tag-high { background: rgba(244, 63, 94, 0.15); color: var(--accent-rose); }
-        .tag-critical { background: rgba(244, 63, 94, 0.25); color: #ff6b8a; border: 1px solid rgba(244, 63, 94, 0.3); }
+        .tag-success {
+            background: var(--success-light);
+            color: var(--success);
+        }
 
-        /* Confidence Bar */
-        .confidence-section {
-            margin-top: 1.5rem;
-            animation: fadeInUp 0.5s ease 0.3s both;
+        .tag-error {
+            background: var(--error-light);
+            color: var(--error);
+        }
+
+        .tag-warning {
+            background: var(--warning-light);
+            color: var(--warning);
+        }
+
+        .tag-neutral {
+            background: var(--bg-input);
+            color: var(--text-secondary);
+        }
+
+        .tag-critical {
+            background: var(--error-light);
+            color: var(--error);
+            border: 1px solid rgba(155, 44, 44, 0.2);
+        }
+
+        /* Confidence Section */
+        .confidence-card {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .confidence-info {
+            flex-shrink: 0;
+        }
+
+        .confidence-label {
+            font-size: 0.6875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-muted);
+            margin-bottom: 0.25rem;
+        }
+
+        .confidence-value {
+            font-family: 'Instrument Serif', Georgia, serif;
+            font-size: 2rem;
+            color: var(--text-primary);
+        }
+
+        .confidence-bar-container {
+            flex: 1;
+            display: flex;
+            align-items: center;
         }
 
         .confidence-bar-track {
+            flex: 1;
             height: 8px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 4px;
+            background: var(--bg-input);
+            border-radius: 100px;
             overflow: hidden;
-            margin-top: 0.5rem;
         }
 
         .confidence-bar-fill {
             height: 100%;
-            border-radius: 4px;
-            transition: width 0.8s ease;
-            background: var(--gradient-2);
+            border-radius: 100px;
+            transition: width 0.6s ease-out;
+            background: var(--accent-teal);
         }
 
-        .confidence-label {
-            display: flex;
-            justify-content: space-between;
-            font-size: 0.8rem;
-            color: var(--text-muted);
+        .confidence-bar-fill.warning {
+            background: var(--warning);
         }
 
-        /* Loading */
+        .confidence-bar-fill.error {
+            background: var(--error);
+        }
+
+        /* Spinner */
         .spinner {
             display: none;
-            width: 20px;
-            height: 20px;
+            width: 18px;
+            height: 18px;
             border: 2px solid rgba(255, 255, 255, 0.3);
             border-top-color: white;
             border-radius: 50%;
@@ -405,92 +573,129 @@
         .loading .spinner { display: block; }
         .loading .btn-text { display: none; }
 
-        /* Sample buttons */
-        .samples {
-            margin-top: 0.5rem;
-            display: flex;
-            gap: 0.5rem;
-            flex-wrap: wrap;
-        }
-
-        .sample-chip {
-            padding: 4px 12px;
-            border-radius: 8px;
-            background: var(--bg-glass);
-            border: 1px solid var(--border);
-            color: var(--text-secondary);
-            font-size: 0.75rem;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-
-        .sample-chip:hover {
-            border-color: var(--accent-indigo);
-            color: var(--accent-indigo);
+        @keyframes spin {
+            to { transform: rotate(360deg); }
         }
 
         /* Hidden */
         .hidden { display: none !important; }
 
         /* Animations */
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
+        .fade-in {
+            animation: fadeIn 0.4s ease-out both;
         }
 
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+        .slide-up {
+            animation: slideUp 0.5s ease-out both;
         }
 
-        @keyframes slideIn {
-            from { opacity: 0; transform: translateY(15px) scale(0.98); }
-            to { opacity: 1; transform: translateY(0) scale(1); }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
-        @keyframes spin {
-            to { transform: rotate(360deg); }
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(16px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Scrollbar styling for JSON */
+        .json-display::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+
+        .json-display::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .json-display::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 3px;
+        }
+
+        .json-display::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        /* Footer hint */
+        .keyboard-hint {
+            text-align: center;
+            margin-top: 1rem;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        .keyboard-hint kbd {
+            display: inline-block;
+            padding: 0.125rem 0.375rem;
+            background: var(--bg-input);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-sm);
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.6875rem;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <!-- Header -->
-        <header class="header">
-            <span class="badge">MVP Demo</span>
-            <h1>⚡ SmartRoute</h1>
-            <p>Paste a messy inspector email — get clean extraction & routing in seconds</p>
+        <header class="header fade-in">
+            <span class="header-badge">Live Demo</span>
+            <h1>Smart<span>Route</span></h1>
+            <p>Paste a messy inspector message, get structured extraction and intelligent routing in seconds.</p>
         </header>
 
         <!-- Input -->
-        <section class="input-section">
-            <div class="glass-card">
+        <section class="input-section slide-up" style="animation-delay: 0.1s;">
+            <div class="card">
                 <div class="card-header">
-                    <div class="card-icon" style="background: rgba(99, 102, 241, 0.15);">📧</div>
+                    <div class="card-icon teal">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--accent-teal);">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                            <polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                    </div>
                     <div>
                         <div class="card-title">Raw Inspector Message</div>
                         <div class="card-subtitle">Paste an email, portal export, or any inspector communication</div>
                     </div>
                 </div>
-                <div class="textarea-wrapper">
-                    <textarea id="inputText" placeholder="Paste your inspector message here...&#10;&#10;Examples: formal inspection report, portal export, forwarded email chain, mobile text, or pasted spreadsheet data."></textarea>
-                    <div class="pdf-upload-row">
-                        <input type="file" id="fileInput" class="pdf-input" accept=".pdf,.png,.jpg,.jpeg,.gif,.bmp,.tiff,.tif,.webp" onchange="handleFileUpload(event)">
-                        <button type="button" id="fileBtn" class="pdf-btn" onclick="document.getElementById('fileInput').click()">
-                            📎 Attach File
-                        </button>
-                        <span class="file-hint">PDF, PNG, JPG, etc.</span>
-                        <span id="fileStatus" class="pdf-status"></span>
-                    </div>
+
+                <div class="textarea-container">
+                    <textarea id="inputText" placeholder="Paste your inspector message here...
+
+Examples: formal inspection report, portal export, forwarded email chain, mobile text, or pasted spreadsheet data."></textarea>
                 </div>
+
+                <div class="file-row">
+                    <input type="file" id="fileInput" class="file-input" accept=".pdf,.png,.jpg,.jpeg,.gif,.bmp,.tiff,.tif,.webp" onchange="handleFileUpload(event)">
+                    <button type="button" id="fileBtn" class="file-btn" onclick="document.getElementById('fileInput').click()">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/>
+                        </svg>
+                        Attach File
+                    </button>
+                    <span class="file-hint">PDF, PNG, JPG supported</span>
+                    <span id="fileStatus" class="file-status"></span>
+                </div>
+
                 <div class="btn-row">
                     <button id="extractBtn" class="btn btn-primary" onclick="doExtract()">
-                        <span class="btn-text">🔍 Extract & Route</span>
+                        <span class="btn-text">Extract & Route</span>
                         <span class="spinner"></span>
                     </button>
                     <button class="btn btn-secondary" onclick="clearAll()">Clear</button>
                 </div>
+
                 <div class="samples">
+                    <span class="samples-label">Try a sample:</span>
                     <span class="sample-chip" onclick="loadSample('formal')">Formal Report</span>
                     <span class="sample-chip" onclick="loadSample('portal')">Portal Export</span>
                     <span class="sample-chip" onclick="loadSample('mobile')">Mobile Text</span>
@@ -498,15 +703,24 @@
                     <span class="sample-chip" onclick="loadSample('datadump')">Data Dump</span>
                 </div>
             </div>
+            <p class="keyboard-hint"><kbd>Ctrl</kbd> + <kbd>Enter</kbd> to submit</p>
         </section>
 
         <!-- Results -->
-        <section id="resultsSection" class="hidden">
+        <section id="resultsSection" class="results-section hidden">
             <div class="results-grid">
                 <!-- Extracted Record -->
-                <div class="result-card glass-card">
+                <div class="card slide-up">
                     <div class="card-header">
-                        <div class="card-icon" style="background: rgba(34, 211, 238, 0.15);">📋</div>
+                        <div class="card-icon coral">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--accent-coral);">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                <polyline points="14 2 14 8 20 8"/>
+                                <line x1="16" y1="13" x2="8" y2="13"/>
+                                <line x1="16" y1="17" x2="8" y2="17"/>
+                                <polyline points="10 9 9 9 8 9"/>
+                            </svg>
+                        </div>
                         <div>
                             <div class="card-title">Extracted Record</div>
                             <div class="card-subtitle">Structured data from raw text</div>
@@ -516,26 +730,35 @@
                 </div>
 
                 <!-- Routing Decision -->
-                <div class="result-card glass-card">
+                <div class="card slide-up" style="animation-delay: 0.1s;">
                     <div class="card-header">
-                        <div class="card-icon" style="background: rgba(167, 139, 250, 0.15);">🔀</div>
+                        <div class="card-icon gold">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--accent-gold);">
+                                <circle cx="12" cy="12" r="10"/>
+                                <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/>
+                            </svg>
+                        </div>
                         <div>
                             <div class="card-title">Routing Decision</div>
                             <div class="card-subtitle">Where this message should go</div>
                         </div>
                     </div>
-                    <div id="routingDisplay"></div>
+                    <div id="routingDisplay" class="routing-list"></div>
                 </div>
             </div>
 
             <!-- Confidence -->
-            <div class="confidence-section glass-card">
-                <div class="confidence-label">
-                    <span>Extraction Confidence</span>
-                    <span id="confidenceValue">0%</span>
-                </div>
-                <div class="confidence-bar-track">
-                    <div id="confidenceBar" class="confidence-bar-fill" style="width: 0%"></div>
+            <div class="card slide-up" style="animation-delay: 0.2s;">
+                <div class="confidence-card">
+                    <div class="confidence-info">
+                        <div class="confidence-label">Extraction Confidence</div>
+                        <div id="confidenceValue" class="confidence-value">0%</div>
+                    </div>
+                    <div class="confidence-bar-container">
+                        <div class="confidence-bar-track">
+                            <div id="confidenceBar" class="confidence-bar-fill" style="width: 0%"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -644,8 +867,8 @@ BP-2026-00146\t1-Feb-2026\t222 Birch Ct, Springfield, 62705\tResidential\tPass\t
 
             const ext = file.name.split('.').pop().toLowerCase();
             const isImage = ['png', 'jpg', 'jpeg', 'gif', 'bmp', 'tiff', 'tif', 'webp'].includes(ext);
-            fileStatus.textContent = isImage ? 'Running OCR on image...' : 'Extracting text from PDF...';
-            fileStatus.className = 'pdf-status';
+            fileStatus.textContent = isImage ? 'Running OCR...' : 'Extracting text...';
+            fileStatus.className = 'file-status';
 
             try {
                 const formData = new FormData();
@@ -660,19 +883,19 @@ BP-2026-00146\t1-Feb-2026\t222 Birch Ct, Springfield, 62705\tResidential\tPass\t
 
                 if (data.error) {
                     fileStatus.textContent = data.error;
-                    fileStatus.className = 'pdf-status error';
+                    fileStatus.className = 'file-status error';
                 } else {
                     document.getElementById('inputText').value = data.text;
                     if (data.type === 'pdf') {
-                        fileStatus.textContent = `✓ Extracted ${data.pages} page(s) from ${file.name}`;
+                        fileStatus.textContent = `Extracted ${data.pages} page(s) from ${file.name}`;
                     } else {
-                        fileStatus.textContent = `✓ OCR completed for ${file.name}`;
+                        fileStatus.textContent = `OCR completed: ${file.name}`;
                     }
-                    fileStatus.className = 'pdf-status success';
+                    fileStatus.className = 'file-status success';
                 }
             } catch (err) {
-                fileStatus.textContent = 'Failed to process file: ' + err.message;
-                fileStatus.className = 'pdf-status error';
+                fileStatus.textContent = 'Failed: ' + err.message;
+                fileStatus.className = 'file-status error';
             } finally {
                 fileBtn.classList.remove('loading');
                 fileBtn.disabled = false;
@@ -682,7 +905,7 @@ BP-2026-00146\t1-Feb-2026\t222 Birch Ct, Springfield, 62705\tResidential\tPass\t
 
         function clearFileStatus() {
             document.getElementById('fileStatus').textContent = '';
-            document.getElementById('fileStatus').className = 'pdf-status';
+            document.getElementById('fileStatus').className = 'file-status';
             document.getElementById('fileInput').value = '';
         }
 
@@ -733,36 +956,43 @@ BP-2026-00146\t1-Feb-2026\t222 Birch Ct, Springfield, 62705\tResidential\tPass\t
                 // Display routing
                 const r = data.routing;
                 const actionTag = r.action_required
-                    ? '<span class="tag tag-action">🚨 ACTION REQUIRED</span>'
-                    : '<span class="tag tag-no-action">✅ No Action</span>';
-                const prioClass = 'tag-' + r.priority.toLowerCase();
+                    ? '<span class="tag tag-error">Action Required</span>'
+                    : '<span class="tag tag-success">No Action</span>';
+
+                let prioClass = 'tag-neutral';
+                if (r.priority.toLowerCase() === 'high') prioClass = 'tag-error';
+                else if (r.priority.toLowerCase() === 'medium') prioClass = 'tag-warning';
+                else if (r.priority.toLowerCase() === 'low') prioClass = 'tag-success';
+                else if (r.priority.toLowerCase() === 'critical') prioClass = 'tag-critical';
 
                 document.getElementById('routingDisplay').innerHTML = `
-                    <div class="routing-field">
+                    <div class="routing-item">
                         <span class="routing-label">Team</span>
                         <span class="routing-value">${r.team}</span>
                     </div>
-                    <div class="routing-field">
+                    <div class="routing-item">
                         <span class="routing-label">Action</span>
                         ${actionTag}
                     </div>
-                    <div class="routing-field">
+                    <div class="routing-item">
                         <span class="routing-label">Priority</span>
                         <span class="tag ${prioClass}">${r.priority}</span>
                     </div>
-                    <div class="routing-field">
+                    <div class="routing-item">
                         <span class="routing-label">Reason</span>
-                        <span class="routing-value" style="font-size:0.85rem; color:var(--text-secondary)">${r.reason}</span>
+                        <span class="routing-reason">${r.reason}</span>
                     </div>
                 `;
 
                 // Confidence
                 const pct = Math.round(data.confidence * 100);
                 document.getElementById('confidenceValue').textContent = pct + '%';
-                document.getElementById('confidenceBar').style.width = pct + '%';
 
-                const barColor = pct >= 70 ? 'var(--gradient-2)' : pct >= 40 ? 'linear-gradient(135deg, #f59e0b, #fbbf24)' : 'linear-gradient(135deg, #f43f5e, #fb7185)';
-                document.getElementById('confidenceBar').style.background = barColor;
+                const bar = document.getElementById('confidenceBar');
+                bar.style.width = pct + '%';
+                bar.className = 'confidence-bar-fill';
+                if (pct < 40) bar.classList.add('error');
+                else if (pct < 70) bar.classList.add('warning');
 
                 document.getElementById('resultsSection').classList.remove('hidden');
             } catch (err) {
