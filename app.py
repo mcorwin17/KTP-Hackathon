@@ -10,14 +10,21 @@ Run:
 from __future__ import annotations
 
 import json
+import io
 from pathlib import Path
 
-from fastapi import FastAPI, Request
+from fastapi import FastAPI, Request, UploadFile, File
 from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
 from pydantic import BaseModel
 
 from smartroute import parse_message
+
+try:
+    import pdfplumber
+    PDF_SUPPORT = True
+except ImportError:
+    PDF_SUPPORT = False
 
 app = FastAPI(title="SmartRoute", description="Inspector message extraction & routing demo", version="0.1.0")
 templates = Jinja2Templates(directory=str(Path(__file__).parent / "templates"))
@@ -69,6 +76,37 @@ async def extract_endpoint(body: ExtractRequest):
     }
 
 
+@app.post("/upload-pdf")
+async def upload_pdf(file: UploadFile = File(...)):
+    """Extract text from uploaded PDF and return it."""
+    if not PDF_SUPPORT:
+        return {"error": "PDF support not available. Install pdfplumber."}
+
+    if not file.filename.lower().endswith('.pdf'):
+        return {"error": "File must be a PDF"}
+
+    try:
+        contents = await file.read()
+        pdf_file = io.BytesIO(contents)
+
+        extracted_text = []
+        with pdfplumber.open(pdf_file) as pdf:
+            for page in pdf.pages:
+                page_text = page.extract_text()
+                if page_text:
+                    extracted_text.append(page_text)
+
+        full_text = "\n\n".join(extracted_text)
+
+        if not full_text.strip():
+            return {"error": "Could not extract text from PDF. The PDF may be image-based or empty."}
+
+        return {"text": full_text, "pages": len(extracted_text)}
+
+    except Exception as e:
+        return {"error": f"Failed to process PDF: {str(e)}"}
+
+
 @app.get("/health")
 async def health():
-    return {"status": "ok"}
+    return {"status": "ok", "pdf_support": PDF_SUPPORT}

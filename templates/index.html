@@ -223,6 +223,62 @@
             transform: none !important;
         }
 
+        /* PDF Upload */
+        .textarea-wrapper {
+            position: relative;
+        }
+
+        .pdf-upload-row {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-top: 0.5rem;
+            padding-top: 0.5rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .pdf-btn {
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            background: var(--bg-glass);
+            border: 1px dashed var(--border);
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .pdf-btn:hover {
+            border-color: var(--accent-indigo);
+            color: var(--accent-indigo);
+            background: rgba(99, 102, 241, 0.05);
+        }
+
+        .pdf-btn.loading {
+            opacity: 0.6;
+            cursor: wait;
+        }
+
+        .pdf-input {
+            display: none;
+        }
+
+        .pdf-status {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        .pdf-status.success {
+            color: var(--accent-emerald);
+        }
+
+        .pdf-status.error {
+            color: var(--accent-rose);
+        }
+
         /* Results */
         .results-grid {
             display: grid;
@@ -410,7 +466,16 @@
                         <div class="card-subtitle">Paste an email, portal export, or any inspector communication</div>
                     </div>
                 </div>
-                <textarea id="inputText" placeholder="Paste your inspector message here...&#10;&#10;Examples: formal inspection report, portal export, forwarded email chain, mobile text, or pasted spreadsheet data."></textarea>
+                <div class="textarea-wrapper">
+                    <textarea id="inputText" placeholder="Paste your inspector message here...&#10;&#10;Examples: formal inspection report, portal export, forwarded email chain, mobile text, or pasted spreadsheet data."></textarea>
+                    <div class="pdf-upload-row">
+                        <input type="file" id="pdfInput" class="pdf-input" accept=".pdf" onchange="handlePdfUpload(event)">
+                        <button type="button" id="pdfBtn" class="pdf-btn" onclick="document.getElementById('pdfInput').click()">
+                            📎 Attach PDF
+                        </button>
+                        <span id="pdfStatus" class="pdf-status"></span>
+                    </div>
+                </div>
                 <div class="btn-row">
                     <button id="extractBtn" class="btn btn-primary" onclick="doExtract()">
                         <span class="btn-text">🔍 Extract & Route</span>
@@ -557,11 +622,60 @@ BP-2026-00146\t1-Feb-2026\t222 Birch Ct, Springfield, 62705\tResidential\tPass\t
         function loadSample(type) {
             document.getElementById('inputText').value = SAMPLES[type] || '';
             document.getElementById('inputText').focus();
+            clearPdfStatus();
+        }
+
+        async function handlePdfUpload(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+
+            const pdfBtn = document.getElementById('pdfBtn');
+            const pdfStatus = document.getElementById('pdfStatus');
+
+            pdfBtn.classList.add('loading');
+            pdfBtn.disabled = true;
+            pdfStatus.textContent = 'Extracting text from PDF...';
+            pdfStatus.className = 'pdf-status';
+
+            try {
+                const formData = new FormData();
+                formData.append('file', file);
+
+                const resp = await fetch('/upload-pdf', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const data = await resp.json();
+
+                if (data.error) {
+                    pdfStatus.textContent = data.error;
+                    pdfStatus.className = 'pdf-status error';
+                } else {
+                    document.getElementById('inputText').value = data.text;
+                    pdfStatus.textContent = `✓ Extracted ${data.pages} page(s) from ${file.name}`;
+                    pdfStatus.className = 'pdf-status success';
+                }
+            } catch (err) {
+                pdfStatus.textContent = 'Failed to upload PDF: ' + err.message;
+                pdfStatus.className = 'pdf-status error';
+            } finally {
+                pdfBtn.classList.remove('loading');
+                pdfBtn.disabled = false;
+                event.target.value = '';
+            }
+        }
+
+        function clearPdfStatus() {
+            document.getElementById('pdfStatus').textContent = '';
+            document.getElementById('pdfStatus').className = 'pdf-status';
+            document.getElementById('pdfInput').value = '';
         }
 
         function clearAll() {
             document.getElementById('inputText').value = '';
             document.getElementById('resultsSection').classList.add('hidden');
+            clearPdfStatus();
         }
 
         function syntaxHighlight(json) {
