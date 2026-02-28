@@ -267,9 +267,6 @@ def compute_confidence(
     """
     Compute overall confidence score and identify missing required fields.
 
-    Optimized for OCR text where some fields may be harder to extract.
-    Gives bonus credit for having core identifying information.
-
     Args:
         record_dict: The extracted record as a dictionary
         required_fields: List of required field paths (e.g., "permit.permit_number")
@@ -284,62 +281,53 @@ def compute_confidence(
             "inspection.status",
         ]
 
-    # Field weights for confidence calculation - rebalanced for OCR tolerance
-    # Core fields still weighted heavily but more fields contribute
+    # Core field weights (these are the main contributors)
     field_weights = {
-        "permit.permit_number": 0.20,
-        "site.address_full": 0.18,
+        "permit.permit_number": 0.25,
+        "site.address_full": 0.20,
         "inspection.status": 0.15,
-        "inspection.inspection_date": 0.12,
-        "site.structure_type": 0.08,
-        "inspection.inspection_type": 0.07,
-        "release.release_date": 0.06,
-        "release.release_type": 0.06,
-        "contacts": 0.08,
+        "inspection.inspection_date": 0.15,
+        "release.release_date": 0.10,
+        "release.release_type": 0.05,
+        "contacts": 0.10,
+    }
+
+    # Bonus fields - add to confidence when present, don't subtract when absent
+    bonus_fields = {
+        "site.structure_type": 0.05,
+        "inspection.inspection_type": 0.05,
     }
 
     missing_fields = []
-    total_weight = 0.0
+    total_weight = sum(field_weights.values())  # Only core fields count toward total
     achieved_weight = 0.0
-    core_fields_found = 0
 
+    # Score core fields
     for field_path, weight in field_weights.items():
-        total_weight += weight
         value = _get_nested_value(record_dict, field_path)
 
         if value:
             if isinstance(value, list) and len(value) > 0:
                 achieved_weight += weight
-                if field_path in required_fields:
-                    core_fields_found += 1
             elif isinstance(value, str) and value.strip():
                 achieved_weight += weight
-                if field_path in required_fields:
-                    core_fields_found += 1
             elif not isinstance(value, (str, list)):
                 achieved_weight += weight
-                if field_path in required_fields:
-                    core_fields_found += 1
         elif field_path in required_fields:
             missing_fields.append(field_path)
 
-    # Calculate base confidence
+    # Calculate base confidence from core fields
     confidence = achieved_weight / total_weight if total_weight > 0 else 0.0
 
-    # Bonus for having core fields (reduces penalty impact)
-    # If we have at least 2 of 3 core fields, boost confidence
-    if core_fields_found >= 2:
-        confidence = min(1.0, confidence + 0.10)
-    elif core_fields_found >= 1:
-        confidence = min(1.0, confidence + 0.05)
+    # Add bonus for extra fields (only adds, never subtracts)
+    for field_path, bonus in bonus_fields.items():
+        value = _get_nested_value(record_dict, field_path)
+        if value and isinstance(value, str) and value.strip():
+            confidence = min(1.0, confidence + bonus)
 
-    # Reduced penalty for missing required fields (was 0.1, now 0.05)
+    # Small penalty for missing required fields
     penalty = len(missing_fields) * 0.05
     confidence = max(0.0, confidence - penalty)
-
-    # Ensure minimum confidence if we extracted anything meaningful
-    if achieved_weight > 0 and confidence < 0.35:
-        confidence = 0.35
 
     return round(confidence, 2), missing_fields
 
