@@ -141,20 +141,34 @@ class RegexExtractor:
     Only extracts clearly visible text - skips redacted or unclear content.
     """
 
+    # Generic separator pattern for labeled fields
+    _SEP = r'[\s]*(?::|=|→|->|-|\t)[\s]*'
+
     # Permit number patterns - ordered by specificity
     PERMIT_PATTERNS = [
-        # Structured format first: BP-2026-00142, CP-2026-00201, IP-2026-00050
-        r"(?:Permit\s*(?:#|Number|No\.?)\s*:?\s*)([A-Z]{1,3}-?\d{4}-?\d{3,6})",
-        r"(?:Permit\s*:?\s*#?\s*)([A-Z]{1,3}-?\d{4}-?\d{3,6})",
-        # Standalone structured format (no label needed)
+        # Structured format: BP-2026-00142, CP-2026-00201, IP-2026-00050
+        r"(?:Permit\s*(?:#|Number|No\.?)" + _SEP + r")([A-Z]{1,3}-?\d{4}-?\d{3,6})",
+        r"(?:Permit" + _SEP + r"#?\s*)([A-Z]{1,3}-?\d{4}-?\d{3,6})",
+        # PERMIT_NO (data dump header style) with tab separator
+        r"(?:PERMIT(?:_NO)?" + _SEP + r")([A-Z]{1,3}-?\d{4}-?\d{3,6})",
+        # Standalone structured format (no label) — highest priority standalone
         r"\b([A-Z]{2}-\d{4}-\d{4,6})\b",
         r"\b([A-Z]{1,3}-20\d{2}-\d{3,6})\b",
-        # Labeled with alphanumeric-only capture (no spaces allowed in permit)
+        # Abbreviations: Prmt, prmt, prmit
+        r"(?:[Pp]rmt|[Pp]ermit)\s+([A-Z]{0,3}-?\d{4}-?\d{3,6})",
+        # Bare year-sequence without prefix: "2026-00142"
+        r"(?:[Pp]rmt|[Pp]ermit)\s+(\d{4}-\d{3,6})",
+        # Labeled with alphanumeric-only capture
         r"Permit\s*#\s*:?\s*([A-Z0-9][A-Z0-9\-]{4,20})",
         r"Permit\s+(?:Number|No\.?)\s*:?\s*([A-Z0-9][A-Z0-9\-]{4,20})",
         # Standalone number references
         r"#\s*(\d{5,})",
         r"(?:permit|application)\s*(?:no|number|#)?\s*:?\s*([A-Z]?\d{5,})",
+        # insp done PERMIT or done w/ PERMIT
+        r"(?:insp|inspection)\s+(?:done|completed?)\s+([A-Z]{1,3}-\d{4}-\d{3,6})",
+        r"(?:done|finished)\s+(?:w/\s+)?(?:inspection\s+)?([A-Z]{1,3}-\d{4}-\d{3,6})",
+        # Permit tracking ID / Reference
+        r"(?:Ref|Reference|tracking\s+ID)\s*:?\s*([A-Z]{1,3}-?\d{4}-?\d{3,6})",
     ]
 
     # Date patterns - expanded for OCR variations
@@ -188,26 +202,43 @@ class RegexExtractor:
         r"[Dd]ate[:\s]+(\d{4}[/\-]\d{1,2}[/\-]\d{1,2})",
     ]
 
-    # Status patterns - expanded
+    # Status patterns - comprehensive: covers all STATUS_DISPLAY variants + slang + emoji
     STATUS_PATTERNS = [
-        # Explicit status labels
-        (r"(?:inspection\s+)?status\s*:?\s*(pass(?:ed)?)", "pass"),
-        (r"(?:inspection\s+)?status\s*:?\s*(fail(?:ed)?)", "fail"),
-        (r"(?:inspection\s+)?status\s*:?\s*(partial)", "partial"),
-        (r"[Rr]esult\s*:?\s*(pass(?:ed)?)", "pass"),
-        (r"[Rr]esult\s*:?\s*(fail(?:ed)?)", "fail"),
-        (r"[Rr]esult\s*:?\s*(partial)", "partial"),
-        # Status values
+        # Explicit status/result/outcome labels with any separator
+        (r"(?:inspection\s+)?(?:status|result|outcome)" + _SEP + r"(pass(?:ed)?|approv(?:ed|al)|ok|complete[d]?|good|✓|👍)", "pass"),
+        (r"(?:inspection\s+)?(?:status|result|outcome)" + _SEP + r"(fail(?:ed)?|reject(?:ed)?|denied|not\s+approv(?:ed|al)|no\s*good|❌|nope)", "fail"),
+        (r"(?:inspection\s+)?(?:status|result|outcome)" + _SEP + r"(partial|cond(?:itional)?(?:\s+approval)?|maybe|needs\s+work)", "partial"),
+        (r"(?:inspection\s+)?(?:status|result|outcome)" + _SEP + r"(pending|scheduled|tbd|waiting|hold|under\s+review|in\s+review)", "unknown"),
+        # Standalone keywords — pass
         (r"\b(approved)\b", "pass"),
         (r"\b(passed)\b", "pass"),
-        (r"\b(pass)\b", "pass"),
+        (r"(?:^|\s)(pass)(?:\s|$|[.,])", "pass"),
+        (r"(?:^|\s)(ok)(?:\s|$|[.,])", "pass"),
+        (r"(?:^|\s)(good)(?:\s|$|[.,])", "pass"),
+        (r"✓", "pass"),
+        (r"👍", "pass"),
+        # Standalone keywords — fail
         (r"\b(failed)\b", "fail"),
-        (r"\b(fail)\b", "fail"),
+        (r"(?:^|\s)(fail)(?:\s|$|[.,])", "fail"),
         (r"\b(rejected)\b", "fail"),
+        (r"\b(denied)\b", "fail"),
+        (r"\bno\s*good\b", "fail"),
+        (r"(?:^|\s)(nope)(?:\s|$|[.,])", "fail"),
+        (r"❌", "fail"),
+        (r"\bnot\s+approved\b", "fail"),
         (r"\bre-?inspection\s+required\b", "fail"),
         (r"\bcorrections?\s+(?:needed|required)\b", "fail"),
-        (r"\b(conditional(?:ly)?(?:\s+approved)?)\b", "partial"),
-        (r"\b(pending)\b", "partial"),
+        # Standalone keywords — partial
+        (r"\b(conditional(?:ly)?(?:\s+approv(?:ed|al))?)\b", "partial"),
+        (r"(?:^|\s)(partial)(?:\s|$|[.,])", "partial"),
+        (r"(?:^|\s)(cond)(?:\s|$|[.,])", "partial"),
+        (r"\bneeds\s+work\b", "partial"),
+        (r"(?:^|\s)(maybe)(?:\s|$|[.,])", "partial"),
+        # Standalone keywords — unknown
+        (r"\b(pending)\b", "unknown"),
+        (r"(?:^|\s)(tbd)(?:\s|$|[.,])", "unknown"),
+        (r"(?:^|\s)(waiting)(?:\s|$|[.,])", "unknown"),
+        (r"(?:^|\s)(hold)(?:\s|$|[.,])", "unknown"),
     ]
 
     # Phone patterns
@@ -220,41 +251,44 @@ class RegexExtractor:
     # Email patterns
     EMAIL_PATTERN = r"[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
 
-    # Address patterns - more flexible for OCR
+    # Address patterns — covers all template families
     ADDRESS_PATTERNS = [
-        # Labeled addresses
-        r"(?:Site\s+)?[Aa]ddress\s*:?\s*(.+?)(?:\n|$)",
-        r"[Ll]ocation\s*:?\s*(.+?)(?:\n|$)",
-        r"[Pp]roperty\s*:?\s*(.+?)(?:\n|$)",
-        r"[Ss]ite\s*:?\s*(.+?)(?:\n|$)",
+        # Labeled addresses with any separator
+        r"(?:Site\s+)?[Aa]ddress" + _SEP + r"(.+?)(?:\n|\t|$)",
+        r"(?:SITE_ADDR|Property\s+Address|Location)" + _SEP + r"(.+?)(?:\n|\t|$)",
+        r"[Ll]ocation" + _SEP + r"(.+?)(?:\n|\t|$)",
+        r"[Pp]roperty" + _SEP + r"(.+?)(?:\n|\t|$)",
+        # Abbreviation: "addr 123 Main St"
+        r"(?:addr|address)\s+(.+?)(?:\n|$)",
+        # @ prefix: "@ 123 Main St"
+        r"@\s*(\d+\s+[A-Za-z].+?)(?:\n|$)",
         # Street address patterns with common street types
         r"(\d+\s+[A-Za-z0-9\s\.]+(?:Street|St\.?|Avenue|Ave\.?|Road|Rd\.?|Drive|Dr\.?|"
         r"Lane|Ln\.?|Way|Court|Ct\.?|Circle|Cir\.?|Boulevard|Blvd\.?|"
-        r"Parkway|Pkwy\.?|Place|Pl\.?|Highway|Hwy\.?|Trail|Trl\.?)\.?"
+        r"Parkway|Pkwy\.?|Place|Pl\.?|Highway|Hwy\.?|Trail|Trl\.?|Ter\.?)\.?"
         r"(?:[,\s]+[A-Za-z\s]+)?(?:[,\s]+\d{5}(?:-\d{4})?)?)",
-        # Simpler pattern: number + words + optional city/zip
+        # Simpler pattern: number + words + city,zip
         r"(\d{1,5}\s+[A-Za-z][A-Za-z0-9\s\.]{5,40}(?:,\s*[A-Za-z\s]+)?(?:,?\s*\d{5})?)",
     ]
 
     # Structure type patterns - order matters, most specific first
     STRUCTURE_TYPE_PATTERNS = [
-        # Explicit "Structure Type:" label
-        r"(?:Structure|Building|Property)\s+[Tt]ype\s*:?\s*([A-Za-z\-]+)",
-        # Just "Type:" but only when followed by structure type values (not inspection types)
-        r"(?<![Ii]nspection\s)[Tt]ype\s*:?\s*(Residential|Commercial|Industrial|Mixed[\-\s]?Use)",
+        # Explicit label with any separator
+        r"(?:Structure|Building|Property|Bldg|STRUCT)(?:[_\s]+)?[Tt](?:ype)?" + _SEP + r"([A-Za-z\-]+)",
+        # "Type: Residential" (not preceded by "Inspection")
+        r"(?<![Ii]nspection\s)[Tt]ype" + _SEP + r"(Residential|Commercial|Industrial|Mixed[\-\s]?Use)",
+        # "Type: res" abbreviations with any separator
+        r"(?<![Ii]nspection\s)[Tt]ype" + _SEP + r"(res(?:idential)?|comm?(?:ercial)?|ind(?:ustrial)?|mix(?:ed)?(?:[\-\s]?use)?)",
+        # "for res" / "for com" (minimalist mobile pattern)
+        r"\bfor\s+(res(?:idential)?|comm?(?:ercial)?|ind(?:ustrial)?|mix(?:ed)?(?:[\-\s]?use)?)",
     ]
 
     # Structure type abbreviation mappings
     STRUCTURE_TYPE_ABBREVS = {
-        "res": "Residential",
-        "resi": "Residential",
-        "resid": "Residential",
-        "comm": "Commercial",
-        "com": "Commercial",
-        "ind": "Industrial",
-        "indus": "Industrial",
-        "mix": "Mixed-Use",
-        "mixed": "Mixed-Use",
+        "res": "Residential", "resi": "Residential", "resid": "Residential", "residential": "Residential",
+        "comm": "Commercial", "com": "Commercial", "commercial": "Commercial",
+        "ind": "Industrial", "indus": "Industrial", "industrial": "Industrial",
+        "mix": "Mixed-Use", "mixed": "Mixed-Use", "mixed-use": "Mixed-Use", "mixeduse": "Mixed-Use",
     }
 
     # Inspection type patterns
@@ -459,11 +493,12 @@ class RegexExtractor:
     def _extract_status(self, text: str) -> tuple[Optional[str], float]:
         """Extract inspection status from text."""
         # First check for explicit labels (highest confidence)
+        sep = self._SEP
         label_patterns = [
-            (r"(?:inspection\s+)?(?:status|result|outcome)\s*:?\s*(?:is\s+)?(pass(?:ed)?|approv(?:ed|al)|ok|complete[d]?)", "pass", 0.95),
-            (r"(?:inspection\s+)?(?:status|result|outcome)\s*:?\s*(?:is\s+)?(fail(?:ed)?|reject(?:ed)?|denied|not\s+approv(?:ed|al))", "fail", 0.95),
-            (r"(?:inspection\s+)?(?:status|result|outcome)\s*:?\s*(?:is\s+)?(partial(?:ly)?|conditional(?:ly)?)", "partial", 0.95),
-            (r"(?:inspection\s+)?(?:status|result|outcome)\s*:?\s*(?:is\s+)?(pending|scheduled|under\s+review|in\s+review)", "unknown", 0.85),
+            (r"(?:inspection\s+)?(?:status|result|outcome)" + sep + r"(?:is\s+)?(pass(?:ed)?|approv(?:ed|al)|ok|complete[d]?|good|✓|👍)", "pass", 0.95),
+            (r"(?:inspection\s+)?(?:status|result|outcome)" + sep + r"(?:is\s+)?(fail(?:ed)?|reject(?:ed)?|denied|not\s+approv(?:ed|al)|no\s*good|❌|nope)", "fail", 0.95),
+            (r"(?:inspection\s+)?(?:status|result|outcome)" + sep + r"(?:is\s+)?(partial(?:ly)?|conditional(?:ly)?|cond(?:\s+approval)?|maybe|needs\s+work)", "partial", 0.95),
+            (r"(?:inspection\s+)?(?:status|result|outcome)" + sep + r"(?:is\s+)?(pending|scheduled|under\s+review|in\s+review|tbd|waiting|hold)", "unknown", 0.85),
         ]
         for pattern, status, conf in label_patterns:
             if re.search(pattern, text, re.IGNORECASE):
@@ -479,6 +514,14 @@ class RegexExtractor:
 
     def _extract_address(self, text: str) -> tuple[Optional[str], float]:
         """Extract address from text. Only returns clearly readable values."""
+        # Get permit number to avoid matching it as an address
+        permit_num = None
+        for p in self.PERMIT_PATTERNS:
+            m = re.search(p, text, re.IGNORECASE)
+            if m:
+                permit_num = m.group(1).strip()
+                break
+
         for pattern in self.ADDRESS_PATTERNS:
             match = re.search(pattern, text, re.IGNORECASE | re.MULTILINE)
             if match:
@@ -486,16 +529,26 @@ class RegexExtractor:
                 # Clean up the address
                 address = re.sub(r"\s+", " ", address)
                 address = re.sub(r"[,\s]+$", "", address)
+                # Remove trailing noise words
+                address = re.sub(r"\s+(?:type|status|result|inspector|notes)\b.*$", "", address, flags=re.IGNORECASE)
                 # Skip if it looks like garbage/redacted content
                 if is_garbage_text(address):
                     continue
                 # Address should have reasonable length
-                if len(address) < 5:
+                if len(address) < 8:
                     continue
-                # Should contain at least one digit (street number)
+                # Should contain at least one digit (street number) AND at least one letter
                 if not any(c.isdigit() for c in address):
                     continue
-                conf = 0.85 if any(label in pattern.lower() for label in ["address", "location", "property", "site"]) else 0.65
+                if not any(c.isalpha() for c in address):
+                    continue
+                # Skip if it looks like a permit number (e.g., "2026-08277" or "BP-2026-00142")
+                if re.match(r'^[A-Z]{0,3}-?\d{4}-?\d{3,6}$', address.strip()):
+                    continue
+                # Skip if the match is basically just the permit number
+                if permit_num and permit_num in address and len(address) < len(permit_num) + 10:
+                    continue
+                conf = 0.85 if any(label in pattern.lower() for label in ["address", "location", "property", "site", "addr"]) else 0.65
                 return address, conf
         return None, 0.0
 

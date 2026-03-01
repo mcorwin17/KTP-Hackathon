@@ -89,11 +89,44 @@ def remove_email_headers(text: str) -> str:
 
 
 def remove_reply_quotes(text: str) -> str:
-    """Remove quoted reply content."""
-    result = text
-    for pattern in REPLY_PATTERNS:
-        result = re.sub(pattern, "", result, flags=re.MULTILINE | re.IGNORECASE | re.DOTALL)
-    return result
+    """Remove quoted reply prefixes and forwarded headers while preserving body content.
+
+    Only strips: quoted '>' lines, From/Date/Subject/To header lines within
+    forwarded blocks, and separator lines. Preserves the actual body text
+    that may contain inspection data.
+    """
+    lines = text.split("\n")
+    cleaned = []
+
+    for line in lines:
+        stripped = line.strip()
+
+        # Skip quoted lines (> prefix)
+        if stripped.startswith(">"):
+            continue
+
+        # Skip "On ... wrote:" lines
+        if re.match(r"^On .* wrote:\s*$", stripped, re.IGNORECASE):
+            continue
+
+        # Skip "---------- Forwarded message ----------" separators
+        if re.match(r"^-{3,}\s*(Forwarded|Original)\s+[Mm]essage\s*-{3,}", stripped):
+            continue
+
+        # Skip horizontal rule / separator lines (─── or === or ---)
+        if re.match(r"^[─═\-=_]{10,}$", stripped):
+            continue
+
+        # Skip From/To/Subject/Sent lines that look like forwarded headers
+        # (they contain email addresses or day-of-week patterns typical of headers)
+        if re.match(r"^(From|To|Cc|Subject|Sent):\s", stripped, re.IGNORECASE):
+            # Only strip if it looks like a forwarded email header
+            if re.search(r"@|Mon|Tue|Wed|Thu|Fri|Sat|Sun|FW:|Re:|Fwd:", stripped, re.IGNORECASE):
+                continue
+
+        cleaned.append(line)
+
+    return "\n".join(cleaned)
 
 
 def extract_signature(text: str) -> Tuple[str, str]:
