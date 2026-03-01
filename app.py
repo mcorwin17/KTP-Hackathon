@@ -12,7 +12,11 @@ from __future__ import annotations
 import json
 import io
 import re
+import sys
 from pathlib import Path
+
+# Ensure smartroute package is importable without pip install -e .
+sys.path.insert(0, str(Path(__file__).resolve().parent / "src"))
 
 from fastapi import FastAPI, Request, UploadFile, File
 from fastapi.responses import HTMLResponse

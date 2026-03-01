@@ -103,9 +103,9 @@
     "name": "Tab-separated with Misaligned Columns",
     "description": "Clipboard paste where tabs don't line up",
     "extracted_permit": "BP-2026-00600",
-    "extracted_status": "pass",
-    "confidence": 0.9,
-    "route_team": "PERMITTING",
+    "extracted_status": "unknown",
+    "confidence": 0.53,
+    "route_team": "UNKNOWN",
     "action_required": true,
     "checks": [],
     "all_passed": null
