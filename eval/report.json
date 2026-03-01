@@ -1,25 +1,25 @@
 {
   "aggregate": {
     "total_messages": 500,
-    "permit_em": 0.9,
-    "date_em": 0.678,
-    "address_fm_avg": 0.8381652,
-    "status_em": 0.864,
-    "structure_type_fm": 0.8530726,
+    "permit_em": 0.918,
+    "date_em": 0.748,
+    "address_fm_avg": 0.8698644000000001,
+    "status_em": 0.972,
+    "structure_type_fm": 0.8576182,
     "routing_action_accuracy": 0.634,
-    "avg_confidence": 0.92582,
+    "avg_confidence": 0.92104,
     "per_template": {
       "data_dump": {
         "count": 92,
-        "permit_em": 0.8478260869565217,
-        "date_em": 0.5869565217391305,
-        "address_fm_avg": 0.8241445652173912,
-        "status_em": 0.40217391304347827,
+        "permit_em": 0.9130434782608695,
+        "date_em": 0.967391304347826,
+        "address_fm_avg": 0.9964228260869565,
+        "status_em": 0.9891304347826086,
         "routing_action_accuracy": 0.6086956521739131
       },
       "formal_bureaucratic": {
         "count": 97,
-        "permit_em": 0.9381443298969072,
+        "permit_em": 0.9484536082474226,
         "date_em": 0.865979381443299,
         "address_fm_avg": 0.9521051546391753,
         "status_em": 0.979381443298969,
@@ -43,7 +43,7 @@
       },
       "portal_scraping": {
         "count": 103,
-        "permit_em": 0.9611650485436893,
+        "permit_em": 0.9805825242718447,
         "date_em": 0.6504854368932039,
         "address_fm_avg": 0.9966864077669902,
         "status_em": 0.9902912621359223,
@@ -60,7 +60,7 @@
       "msg_0229",
       "msg_0428",
       "msg_0426",
-      "msg_0207"
+      "msg_0388"
     ]
   },
   "per_message": [
@@ -463,7 +463,7 @@
     {
       "message_id": "msg_0012",
       "template_type": "data_dump",
-      "confidence": 0.99,
+      "confidence": 0.96,
       "permit_number": {
         "predicted": "BP-2025-42616",
         "expected": "BP-2025-42616",
@@ -475,9 +475,9 @@
         "exact_match": 1.0
       },
       "site_address": {
-        "predicted": "42616 Jun 29 2025 4906 Cypress Way, Capital City, 62707",
+        "predicted": "4906 Cypress Way, Capital City, 62707",
         "expected": "4906 Cypress Way, Capital City, 62707",
-        "fuzzy_score": 0.6727
+        "fuzzy_score": 1.0
       },
       "status": {
         "predicted": "fail",
@@ -643,9 +643,9 @@
     {
       "message_id": "msg_0017",
       "template_type": "data_dump",
-      "confidence": 0.99,
+      "confidence": 0.96,
       "permit_number": {
-        "predicted": "CP-2025-33591",
+        "predicted": "EP-202S-45342",
         "expected": "EP-2025-45342",
         "exact_match": 0.0
       },
@@ -655,14 +655,14 @@
         "exact_match": 1.0
       },
       "site_address": {
-        "predicted": "07 1916 Spruce Cir, Brockway, 62708",
+        "predicted": "1916 Spruce Cir, Brockway, 62708",
         "expected": "1916 Spruce Cir, Brockway, 62708",
-        "fuzzy_score": 0.9143
+        "fuzzy_score": 1.0
       },
       "status": {
-        "predicted": "pass",
+        "predicted": "partial",
         "expected": "partial",
-        "exact_match": 0.0
+        "exact_match": 1.0
       },
       "structure_type": {
         "predicted": "Residential",
@@ -670,7 +670,7 @@
         "fuzzy_score": 1.0
       },
       "routing": {
-        "team": "PERMITTING",
+        "team": "UNKNOWN",
         "action_correct": true,
         "predicted_action": true,
         "expected_action": true
@@ -715,11 +715,11 @@
     {
       "message_id": "msg_0019",
       "template_type": "data_dump",
-      "confidence": 0.93,
+      "confidence": 0.91,
       "permit_number": {
-        "predicted": "EP-2025-32868",
+        "predicted": "MP-2025-70093",
         "expected": "MP-2025-70093",
-        "exact_match": 0.0
+        "exact_match": 1.0
       },
       "inspection_date": {
         "predicted": "2025-10-01",
@@ -727,14 +727,14 @@
         "exact_match": 1.0
       },
       "site_address": {
-        "predicted": "2025 5170 Hickory Ln, Shelbyville, 62706",
+        "predicted": "5170 Hickory Ln, Shelbyville, 62706",
         "expected": "5170 Hickory Ln, Shelbyville, 62706",
-        "fuzzy_score": 0.875
+        "fuzzy_score": 1.0
       },
       "status": {
-        "predicted": "pass",
+        "predicted": "unknown",
         "expected": "unknown",
-        "exact_match": 0.0
+        "exact_match": 1.0
       },
       "structure_type": {
         "predicted": "Mixed-Use",
@@ -742,7 +742,7 @@
         "fuzzy_score": 1.0
       },
       "routing": {
-        "team": "PERMITTING",
+        "team": "UNKNOWN",
         "action_correct": false,
         "predicted_action": true,
         "expected_action": false
@@ -1003,34 +1003,34 @@
     {
       "message_id": "msg_0027",
       "template_type": "data_dump",
-      "confidence": 0.99,
+      "confidence": 0.96,
       "permit_number": {
         "predicted": "EP-2026-54605",
         "expected": "EP-2026-54605",
         "exact_match": 1.0
       },
       "inspection_date": {
-        "predicted": "2026-01-28",
+        "predicted": "2026-05-26",
         "expected": "2026-05-26",
-        "exact_match": 0.0
+        "exact_match": 1.0
       },
       "site_address": {
-        "predicted": "54605 May 26 2026 9098 Hickory Ln, North Haverbrook, 62704",
+        "predicted": "9098 Hickory Ln, North Haverbrook, 62704",
         "expected": "9098 Hickory Ln, North Haverbrook, 62704",
-        "fuzzy_score": 0.6897
+        "fuzzy_score": 1.0
       },
       "status": {
-        "predicted": "pass",
+        "predicted": "fail",
         "expected": "fail",
-        "exact_match": 0.0
+        "exact_match": 1.0
       },
       "structure_type": {
-        "predicted": "Industrial",
+        "predicted": "Residential",
         "expected": "residential",
-        "fuzzy_score": 0.3636
+        "fuzzy_score": 1.0
       },
       "routing": {
-        "team": "PERMITTING",
+        "team": "FIELD_DISPATCH",
         "action_correct": true,
         "predicted_action": true,
         "expected_action": true
@@ -1147,7 +1147,7 @@
     {
       "message_id": "msg_0031",
       "template_type": "data_dump",
-      "confidence": 0.99,
+      "confidence": 0.91,
       "permit_number": {
         "predicted": "MP-2025-83112",
         "expected": "MP-2025-83112",
@@ -1159,14 +1159,14 @@
         "exact_match": 1.0
       },
       "site_address": {
-        "predicted": "2025 4065 Ash Pl, Brockway",
+        "predicted": "4065 Ash Pl, Brockway. 62703",
         "expected": "4065 Ash Pl, Brockway, 62703",
-        "fuzzy_score": 0.5714
+        "fuzzy_score": 0.9643
       },
       "status": {
-        "predicted": "fail",
+        "predicted": "unknown",
         "expected": "unknown",
-        "exact_match": 0.0
+        "exact_match": 1.0
       },
       "structure_type": {
         "predicted": "Mixed-Use",
@@ -1174,7 +1174,7 @@
         "fuzzy_score": 1.0
       },
       "routing": {
-        "team": "FIELD_DISPATCH",
+        "team": "UNKNOWN",
         "action_correct": false,
         "predicted_action": true,
         "expected_action": false
@@ -1183,21 +1183,21 @@
     {
       "message_id": "msg_0032",
       "template_type": "data_dump",
-      "confidence": 0.99,
+      "confidence": 0.96,
       "permit_number": {
         "predicted": "EP-2026-22147",
         "expected": "EP-2026-22147",
         "exact_match": 1.0
       },
       "inspection_date": {
-        "predicted": "2026-06-12",
+        "predicted": "2026-07-05",
         "expected": "2026-07-05",
-        "exact_match": 0.0
+        "exact_match": 1.0
       },
       "site_address": {
-        "predicted": "2026 7592 Poplar Ct, Brockway, 62708",
+        "predicted": "7592 Poplar Ct, Brockway, 62708",
         "expected": "7592 Poplar Ct, Brockway, 62708",
-        "fuzzy_score": 0.8611
+        "fuzzy_score": 1.0
       },
       "status": {
         "predicted": "pass",
@@ -1255,7 +1255,7 @@
     {
       "message_id": "msg_0034",
       "template_type": "data_dump",
-      "confidence": 0.94,
+      "confidence": 0.91,
       "permit_number": {
         "predicted": "BP-2025-34465",
         "expected": "BP-2025-34465",
@@ -1267,9 +1267,9 @@
         "exact_match": 1.0
       },
       "site_address": {
-        "predicted": "2025 752 Oak Ave, Ogdenville, 62705",
+        "predicted": "752 Oak Ave, Ogdenville, 62705",
         "expected": "752 Oak Ave, Ogdenville, 62705",
-        "fuzzy_score": 0.8571
+        "fuzzy_score": 1.0
       },
       "status": {
         "predicted": "unknown",
@@ -1471,9 +1471,9 @@
     {
       "message_id": "msg_0040",
       "template_type": "minimalist_mobile",
-      "confidence": 0.68,
+      "confidence": 0.8,
       "permit_number": {
-        "predicted": "",
+        "predicted": "CP-0025-53745",
         "expected": "CP-2025-53745",
         "exact_match": 0.0
       },
@@ -1615,7 +1615,7 @@
     {
       "message_id": "msg_0044",
       "template_type": "data_dump",
-      "confidence": 0.99,
+      "confidence": 0.96,
       "permit_number": {
         "predicted": "IP-2026-92095",
         "expected": "IP-2026-92095",
@@ -1627,14 +1627,14 @@
         "exact_match": 1.0
       },
       "site_address": {
-        "predicted": "92095 August",
+        "predicted": "3466 A1der Ln, Brockway, 62701",
         "expected": "3466 Alder Ln, Brockway, 62701",
-        "fuzzy_score": 0.0667
+        "fuzzy_score": 0.9667
       },
       "status": {
-        "predicted": "pass",
+        "predicted": "partial",
         "expected": "partial",
-        "exact_match": 0.0
+        "exact_match": 1.0
       },
       "structure_type": {
         "predicted": "Mixed-Use",
@@ -1642,7 +1642,7 @@
         "fuzzy_score": 1.0
       },
       "routing": {
-        "team": "PERMITTING",
+        "team": "UNKNOWN",
         "action_correct": true,
         "predicted_action": true,
         "expected_action": true
@@ -1687,26 +1687,26 @@
     {
       "message_id": "msg_0046",
       "template_type": "data_dump",
-      "confidence": 0.99,
+      "confidence": 0.96,
       "permit_number": {
         "predicted": "EP-2025-24681",
         "expected": "EP-2025-24681",
         "exact_match": 1.0
       },
       "inspection_date": {
-        "predicted": "2026-04-05",
+        "predicted": "2025-08-01",
         "expected": "2025-08-01",
-        "exact_match": 0.0
+        "exact_match": 1.0
       },
       "site_address": {
-        "predicted": "01 6537 Birch Ct, Ogdenville, 62704",
+        "predicted": "6537 Birch Ct, Ogdenville, 62704",
         "expected": "6537 Birch Ct, Ogdenville, 62704",
-        "fuzzy_score": 0.9143
+        "fuzzy_score": 1.0
       },
       "status": {
-        "predicted": "pass",
+        "predicted": "partial",
         "expected": "partial",
-        "exact_match": 0.0
+        "exact_match": 1.0
       },
       "structure_type": {
         "predicted": "Residential",
@@ -1714,7 +1714,7 @@
         "fuzzy_score": 1.0
       },
       "routing": {
-        "team": "PERMITTING",
+        "team": "UNKNOWN",
         "action_correct": true,
         "predicted_action": true,
         "expected_action": true
@@ -1795,26 +1795,26 @@
     {
       "message_id": "msg_0049",
       "template_type": "data_dump",
-      "confidence": 0.99,
+      "confidence": 0.96,
       "permit_number": {
         "predicted": "BP-2026-77437",
         "expected": "BP-2026-77437",
         "exact_match": 1.0
       },
       "inspection_date": {
-        "predicted": "2026-06-10",
+        "predicted": "2025-09-17",
         "expected": "2025-09-17",
-        "exact_match": 0.0
+        "exact_match": 1.0
       },
       "site_address": {
-        "predicted": "77437 Sep 17 2025 700 Sycamore Rd, Capital City, 62708",
+        "predicted": "700 Sycamore Rd, Capital City, 62708",
         "expected": "700 Sycamore Rd, Capital City, 62708",
-        "fuzzy_score": 0.6667
+        "fuzzy_score": 1.0
       },
       "status": {
-        "predicted": "pass",
+        "predicted": "fail",
         "expected": "fail",
-        "exact_match": 0.0
+        "exact_match": 1.0
       },
       "structure_type": {
         "predicted": "Industrial",
@@ -1822,7 +1822,7 @@
         "fuzzy_score": 1.0
       },
       "routing": {
-        "team": "PERMITTING",
+        "team": "FIELD_DISPATCH",
         "action_correct": true,
         "predicted_action": true,
         "expected_action": true
@@ -1867,21 +1867,21 @@
     {
       "message_id": "msg_0051",
       "template_type": "data_dump",
-      "confidence": 0.99,
+      "confidence": 0.96,
       "permit_number": {
         "predicted": "IP-2026-47583",
         "expected": "IP-2026-47583",
         "exact_match": 1.0
       },
       "inspection_date": {
-        "predicted": "2025-12-07",
+        "predicted": "2025-07-25",
         "expected": "2025-07-25",
-        "exact_match": 0.0
+        "exact_match": 1.0
       },
       "site_address": {
-        "predicted": "25 2635 Redwood Ave, Brockway, 62705",
+        "predicted": "2635 Redwood Ave, Brockway, 62705",
         "expected": "2635 Redwood Ave, Brockway, 62705",
-        "fuzzy_score": 0.9167
+        "fuzzy_score": 1.0
       },
       "status": {
         "predicted": "partial",
@@ -1903,7 +1903,7 @@
     {
       "message_id": "msg_0052",
       "template_type": "data_dump",
-      "confidence": 0.99,
+      "confidence": 0.96,
       "permit_number": {
         "predicted": "BP-2026-52454",
         "expected": "BP-2026-52454",
@@ -1915,9 +1915,9 @@
         "exact_match": 1.0
       },
       "site_address": {
-        "predicted": "2025 6574 Sequoia Dr, North Haverbrook, 62704",
+        "predicted": "6574 Sequoia Dr, North Haverbrook, 62704",
         "expected": "6574 Sequoia Dr, North Haverbrook, 62704",
-        "fuzzy_score": 0.8889
+        "fuzzy_score": 1.0
       },
       "status": {
         "predicted": "pass",
@@ -2119,21 +2119,21 @@
     {
       "message_id": "msg_0058",
       "template_type": "data_dump",
-      "confidence": 0.99,
+      "confidence": 0.96,
       "permit_number": {
         "predicted": "BP-2026-29030",
         "expected": "BP-2026-29030",
         "exact_match": 1.0
       },
       "inspection_date": {
-        "predicted": "2025-11-13",
+        "predicted": "2026-04-07",
         "expected": "2026-04-07",
-        "exact_match": 0.0
+        "exact_match": 1.0
       },
       "site_address": {
-        "predicted": "29030 Apr 07 2026 1261 Main St, Shelbyville, 62708",
+        "predicted": "1261 Main St, Shelbyville, 62708",
         "expected": "1261 Main St, Shelbyville, 62708",
-        "fuzzy_score": 0.64
+        "fuzzy_score": 1.0
       },
       "status": {
         "predicted": "pass",
@@ -2227,26 +2227,26 @@
     {
       "message_id": "msg_0061",
       "template_type": "data_dump",
-      "confidence": 0.99,
+      "confidence": 0.96,
       "permit_number": {
         "predicted": "MP-2026-39860",
         "expected": "MP-2026-39860",
         "exact_match": 1.0
       },
       "inspection_date": {
-        "predicted": "2025-08-23",
+        "predicted": "2026-01-13",
         "expected": "2026-01-13",
-        "exact_match": 0.0
+        "exact_match": 1.0
       },
       "site_address": {
-        "predicted": "2026 4585 Maple Rd, Shelbyville, 62702",
+        "predicted": "4585 Maple Rd, Shelbyville, 62702",
         "expected": "4585 Maple Rd, Shelbyville, 62702",
-        "fuzzy_score": 0.8684
+        "fuzzy_score": 1.0
       },
       "status": {
-        "predicted": "pass",
+        "predicted": "fail",
         "expected": "fail",
-        "exact_match": 0.0
+        "exact_match": 1.0
       },
       "structure_type": {
         "predicted": "Commercial",
@@ -2254,7 +2254,7 @@
         "fuzzy_score": 1.0
       },
       "routing": {
-        "team": "PERMITTING",
+        "team": "FIELD_DISPATCH",
         "action_correct": true,
         "predicted_action": true,
         "expected_action": true
@@ -2479,7 +2479,7 @@
     {
       "message_id": "msg_0068",
       "template_type": "data_dump",
-      "confidence": 0.99,
+      "confidence": 0.96,
       "permit_number": {
         "predicted": "FP-2026-93393",
         "expected": "FP-2026-93393",
@@ -2491,9 +2491,9 @@
         "exact_match": 1.0
       },
       "site_address": {
-        "predicted": "2025 6752 Sequoia Dr, Ogdenvi",
+        "predicted": "6752 Sequoia Dr, Ogdenvi1le, 62704",
         "expected": "6752 Sequoia Dr, Ogdenville, 62704",
-        "fuzzy_score": 0.5588
+        "fuzzy_score": 0.9706
       },
       "status": {
         "predicted": "fail",
@@ -2515,26 +2515,26 @@
     {
       "message_id": "msg_0069",
       "template_type": "data_dump",
-      "confidence": 0.93,
+      "confidence": 0.96,
       "permit_number": {
-        "predicted": "IP-2026-38007",
+        "predicted": "FP-2025-89762",
         "expected": "FP-2025-89762",
-        "exact_match": 0.0
+        "exact_match": 1.0
       },
       "inspection_date": {
-        "predicted": "2026-04-16",
+        "predicted": "2026-04-21",
         "expected": "2026-04-21",
-        "exact_match": 0.0
+        "exact_match": 1.0
       },
       "site_address": {
-        "predicted": "2026 8934 Poplar Ct, Capital City, 62701",
+        "predicted": "8934 Poplar Ct, Capital City, 62701",
         "expected": "8934 Poplar Ct, Capital City, 62701",
-        "fuzzy_score": 0.875
+        "fuzzy_score": 1.0
       },
       "status": {
-        "predicted": "pass",
+        "predicted": "partial",
         "expected": "partial",
-        "exact_match": 0.0
+        "exact_match": 1.0
       },
       "structure_type": {
         "predicted": "Residential",
@@ -2542,7 +2542,7 @@
         "fuzzy_score": 1.0
       },
       "routing": {
-        "team": "PERMITTING",
+        "team": "UNKNOWN",
         "action_correct": true,
         "predicted_action": true,
         "expected_action": true
@@ -2551,7 +2551,7 @@
     {
       "message_id": "msg_0070",
       "template_type": "data_dump",
-      "confidence": 0.99,
+      "confidence": 0.96,
       "permit_number": {
         "predicted": "FP-2026-46173",
         "expected": "FP-2026-46173",
@@ -2563,9 +2563,9 @@
         "exact_match": 1.0
       },
       "site_address": {
-        "predicted": "46173 Sep 21 2025 4741 Ash Pl, Shelbyville, 62701",
+        "predicted": "4741 Ash Pl, Shelbyville, 62701",
         "expected": "4741 Ash Pl, Shelbyville, 62701",
-        "fuzzy_score": 0.6327
+        "fuzzy_score": 1.0
       },
       "status": {
         "predicted": "pass",
@@ -2695,26 +2695,26 @@
     {
       "message_id": "msg_0074",
       "template_type": "data_dump",
-      "confidence": 0.99,
+      "confidence": 0.96,
       "permit_number": {
         "predicted": "MP-2025-27121",
         "expected": "MP-2025-27121",
         "exact_match": 1.0
       },
       "inspection_date": {
-        "predicted": "2025-09-29",
+        "predicted": "2025-08-13",
         "expected": "2025-08-13",
-        "exact_match": 0.0
+        "exact_match": 1.0
       },
       "site_address": {
-        "predicted": "2025 4539 Magnolia Blvd, Ogdenville, 62707",
+        "predicted": "4539 Magnolia Blvd, Ogdenville, 62707",
         "expected": "4539 Magnolia Blvd, Ogdenville, 62707",
-        "fuzzy_score": 0.881
+        "fuzzy_score": 1.0
       },
       "status": {
-        "predicted": "pass",
+        "predicted": "fail",
         "expected": "fail",
-        "exact_match": 0.0
+        "exact_match": 1.0
       },
       "structure_type": {
         "predicted": "Commercial",
@@ -2722,7 +2722,7 @@
         "fuzzy_score": 1.0
       },
       "routing": {
-        "team": "PERMITTING",
+        "team": "FIELD_DISPATCH",
         "action_correct": true,
         "predicted_action": true,
         "expected_action": true
@@ -2911,7 +2911,7 @@
     {
       "message_id": "msg_0080",
       "template_type": "data_dump",
-      "confidence": 0.96,
+      "confidence": 0.93,
       "permit_number": {
         "predicted": "FP-2025-61583",
         "expected": "FP-2025-61583",
@@ -3415,7 +3415,7 @@
     {
       "message_id": "msg_0094",
       "template_type": "data_dump",
-      "confidence": 0.93,
+      "confidence": 0.9,
       "permit_number": {
         "predicted": "IP-2026-21638",
         "expected": "IP-2026-21638",
@@ -3427,9 +3427,9 @@
         "exact_match": 1.0
       },
       "site_address": {
-        "predicted": "2026 1107 Sequoia Dr, Springfield, 62703",
+        "predicted": "1107 Sequoia Dr, Springfield, 62703",
         "expected": "1107 Sequoia Dr, Springfield, 62703",
-        "fuzzy_score": 0.875
+        "fuzzy_score": 1.0
       },
       "status": {
         "predicted": "pass",
@@ -3451,26 +3451,26 @@
     {
       "message_id": "msg_0095",
       "template_type": "data_dump",
-      "confidence": 0.99,
+      "confidence": 0.91,
       "permit_number": {
         "predicted": "EP-2026-34662",
         "expected": "EP-2026-34662",
         "exact_match": 1.0
       },
       "inspection_date": {
-        "predicted": "2017-09-25",
+        "predicted": "2026-03-27",
         "expected": "2026-03-27",
-        "exact_match": 0.0
+        "exact_match": 1.0
       },
       "site_address": {
-        "predicted": "2026 8272 Dogwood Dr, Ogdenville, 62708",
+        "predicted": "8272 Dogwood Dr, Ogdenville, 62708",
         "expected": "8272 Dogwood Dr, Ogdenville, 62708",
-        "fuzzy_score": 0.8718
+        "fuzzy_score": 1.0
       },
       "status": {
-        "predicted": "partial",
+        "predicted": "unknown",
         "expected": "unknown",
-        "exact_match": 0.0
+        "exact_match": 1.0
       },
       "structure_type": {
         "predicted": "Mixed-Use",
@@ -3487,11 +3487,11 @@
     {
       "message_id": "msg_0096",
       "template_type": "data_dump",
-      "confidence": 0.93,
+      "confidence": 0.96,
       "permit_number": {
-        "predicted": "FP-2025-84499",
+        "predicted": "MP-2025-51925",
         "expected": "MP-2025-51925",
-        "exact_match": 0.0
+        "exact_match": 1.0
       },
       "inspection_date": {
         "predicted": "2025-11-21",
@@ -3499,14 +3499,14 @@
         "exact_match": 1.0
       },
       "site_address": {
-        "predicted": "21 2025 8963 Oak Ave, Brockway, 62708",
+        "predicted": "8963 Oak Ave, Brockway, 62708",
         "expected": "8963 Oak Ave, Brockway, 62708",
-        "fuzzy_score": 0.7838
+        "fuzzy_score": 1.0
       },
       "status": {
-        "predicted": "pass",
+        "predicted": "partial",
         "expected": "partial",
-        "exact_match": 0.0
+        "exact_match": 1.0
       },
       "structure_type": {
         "predicted": "Residential",
@@ -3514,7 +3514,7 @@
         "fuzzy_score": 1.0
       },
       "routing": {
-        "team": "PERMITTING",
+        "team": "UNKNOWN",
         "action_correct": true,
         "predicted_action": true,
         "expected_action": true
@@ -3667,26 +3667,26 @@
     {
       "message_id": "msg_0101",
       "template_type": "data_dump",
-      "confidence": 0.99,
+      "confidence": 0.96,
       "permit_number": {
-        "predicted": "BP-2025-98616",
+        "predicted": "FP-202S-27258",
         "expected": "FP-2025-27258",
         "exact_match": 0.0
       },
       "inspection_date": {
-        "predicted": "2025-12-06",
+        "predicted": "2025-09-21",
         "expected": "2025-09-21",
-        "exact_match": 0.0
+        "exact_match": 1.0
       },
       "site_address": {
-        "predicted": "2025 3425 Chestnut St, Shelbyville, 62707",
+        "predicted": "3425 Chestnut St, Shelbyville, 62707",
         "expected": "3425 Chestnut St, Shelbyville, 62707",
-        "fuzzy_score": 0.878
+        "fuzzy_score": 1.0
       },
       "status": {
-        "predicted": "pass",
+        "predicted": "fail",
         "expected": "fail",
-        "exact_match": 0.0
+        "exact_match": 1.0
       },
       "structure_type": {
         "predicted": "Industrial",
@@ -3694,7 +3694,7 @@
         "fuzzy_score": 1.0
       },
       "routing": {
-        "team": "PERMITTING",
+        "team": "FIELD_DISPATCH",
         "action_correct": true,
         "predicted_action": true,
         "expected_action": true
@@ -4063,26 +4063,26 @@
     {
       "message_id": "msg_0112",
       "template_type": "data_dump",
-      "confidence": 0.99,
+      "confidence": 0.96,
       "permit_number": {
         "predicted": "CP-2026-56936",
         "expected": "CP-2026-56936",
         "exact_match": 1.0
       },
       "inspection_date": {
-        "predicted": "2026-01-06",
+        "predicted": "2025-12-12",
         "expected": "2025-12-12",
-        "exact_match": 0.0
+        "exact_match": 1.0
       },
       "site_address": {
-        "predicted": "2025 S24 Juniper Way, Shelbyville, 62702",
+        "predicted": "S24 Juniper Way, Shelbyville, 62702",
         "expected": "524 Juniper Way, Shelbyville, 62702",
-        "fuzzy_score": 0.875
+        "fuzzy_score": 0.9714
       },
       "status": {
-        "predicted": "pass",
+        "predicted": "partial",
         "expected": "partial",
-        "exact_match": 0.0
+        "exact_match": 1.0
       },
       "structure_type": {
         "predicted": "Residential",
@@ -4090,7 +4090,7 @@
         "fuzzy_score": 1.0
       },
       "routing": {
-        "team": "PERMITTING",
+        "team": "UNKNOWN",
         "action_correct": true,
         "predicted_action": true,
         "expected_action": true
@@ -4243,7 +4243,7 @@
     {
       "message_id": "msg_0117",
       "template_type": "data_dump",
-      "confidence": 0.99,
+      "confidence": 0.91,
       "permit_number": {
         "predicted": "MP-2026-78971",
         "expected": "MP-2026-78971",
@@ -4255,14 +4255,14 @@
         "exact_match": 1.0
       },
       "site_address": {
-        "predicted": "2026 5563 Maple Rd, Brockway, 62704",
+        "predicted": "5563 Maple Rd, Brockway, 62704",
         "expected": "5563 Maple Rd, Brockway, 62704",
-        "fuzzy_score": 0.8571
+        "fuzzy_score": 1.0
       },
       "status": {
-        "predicted": "partial",
+        "predicted": "unknown",
         "expected": "unknown",
-        "exact_match": 0.0
+        "exact_match": 1.0
       },
       "structure_type": {
         "predicted": "Mixed-Use",
@@ -4495,26 +4495,26 @@
     {
       "message_id": "msg_0124",
       "template_type": "data_dump",
-      "confidence": 0.99,
+      "confidence": 0.96,
       "permit_number": {
         "predicted": "MP-2025-00644",
         "expected": "MP-2025-00644",
         "exact_match": 1.0
       },
       "inspection_date": {
-        "predicted": "2026-03-23",
+        "predicted": "2025-12-30",
         "expected": "2025-12-30",
-        "exact_match": 0.0
+        "exact_match": 1.0
       },
       "site_address": {
-        "predicted": "2025 635 Main St, Springfield",
+        "predicted": "635 Main St, Springfield. 62703",
         "expected": "635 Main St, Springfield, 62703",
-        "fuzzy_score": 0.6129
+        "fuzzy_score": 0.9677
       },
       "status": {
-        "predicted": "fail",
+        "predicted": "partial",
         "expected": "partial",
-        "exact_match": 0.0
+        "exact_match": 1.0
       },
       "structure_type": {
         "predicted": "Industrial",
@@ -4522,7 +4522,7 @@
         "fuzzy_score": 1.0
       },
       "routing": {
-        "team": "FIELD_DISPATCH",
+        "team": "UNKNOWN",
         "action_correct": true,
         "predicted_action": true,
         "expected_action": true
@@ -4999,7 +4999,7 @@
     {
       "message_id": "msg_0138",
       "template_type": "data_dump",
-      "confidence": 0.93,
+      "confidence": 0.96,
       "permit_number": {
         "predicted": "FP-2026-21405",
         "expected": "FP-2026-21405",
@@ -5011,9 +5011,9 @@
         "exact_match": 1.0
       },
       "site_address": {
-        "predicted": "25 7756 Walnut Way, Shelbyville, 62701",
+        "predicted": "7756 Walnut Way, Shelbyville, 62701",
         "expected": "7756 Walnut Way, Shelbyville, 62701",
-        "fuzzy_score": 0.9211
+        "fuzzy_score": 1.0
       },
       "status": {
         "predicted": "partial",
@@ -5179,7 +5179,7 @@
     {
       "message_id": "msg_0143",
       "template_type": "data_dump",
-      "confidence": 0.99,
+      "confidence": 0.96,
       "permit_number": {
         "predicted": "MP-2026-17374",
         "expected": "MP-2026-17374",
@@ -5191,9 +5191,9 @@
         "exact_match": 1.0
       },
       "site_address": {
-        "predicted": "2025 1553 Magnolia Blvd, Brockway, 62704",
+        "predicted": "1553 Magnolia Blvd, Brockway, 62704",
         "expected": "1553 Magnolia Blvd, Brockway, 62704",
-        "fuzzy_score": 0.875
+        "fuzzy_score": 1.0
       },
       "status": {
         "predicted": "pass",
@@ -5647,7 +5647,7 @@
     {
       "message_id": "msg_0156",
       "template_type": "data_dump",
-      "confidence": 0.99,
+      "confidence": 0.96,
       "permit_number": {
         "predicted": "IP-2025-40641",
         "expected": "IP-2025-40641",
@@ -5659,14 +5659,14 @@
         "exact_match": 1.0
       },
       "site_address": {
-        "predicted": "40641 Sep 14 2025 3775 Maple Rd, Capital City, 62702",
+        "predicted": "3775 Maple Rd, Capital City, 62702",
         "expected": "3775 Maple Rd, Capital City, 62702",
-        "fuzzy_score": 0.6538
+        "fuzzy_score": 1.0
       },
       "status": {
-        "predicted": "pass",
+        "predicted": "fail",
         "expected": "fail",
-        "exact_match": 0.0
+        "exact_match": 1.0
       },
       "structure_type": {
         "predicted": "Industrial",
@@ -5674,7 +5674,7 @@
         "fuzzy_score": 1.0
       },
       "routing": {
-        "team": "PERMITTING",
+        "team": "FIELD_DISPATCH",
         "action_correct": true,
         "predicted_action": true,
         "expected_action": true
@@ -5683,7 +5683,7 @@
     {
       "message_id": "msg_0157",
       "template_type": "data_dump",
-      "confidence": 0.99,
+      "confidence": 0.91,
       "permit_number": {
         "predicted": "BP-2025-21126",
         "expected": "BP-2025-21126",
@@ -5695,14 +5695,14 @@
         "exact_match": 1.0
       },
       "site_address": {
-        "predicted": "2025 7959 Poplar Ct, Ogdenville, 62701",
+        "predicted": "7959 Poplar Ct, Ogdenville, 62701",
         "expected": "7959 Poplar Ct, Ogdenville, 62701",
-        "fuzzy_score": 0.8684
+        "fuzzy_score": 1.0
       },
       "status": {
-        "predicted": "pass",
+        "predicted": "unknown",
         "expected": "unknown",
-        "exact_match": 0.0
+        "exact_match": 1.0
       },
       "structure_type": {
         "predicted": "Mixed-Use",
@@ -5710,7 +5710,7 @@
         "fuzzy_score": 1.0
       },
       "routing": {
-        "team": "PERMITTING",
+        "team": "UNKNOWN",
         "action_correct": false,
         "predicted_action": true,
         "expected_action": false
@@ -5971,7 +5971,7 @@
     {
       "message_id": "msg_0165",
       "template_type": "data_dump",
-      "confidence": 0.99,
+      "confidence": 0.96,
       "permit_number": {
         "predicted": "FP-2025-68338",
         "expected": "FP-2025-68338",
@@ -5983,14 +5983,14 @@
         "exact_match": 1.0
       },
       "site_address": {
-        "predicted": "68338 Nov 07 2025 8689 Pine Dr, Brockway, 62708",
+        "predicted": "8689 Pine Dr, Brockway, 62708",
         "expected": "8689 Pine Dr, Brockway, 62708",
-        "fuzzy_score": 0.617
+        "fuzzy_score": 1.0
       },
       "status": {
-        "predicted": "pass",
+        "predicted": "fail",
         "expected": "fail",
-        "exact_match": 0.0
+        "exact_match": 1.0
       },
       "structure_type": {
         "predicted": "Mixed-Use",
@@ -5998,7 +5998,7 @@
         "fuzzy_score": 1.0
       },
       "routing": {
-        "team": "PERMITTING",
+        "team": "FIELD_DISPATCH",
         "action_correct": true,
         "predicted_action": true,
         "expected_action": true
@@ -6115,7 +6115,7 @@
     {
       "message_id": "msg_0169",
       "template_type": "data_dump",
-      "confidence": 0.99,
+      "confidence": 0.96,
       "permit_number": {
         "predicted": "MP-2026-92403",
         "expected": "MP-2026-92403",
@@ -6127,14 +6127,14 @@
         "exact_match": 1.0
       },
       "site_address": {
-        "predicted": "2026 2284 Sequoia Dr, Shelbyville, 62708",
+        "predicted": "2284 Sequoia Dr, Shelbyville, 62708",
         "expected": "2284 Sequoia Dr, Shelbyville, 62708",
-        "fuzzy_score": 0.875
+        "fuzzy_score": 1.0
       },
       "status": {
-        "predicted": "pass",
+        "predicted": "partial",
         "expected": "partial",
-        "exact_match": 0.0
+        "exact_match": 1.0
       },
       "structure_type": {
         "predicted": "Industrial",
@@ -6142,7 +6142,7 @@
         "fuzzy_score": 1.0
       },
       "routing": {
-        "team": "PERMITTING",
+        "team": "UNKNOWN",
         "action_correct": true,
         "predicted_action": true,
         "expected_action": true
@@ -6331,21 +6331,21 @@
     {
       "message_id": "msg_0175",
       "template_type": "data_dump",
-      "confidence": 0.99,
+      "confidence": 0.96,
       "permit_number": {
         "predicted": "CP-2026-14340",
         "expected": "CP-2026-14340",
         "exact_match": 1.0
       },
       "inspection_date": {
-        "predicted": "2025-09-14",
+        "predicted": "2026-03-05",
         "expected": "2026-03-05",
-        "exact_match": 0.0
+        "exact_match": 1.0
       },
       "site_address": {
-        "predicted": "2026 7S10 Spruce Cir, North Haverbrook, 62707",
+        "predicted": "7S10 Spruce Cir, North Haverbrook, 62707",
         "expected": "7510 Spruce Cir, North Haverbrook, 62707",
-        "fuzzy_score": 0.8667
+        "fuzzy_score": 0.975
       },
       "status": {
         "predicted": "pass",
@@ -6475,7 +6475,7 @@
     {
       "message_id": "msg_0179",
       "template_type": "data_dump",
-      "confidence": 0.99,
+      "confidence": 0.91,
       "permit_number": {
         "predicted": "CP-2026-87366",
         "expected": "CP-2026-87366",
@@ -6487,14 +6487,14 @@
         "exact_match": 1.0
       },
       "site_address": {
-        "predicted": "2025 5889 Pine Dr, Springfield, 62706",
+        "predicted": "5889 Pine Dr, Springfield, 62706",
         "expected": "5889 Pine Dr, Springfield, 62706",
-        "fuzzy_score": 0.8649
+        "fuzzy_score": 1.0
       },
       "status": {
-        "predicted": "pass",
+        "predicted": "unknown",
         "expected": "unknown",
-        "exact_match": 0.0
+        "exact_match": 1.0
       },
       "structure_type": {
         "predicted": "Industrial",
@@ -6502,7 +6502,7 @@
         "fuzzy_score": 1.0
       },
       "routing": {
-        "team": "PERMITTING",
+        "team": "UNKNOWN",
         "action_correct": false,
         "predicted_action": true,
         "expected_action": false
@@ -6511,26 +6511,26 @@
     {
       "message_id": "msg_0180",
       "template_type": "data_dump",
-      "confidence": 0.99,
+      "confidence": 0.96,
       "permit_number": {
         "predicted": "MP-2026-72879",
         "expected": "MP-2026-72879",
         "exact_match": 1.0
       },
       "inspection_date": {
-        "predicted": "2026-06-20",
+        "predicted": "2025-08-20",
         "expected": "2025-08-20",
-        "exact_match": 0.0
+        "exact_match": 1.0
       },
       "site_address": {
-        "predicted": "2025 9829 Chestnut St, Capital City, 62702",
+        "predicted": "9829 Chestnut St, Capital City, 62702",
         "expected": "9829 Chestnut St, Capital City, 62702",
-        "fuzzy_score": 0.881
+        "fuzzy_score": 1.0
       },
       "status": {
-        "predicted": "fail",
+        "predicted": "partial",
         "expected": "partial",
-        "exact_match": 0.0
+        "exact_match": 1.0
       },
       "structure_type": {
         "predicted": "Mixed-Use",
@@ -6538,7 +6538,7 @@
         "fuzzy_score": 1.0
       },
       "routing": {
-        "team": "FIELD_DISPATCH",
+        "team": "UNKNOWN",
         "action_correct": true,
         "predicted_action": true,
         "expected_action": true
@@ -6583,26 +6583,26 @@
     {
       "message_id": "msg_0182",
       "template_type": "data_dump",
-      "confidence": 0.99,
+      "confidence": 0.96,
       "permit_number": {
         "predicted": "FP-2026-59183",
         "expected": "FP-2026-59183",
         "exact_match": 1.0
       },
       "inspection_date": {
-        "predicted": "2016-09-25",
+        "predicted": "2026-06-21",
         "expected": "2026-06-21",
-        "exact_match": 0.0
+        "exact_match": 1.0
       },
       "site_address": {
-        "predicted": "59183 Jun 21 2026 8934 Beech Ave, Shelbyville, 62701",
+        "predicted": "8934 Beech Ave, Shelbyville, 62701",
         "expected": "8934 Beech Ave, Shelbyville, 62701",
-        "fuzzy_score": 0.6538
+        "fuzzy_score": 1.0
       },
       "status": {
-        "predicted": "pass",
+        "predicted": "partial",
         "expected": "partial",
-        "exact_match": 0.0
+        "exact_match": 1.0
       },
       "structure_type": {
         "predicted": "Commercial",
@@ -6610,7 +6610,7 @@
         "fuzzy_score": 1.0
       },
       "routing": {
-        "team": "PERMITTING",
+        "team": "UNKNOWN",
         "action_correct": true,
         "predicted_action": true,
         "expected_action": true
@@ -6799,21 +6799,21 @@
     {
       "message_id": "msg_0188",
       "template_type": "data_dump",
-      "confidence": 0.99,
+      "confidence": 0.96,
       "permit_number": {
         "predicted": "EP-2026-75317",
         "expected": "EP-2026-75317",
         "exact_match": 1.0
       },
       "inspection_date": {
-        "predicted": "2026-02-13",
+        "predicted": "2026-07-06",
         "expected": "2026-07-06",
-        "exact_match": 0.0
+        "exact_match": 1.0
       },
       "site_address": {
-        "predicted": "2026 4675 Chestnut St, Shelbyville, 62708",
+        "predicted": "4675 Chestnut St, Shelbyville, 62708",
         "expected": "4675 Chestnut St, Shelbyville, 62708",
-        "fuzzy_score": 0.878
+        "fuzzy_score": 1.0
       },
       "status": {
         "predicted": "fail",
@@ -7267,7 +7267,7 @@
     {
       "message_id": "msg_0201",
       "template_type": "data_dump",
-      "confidence": 0.88,
+      "confidence": 0.91,
       "permit_number": {
         "predicted": "BP-2025-96700",
         "expected": "BP-2025-96700",
@@ -7279,9 +7279,9 @@
         "exact_match": 1.0
       },
       "site_address": {
-        "predicted": "2026 8841 Pine Dr, North Haverbrook, 62708",
+        "predicted": "8841 Pine Dr, North Haverbrook, 62708",
         "expected": "8841 Pine Dr, North Haverbrook, 62708",
-        "fuzzy_score": 0.881
+        "fuzzy_score": 1.0
       },
       "status": {
         "predicted": "unknown",
@@ -7483,26 +7483,26 @@
     {
       "message_id": "msg_0207",
       "template_type": "data_dump",
-      "confidence": 0.99,
+      "confidence": 0.96,
       "permit_number": {
-        "predicted": "FP-2026-11851",
+        "predicted": "FP-2025-3802S",
         "expected": "FP-2025-38025",
         "exact_match": 0.0
       },
       "inspection_date": {
-        "predicted": "2025-11-06",
+        "predicted": "2025-10-25",
         "expected": "2025-10-25",
-        "exact_match": 0.0
+        "exact_match": 1.0
       },
       "site_address": {
-        "predicted": "2025 950S Cedar Ln, Springfield, 62708",
+        "predicted": "950S Cedar Ln, Springfield, 62708",
         "expected": "9505 Cedar Ln, Springfield, 62708",
-        "fuzzy_score": 0.8421
+        "fuzzy_score": 0.9697
       },
       "status": {
-        "predicted": "fail",
+        "predicted": "partial",
         "expected": "partial",
-        "exact_match": 0.0
+        "exact_match": 1.0
       },
       "structure_type": {
         "predicted": "Commercial",
@@ -7510,7 +7510,7 @@
         "fuzzy_score": 1.0
       },
       "routing": {
-        "team": "FIELD_DISPATCH",
+        "team": "UNKNOWN",
         "action_correct": true,
         "predicted_action": true,
         "expected_action": true
@@ -7591,26 +7591,26 @@
     {
       "message_id": "msg_0210",
       "template_type": "data_dump",
-      "confidence": 0.99,
+      "confidence": 0.96,
       "permit_number": {
         "predicted": "BP-2026-36196",
         "expected": "BP-2026-36196",
         "exact_match": 1.0
       },
       "inspection_date": {
-        "predicted": "2025-09-26",
+        "predicted": "2025-10-24",
         "expected": "2025-10-24",
-        "exact_match": 0.0
+        "exact_match": 1.0
       },
       "site_address": {
-        "predicted": "24 966 Walnut Way, Ogdenville, 62704",
+        "predicted": "966 Walnut Way, Ogdenville, 62704",
         "expected": "966 Walnut Way, Ogdenville, 62704",
-        "fuzzy_score": 0.9167
+        "fuzzy_score": 1.0
       },
       "status": {
-        "predicted": "pass",
+        "predicted": "partial",
         "expected": "partial",
-        "exact_match": 0.0
+        "exact_match": 1.0
       },
       "structure_type": {
         "predicted": "Residential",
@@ -7618,7 +7618,7 @@
         "fuzzy_score": 1.0
       },
       "routing": {
-        "team": "PERMITTING",
+        "team": "UNKNOWN",
         "action_correct": true,
         "predicted_action": true,
         "expected_action": true
@@ -8023,7 +8023,7 @@
     {
       "message_id": "msg_0222",
       "template_type": "data_dump",
-      "confidence": 0.99,
+      "confidence": 0.96,
       "permit_number": {
         "predicted": "FP-2026-72693",
         "expected": "FP-2026-72693",
@@ -8035,9 +8035,9 @@
         "exact_match": 1.0
       },
       "site_address": {
-        "predicted": "26 1744 Chestnut St, Ogdenville, 62705",
+        "predicted": "1744 Chestnut St, Ogdenville, 62705",
         "expected": "1744 Chestnut St, Ogdenville, 62705",
-        "fuzzy_score": 0.9211
+        "fuzzy_score": 1.0
       },
       "status": {
         "predicted": "pass",
@@ -8059,7 +8059,7 @@
     {
       "message_id": "msg_0223",
       "template_type": "data_dump",
-      "confidence": 0.94,
+      "confidence": 0.96,
       "permit_number": {
         "predicted": "BP-2026-02021",
         "expected": "BP-2026-02021",
@@ -8071,14 +8071,14 @@
         "exact_match": 1.0
       },
       "site_address": {
-        "predicted": "2025 4427 Cedar Ln, Ogdenville, 62703",
+        "predicted": "4427 Cedar Ln, Ogdenville, 62703",
         "expected": "4427 Cedar Ln, Ogdenville, 62703",
-        "fuzzy_score": 0.8649
+        "fuzzy_score": 1.0
       },
       "status": {
-        "predicted": "unknown",
+        "predicted": "pass",
         "expected": "pass",
-        "exact_match": 0.0
+        "exact_match": 1.0
       },
       "structure_type": {
         "predicted": "Commercial",
@@ -8086,7 +8086,7 @@
         "fuzzy_score": 1.0
       },
       "routing": {
-        "team": "UNKNOWN",
+        "team": "PERMITTING",
         "action_correct": true,
         "predicted_action": false,
         "expected_action": false
@@ -8167,7 +8167,7 @@
     {
       "message_id": "msg_0226",
       "template_type": "data_dump",
-      "confidence": 0.99,
+      "confidence": 0.96,
       "permit_number": {
         "predicted": "BP-2026-52799",
         "expected": "BP-2026-52799",
@@ -8179,14 +8179,14 @@
         "exact_match": 1.0
       },
       "site_address": {
-        "predicted": "2025 7801 Hickory Ln, Brockway, 62702",
+        "predicted": "7801 Hickory Ln, Brockway, 62702",
         "expected": "7801 Hickory Ln, Brockway, 62702",
-        "fuzzy_score": 0.8649
+        "fuzzy_score": 1.0
       },
       "status": {
-        "predicted": "pass",
+        "predicted": "fail",
         "expected": "fail",
-        "exact_match": 0.0
+        "exact_match": 1.0
       },
       "structure_type": {
         "predicted": "Industrial",
@@ -8194,7 +8194,7 @@
         "fuzzy_score": 1.0
       },
       "routing": {
-        "team": "PERMITTING",
+        "team": "FIELD_DISPATCH",
         "action_correct": true,
         "predicted_action": true,
         "expected_action": true
@@ -8563,9 +8563,9 @@
     {
       "message_id": "msg_0237",
       "template_type": "data_dump",
-      "confidence": 0.94,
+      "confidence": 0.96,
       "permit_number": {
-        "predicted": "",
+        "predicted": "BP-202S-41385",
         "expected": "BP-2025-41385",
         "exact_match": 0.0
       },
@@ -8575,9 +8575,9 @@
         "exact_match": 1.0
       },
       "site_address": {
-        "predicted": "2025 7102 Elm Blvd, Brockway, 62701",
+        "predicted": "7102 Elm Blvd, Brockway, 62701",
         "expected": "7102 Elm Blvd, Brockway, 62701",
-        "fuzzy_score": 0.8571
+        "fuzzy_score": 1.0
       },
       "status": {
         "predicted": "partial",
@@ -8671,21 +8671,21 @@
     {
       "message_id": "msg_0240",
       "template_type": "data_dump",
-      "confidence": 0.93,
+      "confidence": 0.96,
       "permit_number": {
         "predicted": "BP-2026-50945",
         "expected": "BP-2026-50945",
         "exact_match": 1.0
       },
       "inspection_date": {
-        "predicted": "2025-06-17",
+        "predicted": "2025-07-07",
         "expected": "2025-07-07",
-        "exact_match": 0.0
+        "exact_match": 1.0
       },
       "site_address": {
-        "predicted": "07 644 Oak Ave, Ogdenville, 62708",
+        "predicted": "644 Oak Ave, Ogdenville, 62708",
         "expected": "644 Oak Ave, Ogdenville, 62708",
-        "fuzzy_score": 0.9091
+        "fuzzy_score": 1.0
       },
       "status": {
         "predicted": "pass",
@@ -8779,9 +8779,9 @@
     {
       "message_id": "msg_0243",
       "template_type": "data_dump",
-      "confidence": 0.99,
+      "confidence": 0.96,
       "permit_number": {
-        "predicted": "EP-2025-42448",
+        "predicted": "IP-2025-L0464",
         "expected": "IP-2025-10464",
         "exact_match": 0.0
       },
@@ -8791,9 +8791,9 @@
         "exact_match": 1.0
       },
       "site_address": {
-        "predicted": "30 5723 Spruce Cir, Capital City, 62701",
+        "predicted": "5723 Spruce Cir, Capital City, 62701",
         "expected": "5723 Spruce Cir, Capital City, 62701",
-        "fuzzy_score": 0.9231
+        "fuzzy_score": 1.0
       },
       "status": {
         "predicted": "pass",
@@ -8959,26 +8959,26 @@
     {
       "message_id": "msg_0248",
       "template_type": "data_dump",
-      "confidence": 0.99,
+      "confidence": 0.91,
       "permit_number": {
         "predicted": "EP-2026-51957",
         "expected": "EP-2026-51957",
         "exact_match": 1.0
       },
       "inspection_date": {
-        "predicted": "2029-03-26",
+        "predicted": "2025-11-04",
         "expected": "2025-11-04",
-        "exact_match": 0.0
+        "exact_match": 1.0
       },
       "site_address": {
-        "predicted": "2025 5165 Sycamore Rd, Brockway, 62707",
+        "predicted": "5165 Sycamore Rd, Brockway, 62707",
         "expected": "5165 Sycamore Rd, Brockway, 62707",
-        "fuzzy_score": 0.8684
+        "fuzzy_score": 1.0
       },
       "status": {
-        "predicted": "pass",
+        "predicted": "unknown",
         "expected": "unknown",
-        "exact_match": 0.0
+        "exact_match": 1.0
       },
       "structure_type": {
         "predicted": "Mixed-Use",
@@ -8986,7 +8986,7 @@
         "fuzzy_score": 1.0
       },
       "routing": {
-        "team": "PERMITTING",
+        "team": "UNKNOWN",
         "action_correct": false,
         "predicted_action": true,
         "expected_action": false
@@ -9031,11 +9031,11 @@
     {
       "message_id": "msg_0250",
       "template_type": "portal_scraping",
-      "confidence": 0.88,
+      "confidence": 0.93,
       "permit_number": {
-        "predicted": "",
+        "predicted": "MP-2025-11194",
         "expected": "MP-2025-11194",
-        "exact_match": 0.0
+        "exact_match": 1.0
       },
       "inspection_date": {
         "predicted": "2025-07-08",
@@ -9319,26 +9319,26 @@
     {
       "message_id": "msg_0258",
       "template_type": "data_dump",
-      "confidence": 0.99,
+      "confidence": 0.96,
       "permit_number": {
         "predicted": "BP-2025-24089",
         "expected": "BP-2025-24089",
         "exact_match": 1.0
       },
       "inspection_date": {
-        "predicted": "2030-05-26",
+        "predicted": "2025-06-09",
         "expected": "2025-06-09",
-        "exact_match": 0.0
+        "exact_match": 1.0
       },
       "site_address": {
-        "predicted": "2025 5107 Alder Ln, Springfield, 62701",
+        "predicted": "5107 Alder Ln, Springfield, 62701",
         "expected": "5107 Alder Ln, Springfield, 62701",
-        "fuzzy_score": 0.8684
+        "fuzzy_score": 1.0
       },
       "status": {
-        "predicted": "pass",
+        "predicted": "partial",
         "expected": "partial",
-        "exact_match": 0.0
+        "exact_match": 1.0
       },
       "structure_type": {
         "predicted": "Commercial",
@@ -9346,7 +9346,7 @@
         "fuzzy_score": 1.0
       },
       "routing": {
-        "team": "PERMITTING",
+        "team": "UNKNOWN",
         "action_correct": true,
         "predicted_action": true,
         "expected_action": true
@@ -9679,21 +9679,21 @@
     {
       "message_id": "msg_0268",
       "template_type": "data_dump",
-      "confidence": 0.93,
+      "confidence": 0.96,
       "permit_number": {
-        "predicted": "CP-2025-35296",
+        "predicted": "CP-2026-17564",
         "expected": "CP-2026-17564",
-        "exact_match": 0.0
+        "exact_match": 1.0
       },
       "inspection_date": {
-        "predicted": "2026-03-28",
+        "predicted": "2025-11-26",
         "expected": "2025-11-26",
-        "exact_match": 0.0
+        "exact_match": 1.0
       },
       "site_address": {
-        "predicted": "26 4433 Cedar Ln, Springfield, 62705",
+        "predicted": "4433 Cedar Ln, Springfield, 62705",
         "expected": "4433 Cedar Ln, Springfield, 62705",
-        "fuzzy_score": 0.9167
+        "fuzzy_score": 1.0
       },
       "status": {
         "predicted": "pass",
@@ -9895,14 +9895,14 @@
     {
       "message_id": "msg_0274",
       "template_type": "data_dump",
-      "confidence": 0.99,
+      "confidence": 0.83,
       "permit_number": {
         "predicted": "BP-2025-27606",
         "expected": "BP-2025-27606",
         "exact_match": 1.0
       },
       "inspection_date": {
-        "predicted": "2025-09-14",
+        "predicted": "",
         "expected": "2025-10-31",
         "exact_match": 0.0
       },
@@ -9912,9 +9912,9 @@
         "fuzzy_score": 1.0
       },
       "status": {
-        "predicted": "pass",
+        "predicted": "unknown",
         "expected": "unknown",
-        "exact_match": 0.0
+        "exact_match": 1.0
       },
       "structure_type": {
         "predicted": "Residential",
@@ -9922,7 +9922,7 @@
         "fuzzy_score": 1.0
       },
       "routing": {
-        "team": "PERMITTING",
+        "team": "UNKNOWN",
         "action_correct": false,
         "predicted_action": true,
         "expected_action": false
@@ -10399,7 +10399,7 @@
     {
       "message_id": "msg_0288",
       "template_type": "data_dump",
-      "confidence": 0.99,
+      "confidence": 0.96,
       "permit_number": {
         "predicted": "MP-2025-75843",
         "expected": "MP-2025-75843",
@@ -10411,9 +10411,9 @@
         "exact_match": 1.0
       },
       "site_address": {
-        "predicted": "2026 342 Hickory Ln, Shelbyville, 62703",
+        "predicted": "342 Hickory Ln, Shelbyville, 62703",
         "expected": "342 Hickory Ln, Shelbyville, 62703",
-        "fuzzy_score": 0.8718
+        "fuzzy_score": 1.0
       },
       "status": {
         "predicted": "pass",
@@ -10759,26 +10759,26 @@
     {
       "message_id": "msg_0298",
       "template_type": "data_dump",
-      "confidence": 0.99,
+      "confidence": 0.93,
       "permit_number": {
         "predicted": "BP-2025-21588",
         "expected": "BP-2025-21588",
         "exact_match": 1.0
       },
       "inspection_date": {
-        "predicted": "2025-08-09",
+        "predicted": "",
         "expected": "2025-06-14",
         "exact_match": 0.0
       },
       "site_address": {
-        "predicted": "21588 Jun 14 202S 9987 Cypress Way, Ogdenville, 62708",
+        "predicted": "9987 Cypress Way, Ogdenville, 62708",
         "expected": "9987 Cypress Way, Ogdenville, 62708",
-        "fuzzy_score": 0.6604
+        "fuzzy_score": 1.0
       },
       "status": {
-        "predicted": "pass",
+        "predicted": "fail",
         "expected": "fail",
-        "exact_match": 0.0
+        "exact_match": 1.0
       },
       "structure_type": {
         "predicted": "Commercial",
@@ -10786,7 +10786,7 @@
         "fuzzy_score": 1.0
       },
       "routing": {
-        "team": "PERMITTING",
+        "team": "FIELD_DISPATCH",
         "action_correct": true,
         "predicted_action": true,
         "expected_action": true
@@ -10795,7 +10795,7 @@
     {
       "message_id": "msg_0299",
       "template_type": "data_dump",
-      "confidence": 0.99,
+      "confidence": 0.96,
       "permit_number": {
         "predicted": "MP-2025-17239",
         "expected": "MP-2025-17239",
@@ -10807,9 +10807,9 @@
         "exact_match": 1.0
       },
       "site_address": {
-        "predicted": "25 2671 Alder Ln, North Haverbrook, 62702",
+        "predicted": "2671 Alder Ln, North Haverbrook, 62702",
         "expected": "2671 Alder Ln, North Haverbrook, 62702",
-        "fuzzy_score": 0.9268
+        "fuzzy_score": 1.0
       },
       "status": {
         "predicted": "pass",
@@ -10903,26 +10903,26 @@
     {
       "message_id": "msg_0302",
       "template_type": "data_dump",
-      "confidence": 0.99,
+      "confidence": 0.96,
       "permit_number": {
         "predicted": "BP-2026-83720",
         "expected": "BP-2026-83720",
         "exact_match": 1.0
       },
       "inspection_date": {
-        "predicted": "2025-06-07",
+        "predicted": "2025-07-04",
         "expected": "2025-07-04",
-        "exact_match": 0.0
+        "exact_match": 1.0
       },
       "site_address": {
-        "predicted": "25 7892 Juniper Way, Ogdenville, 62708",
+        "predicted": "7892 Juniper Way, Ogdenville, 62708",
         "expected": "7892 Juniper Way, Ogdenville, 62708",
-        "fuzzy_score": 0.9211
+        "fuzzy_score": 1.0
       },
       "status": {
-        "predicted": "pass",
+        "predicted": "fail",
         "expected": "fail",
-        "exact_match": 0.0
+        "exact_match": 1.0
       },
       "structure_type": {
         "predicted": "Industrial",
@@ -10930,7 +10930,7 @@
         "fuzzy_score": 1.0
       },
       "routing": {
-        "team": "PERMITTING",
+        "team": "FIELD_DISPATCH",
         "action_correct": true,
         "predicted_action": true,
         "expected_action": true
@@ -10975,7 +10975,7 @@
     {
       "message_id": "msg_0304",
       "template_type": "data_dump",
-      "confidence": 0.94,
+      "confidence": 0.91,
       "permit_number": {
         "predicted": "MP-2025-68929",
         "expected": "MP-2025-68929",
@@ -10987,9 +10987,9 @@
         "exact_match": 1.0
       },
       "site_address": {
-        "predicted": "2025 2648 Main St, Brockway, 62708",
+        "predicted": "2648 Main St, Brockway, 62708",
         "expected": "2648 Main St, Brockway, 62708",
-        "fuzzy_score": 0.8529
+        "fuzzy_score": 1.0
       },
       "status": {
         "predicted": "unknown",
@@ -11011,7 +11011,7 @@
     {
       "message_id": "msg_0305",
       "template_type": "data_dump",
-      "confidence": 0.99,
+      "confidence": 0.96,
       "permit_number": {
         "predicted": "BP-2025-03580",
         "expected": "BP-2025-03580",
@@ -11023,9 +11023,9 @@
         "exact_match": 1.0
       },
       "site_address": {
-        "predicted": "2026 8102 Main St, Ogdenville, 62707",
+        "predicted": "8102 Main St, Ogdenville, 62707",
         "expected": "8102 Main St, Ogdenville, 62707",
-        "fuzzy_score": 0.8611
+        "fuzzy_score": 1.0
       },
       "status": {
         "predicted": "pass",
@@ -11083,7 +11083,7 @@
     {
       "message_id": "msg_0307",
       "template_type": "data_dump",
-      "confidence": 0.99,
+      "confidence": 0.96,
       "permit_number": {
         "predicted": "IP-2026-23258",
         "expected": "IP-2026-23258",
@@ -11095,14 +11095,14 @@
         "exact_match": 1.0
       },
       "site_address": {
-        "predicted": "08 2104 Cypress Way, Brockway, 62706",
+        "predicted": "2104 Cypress Way, Brockway, 62706",
         "expected": "2104 Cypress Way, Brockway, 62706",
-        "fuzzy_score": 0.9167
+        "fuzzy_score": 1.0
       },
       "status": {
-        "predicted": "pass",
+        "predicted": "partial",
         "expected": "partial",
-        "exact_match": 0.0
+        "exact_match": 1.0
       },
       "structure_type": {
         "predicted": "Residential",
@@ -11110,7 +11110,7 @@
         "fuzzy_score": 1.0
       },
       "routing": {
-        "team": "PERMITTING",
+        "team": "UNKNOWN",
         "action_correct": true,
         "predicted_action": true,
         "expected_action": true
@@ -11155,26 +11155,26 @@
     {
       "message_id": "msg_0309",
       "template_type": "data_dump",
-      "confidence": 0.99,
+      "confidence": 0.91,
       "permit_number": {
         "predicted": "IP-2026-08429",
         "expected": "IP-2026-08429",
         "exact_match": 1.0
       },
       "inspection_date": {
-        "predicted": "2025-07-04",
+        "predicted": "2026-06-09",
         "expected": "2026-06-09",
-        "exact_match": 0.0
+        "exact_match": 1.0
       },
       "site_address": {
-        "predicted": "2026 3512 Ash Pl, Capital City, 62705",
+        "predicted": "3512 Ash Pl, Capital City, 62705",
         "expected": "3512 Ash Pl, Capital City, 62705",
-        "fuzzy_score": 0.8649
+        "fuzzy_score": 1.0
       },
       "status": {
-        "predicted": "pass",
+        "predicted": "unknown",
         "expected": "unknown",
-        "exact_match": 0.0
+        "exact_match": 1.0
       },
       "structure_type": {
         "predicted": "Mixed-Use",
@@ -11182,7 +11182,7 @@
         "fuzzy_score": 1.0
       },
       "routing": {
-        "team": "PERMITTING",
+        "team": "UNKNOWN",
         "action_correct": false,
         "predicted_action": true,
         "expected_action": false
@@ -11227,7 +11227,7 @@
     {
       "message_id": "msg_0311",
       "template_type": "data_dump",
-      "confidence": 0.99,
+      "confidence": 0.91,
       "permit_number": {
         "predicted": "CP-2026-24436",
         "expected": "CP-2026-24436",
@@ -11239,14 +11239,14 @@
         "exact_match": 1.0
       },
       "site_address": {
-        "predicted": "2026 6649 Spruce Cir, Capital City, 62708",
+        "predicted": "6649 Spruce Cir, Capital City, 62708",
         "expected": "6649 Spruce Cir, Capital City, 62708",
-        "fuzzy_score": 0.878
+        "fuzzy_score": 1.0
       },
       "status": {
-        "predicted": "pass",
+        "predicted": "unknown",
         "expected": "unknown",
-        "exact_match": 0.0
+        "exact_match": 1.0
       },
       "structure_type": {
         "predicted": "Residential",
@@ -11254,7 +11254,7 @@
         "fuzzy_score": 1.0
       },
       "routing": {
-        "team": "PERMITTING",
+        "team": "UNKNOWN",
         "action_correct": false,
         "predicted_action": true,
         "expected_action": false
@@ -11443,7 +11443,7 @@
     {
       "message_id": "msg_0317",
       "template_type": "data_dump",
-      "confidence": 0.99,
+      "confidence": 0.91,
       "permit_number": {
         "predicted": "CP-2025-47012",
         "expected": "CP-2025-47012",
@@ -11455,12 +11455,12 @@
         "exact_match": 1.0
       },
       "site_address": {
-        "predicted": "26 9783 Juniper Way, Capital City, 62701",
+        "predicted": "9783 Juniper Way, Capital City, 62701",
         "expected": "9783 Juniper Way, Capital City, 62701",
-        "fuzzy_score": 0.925
+        "fuzzy_score": 1.0
       },
       "status": {
-        "predicted": "partial",
+        "predicted": "unknown",
         "expected": "pass",
         "exact_match": 0.0
       },
@@ -11551,34 +11551,34 @@
     {
       "message_id": "msg_0320",
       "template_type": "data_dump",
-      "confidence": 0.99,
+      "confidence": 0.96,
       "permit_number": {
         "predicted": "IP-2025-53481",
         "expected": "IP-2025-53481",
         "exact_match": 1.0
       },
       "inspection_date": {
-        "predicted": "2025-07-19",
+        "predicted": "2026-01-24",
         "expected": "2026-01-24",
-        "exact_match": 0.0
+        "exact_match": 1.0
       },
       "site_address": {
-        "predicted": "2026 8973 Cedar Ln, Springfield, 62706",
+        "predicted": "8973 Cedar Ln, Springfield, 62706",
         "expected": "8973 Cedar Ln, Springfield, 62706",
-        "fuzzy_score": 0.8684
+        "fuzzy_score": 1.0
       },
       "status": {
-        "predicted": "pass",
+        "predicted": "fail",
         "expected": "fail",
-        "exact_match": 0.0
+        "exact_match": 1.0
       },
       "structure_type": {
-        "predicted": "Residential",
+        "predicted": "Commercial",
         "expected": "commercial",
-        "fuzzy_score": 0.3636
+        "fuzzy_score": 1.0
       },
       "routing": {
-        "team": "PERMITTING",
+        "team": "FIELD_DISPATCH",
         "action_correct": true,
         "predicted_action": true,
         "expected_action": true
@@ -11623,9 +11623,9 @@
     {
       "message_id": "msg_0322",
       "template_type": "minimalist_mobile",
-      "confidence": 0.51,
+      "confidence": 0.7,
       "permit_number": {
-        "predicted": "",
+        "predicted": "EP-225-05505",
         "expected": "EP-2025-05505",
         "exact_match": 0.0
       },
@@ -11767,26 +11767,26 @@
     {
       "message_id": "msg_0326",
       "template_type": "data_dump",
-      "confidence": 0.99,
+      "confidence": 0.96,
       "permit_number": {
         "predicted": "IP-2025-50942",
         "expected": "IP-2025-50942",
         "exact_match": 1.0
       },
       "inspection_date": {
-        "predicted": "2025-09-15",
+        "predicted": "2025-12-22",
         "expected": "2025-12-22",
-        "exact_match": 0.0
+        "exact_match": 1.0
       },
       "site_address": {
-        "predicted": "2025 2426 Pine Dr, Ogdenville, 62708",
+        "predicted": "2426 Pine Dr, Ogdenville, 62708",
         "expected": "2426 Pine Dr, Ogdenville, 62708",
-        "fuzzy_score": 0.8611
+        "fuzzy_score": 1.0
       },
       "status": {
-        "predicted": "fail",
+        "predicted": "partial",
         "expected": "partial",
-        "exact_match": 0.0
+        "exact_match": 1.0
       },
       "structure_type": {
         "predicted": "Residential",
@@ -11794,7 +11794,7 @@
         "fuzzy_score": 1.0
       },
       "routing": {
-        "team": "FIELD_DISPATCH",
+        "team": "UNKNOWN",
         "action_correct": true,
         "predicted_action": true,
         "expected_action": true
@@ -11839,11 +11839,11 @@
     {
       "message_id": "msg_0328",
       "template_type": "formal_bureaucratic",
-      "confidence": 0.94,
+      "confidence": 0.99,
       "permit_number": {
-        "predicted": "",
+        "predicted": "EP-2025-29021",
         "expected": "EP-2025-29021",
-        "exact_match": 0.0
+        "exact_match": 1.0
       },
       "inspection_date": {
         "predicted": "2025-11-11",
@@ -11875,7 +11875,7 @@
     {
       "message_id": "msg_0329",
       "template_type": "data_dump",
-      "confidence": 0.99,
+      "confidence": 0.91,
       "permit_number": {
         "predicted": "FP-2025-83115",
         "expected": "FP-2025-83115",
@@ -11887,14 +11887,14 @@
         "exact_match": 1.0
       },
       "site_address": {
-        "predicted": "2026 6934 Redwood Ave, Springfield, 62704",
+        "predicted": "6934 Redwood Ave, Springfield, 62704",
         "expected": "6934 Redwood Ave, Springfield, 62704",
-        "fuzzy_score": 0.878
+        "fuzzy_score": 1.0
       },
       "status": {
-        "predicted": "partial",
+        "predicted": "unknown",
         "expected": "unknown",
-        "exact_match": 0.0
+        "exact_match": 1.0
       },
       "structure_type": {
         "predicted": "Mixed-Use",
@@ -11911,21 +11911,21 @@
     {
       "message_id": "msg_0330",
       "template_type": "data_dump",
-      "confidence": 0.99,
+      "confidence": 0.96,
       "permit_number": {
-        "predicted": "MP-2026-67565",
+        "predicted": "CP-2026-7LS01",
         "expected": "CP-2026-71501",
         "exact_match": 0.0
       },
       "inspection_date": {
-        "predicted": "2026-05-20",
+        "predicted": "2026-02-25",
         "expected": "2026-02-25",
-        "exact_match": 0.0
+        "exact_match": 1.0
       },
       "site_address": {
-        "predicted": "2026 5957 Main St, Springfield, 62707",
+        "predicted": "5957 Main St, Springfield, 62707",
         "expected": "5957 Main St, Springfield, 62707",
-        "fuzzy_score": 0.8649
+        "fuzzy_score": 1.0
       },
       "status": {
         "predicted": "fail",
@@ -12319,9 +12319,9 @@
         "exact_match": 1.0
       },
       "site_address": {
-        "predicted": "2025 9829 Pine Dr, Brockway, 62703",
+        "predicted": "9829 Pine Dr, Brockway, 62703",
         "expected": "9829 Pine Dr, Brockway, 62703",
-        "fuzzy_score": 0.8529
+        "fuzzy_score": 1.0
       },
       "status": {
         "predicted": "unknown",
@@ -12329,9 +12329,9 @@
         "exact_match": 1.0
       },
       "structure_type": {
-        "predicted": "",
+        "predicted": "Residential",
         "expected": "residential",
-        "fuzzy_score": 0.0
+        "fuzzy_score": 1.0
       },
       "routing": {
         "team": "UNKNOWN",
@@ -12343,11 +12343,11 @@
     {
       "message_id": "msg_0342",
       "template_type": "data_dump",
-      "confidence": 0.93,
+      "confidence": 0.91,
       "permit_number": {
-        "predicted": "CP-2025-64368",
+        "predicted": "BP-2026-43965",
         "expected": "BP-2026-43965",
-        "exact_match": 0.0
+        "exact_match": 1.0
       },
       "inspection_date": {
         "predicted": "2026-05-13",
@@ -12355,14 +12355,14 @@
         "exact_match": 1.0
       },
       "site_address": {
-        "predicted": "2026 7443 Magnolia Blvd, North Haverbrook, 62705",
+        "predicted": "7443 Magnolia Blvd, North Haverbrook, 62705",
         "expected": "7443 Magnolia Blvd, North Haverbrook, 62705",
-        "fuzzy_score": 0.8958
+        "fuzzy_score": 1.0
       },
       "status": {
-        "predicted": "partial",
+        "predicted": "unknown",
         "expected": "unknown",
-        "exact_match": 0.0
+        "exact_match": 1.0
       },
       "structure_type": {
         "predicted": "Industrial",
@@ -12559,26 +12559,26 @@
     {
       "message_id": "msg_0348",
       "template_type": "data_dump",
-      "confidence": 0.99,
+      "confidence": 0.91,
       "permit_number": {
         "predicted": "MP-2026-97692",
         "expected": "MP-2026-97692",
         "exact_match": 1.0
       },
       "inspection_date": {
-        "predicted": "2025-12-16",
+        "predicted": "2025-08-28",
         "expected": "2025-08-28",
-        "exact_match": 0.0
+        "exact_match": 1.0
       },
       "site_address": {
-        "predicted": "2025 6266 Spruce Cir, North Haverbrook, 62702",
+        "predicted": "6266 Spruce Cir, North Haverbrook, 62702",
         "expected": "6266 Spruce Cir, North Haverbrook, 62702",
-        "fuzzy_score": 0.8889
+        "fuzzy_score": 1.0
       },
       "status": {
-        "predicted": "pass",
+        "predicted": "unknown",
         "expected": "unknown",
-        "exact_match": 0.0
+        "exact_match": 1.0
       },
       "structure_type": {
         "predicted": "Commercial",
@@ -12586,7 +12586,7 @@
         "fuzzy_score": 1.0
       },
       "routing": {
-        "team": "PERMITTING",
+        "team": "UNKNOWN",
         "action_correct": false,
         "predicted_action": true,
         "expected_action": false
@@ -12667,7 +12667,7 @@
     {
       "message_id": "msg_0351",
       "template_type": "data_dump",
-      "confidence": 0.99,
+      "confidence": 0.91,
       "permit_number": {
         "predicted": "FP-2025-03102",
         "expected": "FP-2025-03102",
@@ -12679,14 +12679,14 @@
         "exact_match": 1.0
       },
       "site_address": {
-        "predicted": "03102 Jan 01 2026 1814 Alder Ln, Brockway, 62707",
+        "predicted": "1814 Alder Ln, Brockway, 62707",
         "expected": "1814 Alder Ln, Brockway, 62707",
-        "fuzzy_score": 0.625
+        "fuzzy_score": 1.0
       },
       "status": {
-        "predicted": "pass",
+        "predicted": "unknown",
         "expected": "unknown",
-        "exact_match": 0.0
+        "exact_match": 1.0
       },
       "structure_type": {
         "predicted": "Residential",
@@ -12694,7 +12694,7 @@
         "fuzzy_score": 1.0
       },
       "routing": {
-        "team": "PERMITTING",
+        "team": "UNKNOWN",
         "action_correct": false,
         "predicted_action": true,
         "expected_action": false
@@ -12703,11 +12703,11 @@
     {
       "message_id": "msg_0352",
       "template_type": "portal_scraping",
-      "confidence": 0.78,
+      "confidence": 0.88,
       "permit_number": {
-        "predicted": "",
+        "predicted": "IP-2025-16627",
         "expected": "IP-2025-16627",
-        "exact_match": 0.0
+        "exact_match": 1.0
       },
       "inspection_date": {
         "predicted": "2026-05-03",
@@ -12739,7 +12739,7 @@
     {
       "message_id": "msg_0353",
       "template_type": "data_dump",
-      "confidence": 0.99,
+      "confidence": 0.96,
       "permit_number": {
         "predicted": "EP-2025-66022",
         "expected": "EP-2025-66022",
@@ -12751,14 +12751,14 @@
         "exact_match": 1.0
       },
       "site_address": {
-        "predicted": "2026 8104 Ash Pl, North Haverbrook, 62708",
+        "predicted": "8104 Ash Pl, North Haverbrook, 62708",
         "expected": "8104 Ash Pl, North Haverbrook, 62708",
-        "fuzzy_score": 0.878
+        "fuzzy_score": 1.0
       },
       "status": {
-        "predicted": "pass",
+        "predicted": "partial",
         "expected": "partial",
-        "exact_match": 0.0
+        "exact_match": 1.0
       },
       "structure_type": {
         "predicted": "Residential",
@@ -12766,7 +12766,7 @@
         "fuzzy_score": 1.0
       },
       "routing": {
-        "team": "PERMITTING",
+        "team": "UNKNOWN",
         "action_correct": true,
         "predicted_action": true,
         "expected_action": true
@@ -12883,7 +12883,7 @@
     {
       "message_id": "msg_0357",
       "template_type": "data_dump",
-      "confidence": 0.99,
+      "confidence": 0.96,
       "permit_number": {
         "predicted": "BP-2025-65546",
         "expected": "BP-2025-65546",
@@ -12895,9 +12895,9 @@
         "exact_match": 1.0
       },
       "site_address": {
-        "predicted": "2025 6208 Alder Ln, Ogdenville, 62701",
+        "predicted": "6208 Alder Ln, Ogdenville, 62701",
         "expected": "6208 Alder Ln, Ogdenville, 62701",
-        "fuzzy_score": 0.8649
+        "fuzzy_score": 1.0
       },
       "status": {
         "predicted": "pass",
@@ -12919,26 +12919,26 @@
     {
       "message_id": "msg_0358",
       "template_type": "data_dump",
-      "confidence": 0.99,
+      "confidence": 0.91,
       "permit_number": {
         "predicted": "CP-2026-58449",
         "expected": "CP-2026-58449",
         "exact_match": 1.0
       },
       "inspection_date": {
-        "predicted": "2025-10-18",
+        "predicted": "2025-12-23",
         "expected": "2025-12-23",
-        "exact_match": 0.0
+        "exact_match": 1.0
       },
       "site_address": {
-        "predicted": "2025 4195 Cypress Way, Shelbyville, 62707",
+        "predicted": "4195 Cypress Way, Shelbyville, 62707",
         "expected": "4195 Cypress Way, Shelbyville, 62707",
-        "fuzzy_score": 0.878
+        "fuzzy_score": 1.0
       },
       "status": {
-        "predicted": "pass",
+        "predicted": "unknown",
         "expected": "unknown",
-        "exact_match": 0.0
+        "exact_match": 1.0
       },
       "structure_type": {
         "predicted": "Commercial",
@@ -12946,7 +12946,7 @@
         "fuzzy_score": 1.0
       },
       "routing": {
-        "team": "PERMITTING",
+        "team": "UNKNOWN",
         "action_correct": false,
         "predicted_action": true,
         "expected_action": false
@@ -12991,7 +12991,7 @@
     {
       "message_id": "msg_0360",
       "template_type": "data_dump",
-      "confidence": 0.99,
+      "confidence": 0.96,
       "permit_number": {
         "predicted": "FP-2026-84664",
         "expected": "FP-2026-84664",
@@ -13003,9 +13003,9 @@
         "exact_match": 1.0
       },
       "site_address": {
-        "predicted": "08 3859 Spruce Cir, Shelbyvi",
+        "predicted": "3859 Spruce Cir, Shelbyvi1le, 62706",
         "expected": "3859 Spruce Cir, Shelbyville, 62706",
-        "fuzzy_score": 0.6286
+        "fuzzy_score": 0.9714
       },
       "status": {
         "predicted": "pass",
@@ -13063,26 +13063,26 @@
     {
       "message_id": "msg_0362",
       "template_type": "data_dump",
-      "confidence": 0.99,
+      "confidence": 0.96,
       "permit_number": {
         "predicted": "MP-2026-61020",
         "expected": "MP-2026-61020",
         "exact_match": 1.0
       },
       "inspection_date": {
-        "predicted": "2025-08-16",
+        "predicted": "2026-05-08",
         "expected": "2026-05-08",
-        "exact_match": 0.0
+        "exact_match": 1.0
       },
       "site_address": {
-        "predicted": "2026 7236 Oak Ave, Springfield, 62707",
+        "predicted": "7236 Oak Ave, Springfield, 62707",
         "expected": "7236 Oak Ave, Springfield, 62707",
-        "fuzzy_score": 0.8649
+        "fuzzy_score": 1.0
       },
       "status": {
-        "predicted": "pass",
+        "predicted": "partial",
         "expected": "partial",
-        "exact_match": 0.0
+        "exact_match": 1.0
       },
       "structure_type": {
         "predicted": "Commercial",
@@ -13090,7 +13090,7 @@
         "fuzzy_score": 1.0
       },
       "routing": {
-        "team": "PERMITTING",
+        "team": "UNKNOWN",
         "action_correct": true,
         "predicted_action": true,
         "expected_action": true
@@ -13243,7 +13243,7 @@
     {
       "message_id": "msg_0367",
       "template_type": "data_dump",
-      "confidence": 0.99,
+      "confidence": 0.96,
       "permit_number": {
         "predicted": "IP-2026-86431",
         "expected": "IP-2026-86431",
@@ -13255,9 +13255,9 @@
         "exact_match": 1.0
       },
       "site_address": {
-        "predicted": "2025 4755 Cedar Ln, Brockway, 62704",
+        "predicted": "4755 Cedar Ln, Brockway, 62704",
         "expected": "4755 Cedar Ln, Brockway, 62704",
-        "fuzzy_score": 0.8571
+        "fuzzy_score": 1.0
       },
       "status": {
         "predicted": "pass",
@@ -13495,7 +13495,7 @@
     {
       "message_id": "msg_0374",
       "template_type": "data_dump",
-      "confidence": 0.93,
+      "confidence": 0.96,
       "permit_number": {
         "predicted": "CP-2025-62904",
         "expected": "CP-2025-62904",
@@ -13507,14 +13507,14 @@
         "exact_match": 1.0
       },
       "site_address": {
-        "predicted": "2026 6457 Sycamore Rd, Ogdenville, 62702",
+        "predicted": "6457 Sycamore Rd, Ogdenville, 62702",
         "expected": "6457 Sycamore Rd, Ogdenville, 62702",
-        "fuzzy_score": 0.875
+        "fuzzy_score": 1.0
       },
       "status": {
-        "predicted": "pass",
+        "predicted": "partial",
         "expected": "partial",
-        "exact_match": 0.0
+        "exact_match": 1.0
       },
       "structure_type": {
         "predicted": "Residential",
@@ -13522,7 +13522,7 @@
         "fuzzy_score": 1.0
       },
       "routing": {
-        "team": "PERMITTING",
+        "team": "UNKNOWN",
         "action_correct": true,
         "predicted_action": true,
         "expected_action": true
@@ -13531,7 +13531,7 @@
     {
       "message_id": "msg_0375",
       "template_type": "data_dump",
-      "confidence": 0.99,
+      "confidence": 0.96,
       "permit_number": {
         "predicted": "MP-2026-36002",
         "expected": "MP-2026-36002",
@@ -13543,9 +13543,9 @@
         "exact_match": 1.0
       },
       "site_address": {
-        "predicted": "2025 4094 Maple Rd, Shelbyville, 62702",
+        "predicted": "4094 Maple Rd, Shelbyville, 62702",
         "expected": "4094 Maple Rd, Shelbyville, 62702",
-        "fuzzy_score": 0.8684
+        "fuzzy_score": 1.0
       },
       "status": {
         "predicted": "fail",
@@ -13855,7 +13855,7 @@
     {
       "message_id": "msg_0384",
       "template_type": "data_dump",
-      "confidence": 0.99,
+      "confidence": 0.96,
       "permit_number": {
         "predicted": "CP-2025-84794",
         "expected": "CP-2025-84794",
@@ -13867,14 +13867,14 @@
         "exact_match": 1.0
       },
       "site_address": {
-        "predicted": "2025 8097 Redwood Ave, Shelbyville",
+        "predicted": "8097 Redwood Ave, Shelbyville. 6270l",
         "expected": "8097 Redwood Ave, Shelbyville, 62701",
-        "fuzzy_score": 0.6667
+        "fuzzy_score": 0.9444
       },
       "status": {
-        "predicted": "pass",
+        "predicted": "partial",
         "expected": "partial",
-        "exact_match": 0.0
+        "exact_match": 1.0
       },
       "structure_type": {
         "predicted": "Mixed-Use",
@@ -13882,7 +13882,7 @@
         "fuzzy_score": 1.0
       },
       "routing": {
-        "team": "PERMITTING",
+        "team": "UNKNOWN",
         "action_correct": true,
         "predicted_action": true,
         "expected_action": true
@@ -14107,7 +14107,7 @@
     {
       "message_id": "msg_0391",
       "template_type": "data_dump",
-      "confidence": 0.99,
+      "confidence": 0.96,
       "permit_number": {
         "predicted": "EP-2026-23954",
         "expected": "EP-2026-23954",
@@ -14119,9 +14119,9 @@
         "exact_match": 1.0
       },
       "site_address": {
-        "predicted": "2026 7533 Willow Ter, Brockway, 62702",
+        "predicted": "7533 Willow Ter, Brockway, 62702",
         "expected": "7533 Willow Ter, Brockway, 62702",
-        "fuzzy_score": 0.8649
+        "fuzzy_score": 1.0
       },
       "status": {
         "predicted": "fail",
@@ -14143,26 +14143,26 @@
     {
       "message_id": "msg_0392",
       "template_type": "data_dump",
-      "confidence": 0.99,
+      "confidence": 0.91,
       "permit_number": {
         "predicted": "BP-2025-82091",
         "expected": "BP-2025-82091",
         "exact_match": 1.0
       },
       "inspection_date": {
-        "predicted": "2026-03-27",
+        "predicted": "2025-07-10",
         "expected": "2025-07-10",
-        "exact_match": 0.0
+        "exact_match": 1.0
       },
       "site_address": {
-        "predicted": "2025 3535 Sycamore Rd. Brockway",
+        "predicted": "3535 Sycamore Rd. Brockway, 62701",
         "expected": "3535 Sycamore Rd, Brockway, 62701",
-        "fuzzy_score": 0.6061
+        "fuzzy_score": 0.9697
       },
       "status": {
-        "predicted": "partial",
+        "predicted": "unknown",
         "expected": "unknown",
-        "exact_match": 0.0
+        "exact_match": 1.0
       },
       "structure_type": {
         "predicted": "Commercial",
@@ -14359,7 +14359,7 @@
     {
       "message_id": "msg_0398",
       "template_type": "data_dump",
-      "confidence": 0.99,
+      "confidence": 0.96,
       "permit_number": {
         "predicted": "FP-2025-75911",
         "expected": "FP-2025-75911",
@@ -14371,14 +14371,14 @@
         "exact_match": 1.0
       },
       "site_address": {
-        "predicted": "2025 6852 Spruce Cir, Capital City, 62703",
+        "predicted": "6852 Spruce Cir, Capital City, 62703",
         "expected": "6852 Spruce Cir, Capital City, 62703",
-        "fuzzy_score": 0.878
+        "fuzzy_score": 1.0
       },
       "status": {
-        "predicted": "pass",
+        "predicted": "fail",
         "expected": "fail",
-        "exact_match": 0.0
+        "exact_match": 1.0
       },
       "structure_type": {
         "predicted": "Residential",
@@ -14386,7 +14386,7 @@
         "fuzzy_score": 1.0
       },
       "routing": {
-        "team": "PERMITTING",
+        "team": "FIELD_DISPATCH",
         "action_correct": true,
         "predicted_action": true,
         "expected_action": true
@@ -14395,7 +14395,7 @@
     {
       "message_id": "msg_0399",
       "template_type": "data_dump",
-      "confidence": 0.99,
+      "confidence": 0.91,
       "permit_number": {
         "predicted": "IP-2026-46770",
         "expected": "IP-2026-46770",
@@ -14407,14 +14407,14 @@
         "exact_match": 1.0
       },
       "site_address": {
-        "predicted": "2025 1944 Birch Ct, North Haverbrook, 62702",
+        "predicted": "1944 Birch Ct, North Haverbrook, 62702",
         "expected": "1944 Birch Ct, North Haverbrook, 62702",
-        "fuzzy_score": 0.8837
+        "fuzzy_score": 1.0
       },
       "status": {
-        "predicted": "pass",
+        "predicted": "unknown",
         "expected": "unknown",
-        "exact_match": 0.0
+        "exact_match": 1.0
       },
       "structure_type": {
         "predicted": "Residential",
@@ -14422,7 +14422,7 @@
         "fuzzy_score": 1.0
       },
       "routing": {
-        "team": "PERMITTING",
+        "team": "UNKNOWN",
         "action_correct": false,
         "predicted_action": true,
         "expected_action": false
@@ -14575,7 +14575,7 @@
     {
       "message_id": "msg_0404",
       "template_type": "data_dump",
-      "confidence": 0.99,
+      "confidence": 0.96,
       "permit_number": {
         "predicted": "MP-2026-52857",
         "expected": "MP-2026-52857",
@@ -14587,9 +14587,9 @@
         "exact_match": 1.0
       },
       "site_address": {
-        "predicted": "2026 8777 Maple Rd, Springfield, 62701",
+        "predicted": "8777 Maple Rd, Springfield, 62701",
         "expected": "8777 Maple Rd, Springfield, 62701",
-        "fuzzy_score": 0.8684
+        "fuzzy_score": 1.0
       },
       "status": {
         "predicted": "pass",
@@ -15259,7 +15259,7 @@
     {
       "message_id": "msg_0423",
       "template_type": "data_dump",
-      "confidence": 0.94,
+      "confidence": 0.91,
       "permit_number": {
         "predicted": "EP-2025-50093",
         "expected": "EP-2025-50093",
@@ -15271,9 +15271,9 @@
         "exact_match": 1.0
       },
       "site_address": {
-        "predicted": "50093 Jan 19 2026 9476 Sequoia Dr, Ogdenville, 62704",
+        "predicted": "9476 Sequoia Dr, Ogdenville, 62704",
         "expected": "9476 Sequoia Dr, Ogdenville, 62704",
-        "fuzzy_score": 0.6538
+        "fuzzy_score": 1.0
       },
       "status": {
         "predicted": "unknown",
@@ -15475,26 +15475,26 @@
     {
       "message_id": "msg_0429",
       "template_type": "data_dump",
-      "confidence": 0.93,
+      "confidence": 0.96,
       "permit_number": {
-        "predicted": "FP-2025-60546",
+        "predicted": "BP-2026-64646",
         "expected": "BP-2026-64646",
-        "exact_match": 0.0
+        "exact_match": 1.0
       },
       "inspection_date": {
-        "predicted": "2017-04-26",
+        "predicted": "2026-06-17",
         "expected": "2026-06-17",
-        "exact_match": 0.0
+        "exact_match": 1.0
       },
       "site_address": {
-        "predicted": "2026 8607 Willow Ter, Brockway, 62705",
+        "predicted": "8607 Willow Ter, Brockway, 62705",
         "expected": "8607 Willow Ter, Brockway, 62705",
-        "fuzzy_score": 0.8649
+        "fuzzy_score": 1.0
       },
       "status": {
-        "predicted": "fail",
+        "predicted": "partial",
         "expected": "partial",
-        "exact_match": 0.0
+        "exact_match": 1.0
       },
       "structure_type": {
         "predicted": "Industrial",
@@ -15502,7 +15502,7 @@
         "fuzzy_score": 1.0
       },
       "routing": {
-        "team": "FIELD_DISPATCH",
+        "team": "UNKNOWN",
         "action_correct": true,
         "predicted_action": true,
         "expected_action": true
@@ -16015,26 +16015,26 @@
     {
       "message_id": "msg_0444",
       "template_type": "data_dump",
-      "confidence": 0.99,
+      "confidence": 0.91,
       "permit_number": {
         "predicted": "BP-2025-06868",
         "expected": "BP-2025-06868",
         "exact_match": 1.0
       },
       "inspection_date": {
-        "predicted": "2026-05-05",
+        "predicted": "2026-04-14",
         "expected": "2026-04-14",
-        "exact_match": 0.0
+        "exact_match": 1.0
       },
       "site_address": {
-        "predicted": "26 8391 Dogwood Dr, Capital City, 62705",
+        "predicted": "8391 Dogwood Dr, Capital City, 62705",
         "expected": "8391 Dogwood Dr, Capital City, 62705",
-        "fuzzy_score": 0.9231
+        "fuzzy_score": 1.0
       },
       "status": {
-        "predicted": "pass",
+        "predicted": "unknown",
         "expected": "unknown",
-        "exact_match": 0.0
+        "exact_match": 1.0
       },
       "structure_type": {
         "predicted": "Mixed-Use",
@@ -16042,7 +16042,7 @@
         "fuzzy_score": 1.0
       },
       "routing": {
-        "team": "PERMITTING",
+        "team": "UNKNOWN",
         "action_correct": false,
         "predicted_action": true,
         "expected_action": false
@@ -16051,7 +16051,7 @@
     {
       "message_id": "msg_0445",
       "template_type": "data_dump",
-      "confidence": 0.99,
+      "confidence": 0.96,
       "permit_number": {
         "predicted": "EP-2025-77894",
         "expected": "EP-2025-77894",
@@ -16063,14 +16063,14 @@
         "exact_match": 1.0
       },
       "site_address": {
-        "predicted": "2025 8052 Redwood Ave, Brockway, 62704",
+        "predicted": "8052 Redwood Ave, Brockway, 62704",
         "expected": "8052 Redwood Ave, Brockway, 62704",
-        "fuzzy_score": 0.8684
+        "fuzzy_score": 1.0
       },
       "status": {
-        "predicted": "pass",
+        "predicted": "partial",
         "expected": "partial",
-        "exact_match": 0.0
+        "exact_match": 1.0
       },
       "structure_type": {
         "predicted": "Commercial",
@@ -16078,7 +16078,7 @@
         "fuzzy_score": 1.0
       },
       "routing": {
-        "team": "PERMITTING",
+        "team": "UNKNOWN",
         "action_correct": true,
         "predicted_action": true,
         "expected_action": true
@@ -16123,9 +16123,9 @@
     {
       "message_id": "msg_0447",
       "template_type": "data_dump",
-      "confidence": 0.94,
+      "confidence": 0.96,
       "permit_number": {
-        "predicted": "",
+        "predicted": "EP-202S-58786",
         "expected": "EP-2025-58786",
         "exact_match": 0.0
       },
@@ -16135,9 +16135,9 @@
         "exact_match": 1.0
       },
       "site_address": {
-        "predicted": "2025 2307 Magnolia Blvd, Capital City, 62707",
+        "predicted": "2307 Magnolia Blvd, Capital City, 62707",
         "expected": "2307 Magnolia Blvd, Capital City, 62707",
-        "fuzzy_score": 0.8864
+        "fuzzy_score": 1.0
       },
       "status": {
         "predicted": "pass",
@@ -16303,9 +16303,9 @@
     {
       "message_id": "msg_0452",
       "template_type": "minimalist_mobile",
-      "confidence": 0.53,
+      "confidence": 0.72,
       "permit_number": {
-        "predicted": "",
+        "predicted": "IP-202-96181",
         "expected": "IP-2026-96181",
         "exact_match": 0.0
       },
@@ -16411,21 +16411,21 @@
     {
       "message_id": "msg_0455",
       "template_type": "data_dump",
-      "confidence": 0.99,
+      "confidence": 0.96,
       "permit_number": {
         "predicted": "MP-2026-58489",
         "expected": "MP-2026-58489",
         "exact_match": 1.0
       },
       "inspection_date": {
-        "predicted": "2026-03-05",
+        "predicted": "2026-04-14",
         "expected": "2026-04-14",
-        "exact_match": 0.0
+        "exact_match": 1.0
       },
       "site_address": {
-        "predicted": "26 584 Birch Ct, Shelbyville, 62704",
+        "predicted": "584 Birch Ct, Shelbyville, 62704",
         "expected": "584 Birch Ct, Shelbyville, 62704",
-        "fuzzy_score": 0.9143
+        "fuzzy_score": 1.0
       },
       "status": {
         "predicted": "pass",
@@ -16447,9 +16447,9 @@
     {
       "message_id": "msg_0456",
       "template_type": "data_dump",
-      "confidence": 0.94,
+      "confidence": 0.91,
       "permit_number": {
-        "predicted": "MP-2026-06966",
+        "predicted": "BP-2025-S1911",
         "expected": "BP-2025-51911",
         "exact_match": 0.0
       },
@@ -16459,9 +16459,9 @@
         "exact_match": 1.0
       },
       "site_address": {
-        "predicted": "2026 7255 Chestnut St, Brockway, 62703",
+        "predicted": "7255 Chestnut St, Brockway, 62703",
         "expected": "7255 Chestnut St, Brockway, 62703",
-        "fuzzy_score": 0.8684
+        "fuzzy_score": 1.0
       },
       "status": {
         "predicted": "unknown",
@@ -16591,7 +16591,7 @@
     {
       "message_id": "msg_0460",
       "template_type": "data_dump",
-      "confidence": 0.99,
+      "confidence": 0.96,
       "permit_number": {
         "predicted": "BP-2025-00614",
         "expected": "BP-2025-00614",
@@ -16603,9 +16603,9 @@
         "exact_match": 1.0
       },
       "site_address": {
-        "predicted": "00614 Aug 07 2025 8201 Elm Blvd, North Haverbrook, 62701",
+        "predicted": "8201 Elm Blvd, North Haverbrook, 62701",
         "expected": "8201 Elm Blvd, North Haverbrook, 62701",
-        "fuzzy_score": 0.6786
+        "fuzzy_score": 1.0
       },
       "status": {
         "predicted": "partial",
@@ -16771,7 +16771,7 @@
     {
       "message_id": "msg_0465",
       "template_type": "data_dump",
-      "confidence": 0.99,
+      "confidence": 0.96,
       "permit_number": {
         "predicted": "FP-2025-60837",
         "expected": "FP-2025-60837",
@@ -16783,14 +16783,14 @@
         "exact_match": 1.0
       },
       "site_address": {
-        "predicted": "19 2561 Cedar Ln, Ogdenville, 62707",
+        "predicted": "2561 Cedar Ln, Ogdenville, 62707",
         "expected": "2561 Cedar Ln, Ogdenville, 62707",
-        "fuzzy_score": 0.9143
+        "fuzzy_score": 1.0
       },
       "status": {
-        "predicted": "pass",
+        "predicted": "fail",
         "expected": "fail",
-        "exact_match": 0.0
+        "exact_match": 1.0
       },
       "structure_type": {
         "predicted": "Industrial",
@@ -16798,7 +16798,7 @@
         "fuzzy_score": 1.0
       },
       "routing": {
-        "team": "PERMITTING",
+        "team": "FIELD_DISPATCH",
         "action_correct": true,
         "predicted_action": true,
         "expected_action": true
@@ -17995,7 +17995,7 @@
     {
       "message_id": "msg_0499",
       "template_type": "data_dump",
-      "confidence": 0.99,
+      "confidence": 0.91,
       "permit_number": {
         "predicted": "FP-2026-74284",
         "expected": "FP-2026-74284",
@@ -18007,14 +18007,14 @@
         "exact_match": 1.0
       },
       "site_address": {
-        "predicted": "74284 Feb 24 2026 3215 Sequoia Dr, Shelbyville, 62701",
+        "predicted": "3215 Sequoia Dr, Shelbyville, 62701",
         "expected": "3215 Sequoia Dr, Shelbyville, 62701",
-        "fuzzy_score": 0.6604
+        "fuzzy_score": 1.0
       },
       "status": {
-        "predicted": "pass",
+        "predicted": "unknown",
         "expected": "unknown",
-        "exact_match": 0.0
+        "exact_match": 1.0
       },
       "structure_type": {
         "predicted": "Industrial",
@@ -18022,7 +18022,7 @@
         "fuzzy_score": 1.0
       },
       "routing": {
-        "team": "PERMITTING",
+        "team": "UNKNOWN",
         "action_correct": false,
         "predicted_action": true,
         "expected_action": false

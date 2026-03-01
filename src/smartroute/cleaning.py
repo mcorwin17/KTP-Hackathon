@@ -150,12 +150,12 @@ def extract_signature(text: str) -> Tuple[str, str]:
 
 
 def normalize_whitespace(text: str) -> str:
-    """Normalize excessive whitespace and line breaks."""
-    # Replace multiple spaces with single space
-    result = re.sub(r"[ \t]+", " ", text)
+    """Normalize excessive whitespace and line breaks while preserving tabs."""
+    # Replace multiple spaces (but NOT tabs) with single space
+    result = re.sub(r" {2,}", " ", text)
     # Replace 3+ newlines with 2 newlines
     result = re.sub(r"\n{3,}", "\n\n", result)
-    # Remove leading/trailing whitespace from lines
+    # Remove leading/trailing whitespace from lines (preserve tabs within)
     result = "\n".join(line.strip() for line in result.split("\n"))
     # Remove leading/trailing whitespace from entire text
     result = result.strip()

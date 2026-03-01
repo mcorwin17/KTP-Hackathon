@@ -1,7 +1,7 @@
 # SmartRoute Evaluation Report
 
 **Total messages evaluated:** 500
-**Generated:** 2026-03-01 01:45:26
+**Generated:** 2026-03-01 02:01:51
 
 ---
 
@@ -9,13 +9,13 @@
 
 | Metric | Score |
 |--------|-------|
-| Permit # (Exact Match) | 90.0% |
-| Inspection Date (Exact Match) | 67.8% |
-| Site Address (Fuzzy Match avg) | 83.8% |
-| Status (Exact Match) | 86.4% |
-| Structure Type (Fuzzy Match) | 85.3% |
+| Permit # (Exact Match) | 91.8% |
+| Inspection Date (Exact Match) | 74.8% |
+| Site Address (Fuzzy Match avg) | 87.0% |
+| Status (Exact Match) | 97.2% |
+| Structure Type (Fuzzy Match) | 85.8% |
 | Routing Action Accuracy | 63.4% |
-| Average Confidence | 92.6% |
+| Average Confidence | 92.1% |
 
 ---
 
@@ -23,11 +23,11 @@
 
 | Template | Count | Permit EM | Date EM | Address FM | Status EM |
 |----------|-------|-----------|---------|------------|-----------|
-| data_dump | 92 | 84.8% | 58.7% | 82.4% | 40.2% |
-| formal_bureaucratic | 97 | 93.8% | 86.6% | 95.2% | 97.9% |
+| data_dump | 92 | 91.3% | 96.7% | 99.6% | 98.9% |
+| formal_bureaucratic | 97 | 94.8% | 86.6% | 95.2% | 97.9% |
 | forward_chain | 106 | 98.1% | 80.2% | 97.0% | 98.1% |
 | minimalist_mobile | 102 | 76.5% | 48.0% | 44.5% | 92.2% |
-| portal_scraping | 103 | 96.1% | 65.0% | 99.7% | 99.0% |
+| portal_scraping | 103 | 98.1% | 65.0% | 99.7% | 99.0% |
 
 ---
 
@@ -105,10 +105,10 @@
 - **Status**: `pass` vs `pass`
 - **Routing**: action ✅
 
-### msg_0207 (template: data_dump)
+### msg_0388 (template: minimalist_mobile)
 
-- **Permit**: `FP-2026-11851` vs `FP-2025-38025` — EM: 0.0
-- **Date**: `2025-11-06` vs `2025-10-25` — EM: 0.0
-- **Address**: FM score 0.842
-- **Status**: `fail` vs `partial`
+- **Permit**: `2025-06957` vs `BP-2025-06957` — EM: 0.0
+- **Date**: `` vs `2026-05-04` — EM: 0.0
+- **Address**: FM score 0.121
+- **Status**: `pass` vs `pass`
 - **Routing**: action ✅

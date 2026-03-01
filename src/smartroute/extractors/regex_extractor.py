@@ -314,6 +314,151 @@ class RegexExtractor:
         r"[Ii]nspector\s+[Nn]ame\s*:?\s*([A-Z][a-z]+\s+[A-Z][a-z]+)",
     ]
 
+    # ── Status keyword normalization for TSV columns ──
+    _STATUS_MAP = {
+        "passed": "pass", "pass": "pass", "approved": "pass", "ok": "pass",
+        "complete": "pass", "good": "pass", "✓": "pass", "👍": "pass",
+        "failed": "fail", "fail": "fail", "rejected": "fail", "denied": "fail",
+        "not approved": "fail", "no good": "fail", "❌": "fail", "nope": "fail",
+        "partial": "partial", "conditional": "partial", "conditional approval": "partial",
+        "cond": "partial", "maybe": "partial", "needs work": "partial",
+        "pending": "unknown", "scheduled": "unknown", "under review": "unknown",
+        "in review": "unknown", "tbd": "unknown", "waiting": "unknown", "hold": "unknown",
+    }
+
+    def _try_parse_tsv(self, text: str) -> Optional[dict]:
+        """Try to parse tab-separated data and extract from the first data row."""
+        lines = [l for l in text.strip().split("\n") if "\t" in l]
+        if len(lines) < 2:
+            return None
+
+        # Identify header row — must have 4+ tab-separated columns
+        header_line = lines[0]
+        headers = [h.strip().lower() for h in header_line.split("\t")]
+        if len(headers) < 4:
+            return None
+
+        # Map header names to column indices
+        col_map = {}
+        for i, h in enumerate(headers):
+            if any(kw in h for kw in ["permit", "prmt"]):
+                col_map["permit"] = i
+            elif any(kw in h for kw in ["date", "insp_date"]):
+                col_map["date"] = i
+            elif any(kw in h for kw in ["addr", "address", "site", "location"]):
+                col_map["address"] = i
+            elif any(kw in h for kw in ["type", "struct"]):
+                col_map["type"] = i
+            elif any(kw in h for kw in ["status", "result", "outcome"]):
+                col_map["status"] = i
+            elif any(kw in h for kw in ["inspector", "examiner"]):
+                col_map["inspector"] = i
+            elif any(kw in h for kw in ["note", "comment"]):
+                col_map["notes"] = i
+
+        if "permit" not in col_map:
+            return None
+
+        # Parse the FIRST data row (the one directly after the header)
+        data_line = lines[1]
+        cols = data_line.split("\t")
+
+        result = {
+            "permit": {},
+            "inspection": {},
+            "release": {},
+            "site": {},
+            "contacts": [],
+            "field_confidence": {},
+        }
+
+        def _col(name):
+            idx = col_map.get(name)
+            if idx is not None and idx < len(cols):
+                val = cols[idx].strip()
+                # Clean OCR artifacts
+                val = normalize_ocr_text(val)
+                return val if val and not is_garbage_text(val) else None
+            return None
+
+        # Permit
+        permit = _col("permit")
+        if permit:
+            if "REDACTED" in permit.upper():
+                # Look for reference at end of text
+                ref_match = re.search(r"(?:Ref|Reference|tracking\s+ID)\s*:?\s*([A-Z]{1,3}-?\d{4}-?\d{3,6})", text, re.IGNORECASE)
+                if ref_match:
+                    permit = ref_match.group(1).strip()
+            permit = re.sub(r"\s+", "", permit).upper()
+            permit = re.sub(r"O(?=\d)", "0", permit)
+            permit = re.sub(r"(?<=\d)O", "0", permit)
+            result["permit"]["permit_number"] = permit
+            result["field_confidence"]["permit.permit_number"] = 0.9
+
+        # Date
+        date_str = _col("date")
+        if date_str:
+            date_str = preprocess_ocr_date(date_str)
+            try:
+                from dateutil import parser as date_parser
+                parsed = date_parser.parse(date_str, fuzzy=True)
+                if 1990 <= parsed.year <= 2100:
+                    result["inspection"]["inspection_date"] = parsed.strftime("%Y-%m-%d")
+                    result["field_confidence"]["inspection.inspection_date"] = 0.85
+            except (ValueError, TypeError, OverflowError):
+                pass
+
+        # Address
+        address = _col("address")
+        if address and len(address) >= 8:
+            result["site"]["address_full"] = address
+            result["field_confidence"]["site.address_full"] = 0.85
+
+        # Structure type
+        stype = _col("type")
+        if stype:
+            stype_lower = stype.lower().strip()
+            # Fix OCR: "Residentia1" -> "Residential"
+            stype_lower = re.sub(r"1$", "l", stype_lower)
+            stype_lower = re.sub(r"0", "o", stype_lower)
+            for abbr, full in self.STRUCTURE_TYPE_ABBREVS.items():
+                if stype_lower.startswith(abbr):
+                    result["site"]["structure_type"] = full
+                    result["release"]["structure_type"] = full
+                    result["field_confidence"]["release.structure_type"] = 0.85
+                    break
+            else:
+                result["site"]["structure_type"] = stype.title()
+                result["release"]["structure_type"] = stype.title()
+                result["field_confidence"]["release.structure_type"] = 0.8
+
+        # Status — map from the exact cell value
+        status_raw = _col("status")
+        if status_raw:
+            status_key = status_raw.lower().strip()
+            mapped = self._STATUS_MAP.get(status_key)
+            if not mapped:
+                # Fuzzy match
+                for key, val in self._STATUS_MAP.items():
+                    if key in status_key or status_key in key:
+                        mapped = val
+                        break
+            if mapped:
+                result["inspection"]["status"] = mapped
+                result["field_confidence"]["inspection.status"] = 0.9
+            else:
+                result["inspection"]["status"] = status_raw.lower()
+                result["field_confidence"]["inspection.status"] = 0.7
+
+        # Inspector
+        inspector = _col("inspector")
+        if inspector and len(inspector) >= 3 and not is_garbage_text(inspector):
+            if inspector.isupper():
+                inspector = inspector.title()
+            result["contacts"].append({"name": inspector, "role": "inspector"})
+
+        return result
+
     def extract(self, clean_text: str, attachment_text: Optional[str] = None) -> dict:
         """
         Extract fields from cleaned text using regex patterns.
@@ -331,6 +476,11 @@ class RegexExtractor:
 
         # Apply OCR normalization
         combined_text = normalize_ocr_text(combined_text)
+
+        # ── Fast path: tab-separated data ──
+        tsv_result = self._try_parse_tsv(combined_text)
+        if tsv_result and tsv_result.get("permit", {}).get("permit_number"):
+            return tsv_result
 
         result = {
             "permit": {},
@@ -427,6 +577,37 @@ class RegexExtractor:
                 # Higher confidence for explicit labels
                 conf = 0.9 if "permit" in pattern.lower() else 0.75
                 return permit_num.upper(), conf
+
+        # ── OCR fallback: try to match degraded permit patterns ──
+        # Match patterns like: XX-d025-53745, EP-225-05505, IP-202-96181
+        # These have OCR errors in the year portion or truncated prefix
+        ocr_fallback_patterns = [
+            # XX-XNNN-NNNNN where X could be OCR-degraded digit
+            r"\b([A-Z]{1,3})-([a-zA-Z0-9]{3,4})-(\d{3,6})\b",
+            # NNNN-NNNNN bare (Prmt prefix already tried)
+            r"(?:^|\s)(\d{3,4})-(\d{3,6})(?:\s|$)",
+        ]
+        for pattern in ocr_fallback_patterns:
+            match = re.search(pattern, text)
+            if match:
+                groups = match.groups()
+                if len(groups) == 3:
+                    prefix, year_part, seq = groups
+                    # Fix OCR in year: d->0, S->5, l->1, O->0
+                    year_fixed = year_part.replace('d', '0').replace('D', '0')
+                    year_fixed = year_fixed.replace('S', '5').replace('s', '5')
+                    year_fixed = year_fixed.replace('l', '1').replace('I', '1')
+                    year_fixed = year_fixed.replace('O', '0').replace('o', '0')
+                    permit_num = f"{prefix.upper()}-{year_fixed}-{seq}"
+                    if any(c.isdigit() for c in permit_num):
+                        return permit_num, 0.65
+                elif len(groups) == 2:
+                    year_part, seq = groups
+                    year_fixed = year_part.replace('O', '0').replace('o', '0')
+                    permit_num = f"{year_fixed}-{seq}"
+                    if any(c.isdigit() for c in permit_num):
+                        return permit_num.upper(), 0.6
+
         return None, 0.0
 
     def _extract_dates(self, text: str) -> list[dict]:
