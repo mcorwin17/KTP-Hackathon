@@ -1,5 +1,7 @@
 # SmartRoute
 
+[![CI](https://github.com/mcorwin17/KTP-Hackathon/actions/workflows/ci.yml/badge.svg)](https://github.com/mcorwin17/KTP-Hackathon/actions/workflows/ci.yml)
+
 Intelligent intake/extraction engine for inspector communications. Transforms messy inspector emails, portal text, and OCR'd attachments into normalized structured records with action routing.
 
 ## Features
@@ -118,16 +120,36 @@ The router determines:
   - `CUSTOMER_SERVICE`: General inquiries
 - **Priority**: Low (passed, informational), Normal (standard action items), High (urgent keywords, failed with corrections)
 
+## Evaluation
+
+Extraction quality is measured against **500 synthetic ground-truth messages** across 5 message-style templates (formal bureaucratic, forwarded chains, portal scrapes, mobile shorthand, data dumps), with exact-match scoring for structured fields and fuzzy matching for free-text fields. Permit matching tolerates common OCR degradations (`d→0`, `S→5`, `l→1`).
+
+| Metric | Score |
+|--------|-------|
+| Permit # (Exact Match) | 91.8% |
+| Status (Exact Match) | 97.2% |
+| Site Address (Fuzzy Match avg) | 87.0% |
+| Structure Type (Fuzzy Match) | 85.8% |
+| Inspection Date (Exact Match) | 74.8% |
+| Average Confidence | 92.1% |
+
+Reproduce with:
+```bash
+pip install -e ".[eval]"
+python tools/eval.py
+```
+Full per-template breakdown and worst-case analysis in [`eval/report.md`](eval/report.md).
+
 ## Development
 
-Run tests:
+Tests run in CI on every push (Python 3.11 and 3.13):
 ```bash
 pytest
 ```
 
 With coverage:
 ```bash
-pytest --cov=smartroute --cov-report=html
+pytest --cov=src/smartroute --cov-report=html
 ```
 
 ## License
