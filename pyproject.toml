@@ -36,8 +36,12 @@ dev = [
     "pytest>=7.0.0",
     "pytest-cov>=4.0.0",
 ]
+eval = [
+    "rich>=13.0.0",
+    "levenshtein>=0.25.0",
+]
 all = [
-    "smartroute[llm,dev]",
+    "smartroute[llm,dev,eval]",
 ]
 
 [project.scripts]
