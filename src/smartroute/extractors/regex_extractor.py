@@ -804,8 +804,14 @@ class RegexExtractor:
 
         # Extract phones
         for pattern in self.PHONE_PATTERNS:
-            for match in re.finditer(pattern, text):
-                phone = match.group(1) if match.lastindex else match.group(0)
+            for match in re.finditer(pattern, text, re.IGNORECASE):
+                if match.lastindex and match.lastindex > 1:
+                    # Multi-group patterns capture the number in pieces, e.g. (555) 123-4567
+                    phone = "".join(g for g in match.groups() if g)
+                elif match.lastindex:
+                    phone = match.group(1)
+                else:
+                    phone = match.group(0)
                 # Normalize phone
                 phone_digits = re.sub(r"\D", "", phone)
                 if len(phone_digits) >= 10:
